@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D428F1D6878E200379A5F /* AppDelegate.m */; };
+		4D0D42931D6878E200379A5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D42921D6878E200379A5F /* main.m */; };
+		4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D42971D6878E200379A5F /* Assets.xcassets */; };
+		4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D42991D6878E200379A5F /* Main.storyboard */; };
+		4D41F8E41D68A1810014E865 /* PresentationGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8E31D68A1810014E865 /* PresentationGLView.m */; };
+		4D41F8E71D68A19A0014E865 /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8E61D68A19A0014E865 /* PresentationViewController.m */; };
+		4D41F8EA1D68A1B50014E865 /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8E91D68A1B50014E865 /* GLViewController.m */; };
+		4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */; };
+		4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D41F8EE1D68A4E70014E865 /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D0D428B1D6878E200379A5F /* OpenGLPresentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLPresentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0D428E1D6878E200379A5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4D0D428F1D6878E200379A5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4D0D42921D6878E200379A5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D0D42971D6878E200379A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D0D429A1D6878E200379A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D0D429C1D6878E200379A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D41F8E21D68A1810014E865 /* PresentationGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationGLView.h; sourceTree = "<group>"; };
+		4D41F8E31D68A1810014E865 /* PresentationGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationGLView.m; sourceTree = "<group>"; };
+		4D41F8E51D68A19A0014E865 /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
+		4D41F8E61D68A19A0014E865 /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
+		4D41F8E81D68A1B50014E865 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
+		4D41F8E91D68A1B50014E865 /* GLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
+		4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationSplitViewController.h; sourceTree = "<group>"; };
+		4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationSplitViewController.m; sourceTree = "<group>"; };
+		4D41F8EE1D68A4E70014E865 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D0D42881D6878E200379A5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D0D42821D6878E200379A5F = {
+			isa = PBXGroup;
+			children = (
+				4D0D428D1D6878E200379A5F /* OpenGLPresentation */,
+				4D0D428C1D6878E200379A5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D0D428C1D6878E200379A5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D0D428B1D6878E200379A5F /* OpenGLPresentation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D0D428D1D6878E200379A5F /* OpenGLPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				4D0D428E1D6878E200379A5F /* AppDelegate.h */,
+				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
+				4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */,
+				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
+				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
+				4D41F8E31D68A1810014E865 /* PresentationGLView.m */,
+				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
+				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
+				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
+				4D41F8E91D68A1B50014E865 /* GLViewController.m */,
+				4D0D42971D6878E200379A5F /* Assets.xcassets */,
+				4D0D42991D6878E200379A5F /* Main.storyboard */,
+				4D0D429C1D6878E200379A5F /* Info.plist */,
+				4D41F8EE1D68A4E70014E865 /* OpenGL.framework */,
+				4D0D42911D6878E200379A5F /* Supporting Files */,
+			);
+			path = OpenGLPresentation;
+			sourceTree = "<group>";
+		};
+		4D0D42911D6878E200379A5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D0D42921D6878E200379A5F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D0D428A1D6878E200379A5F /* OpenGLPresentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D0D429F1D6878E200379A5F /* Build configuration list for PBXNativeTarget "OpenGLPresentation" */;
+			buildPhases = (
+				4D0D42871D6878E200379A5F /* Sources */,
+				4D0D42881D6878E200379A5F /* Frameworks */,
+				4D0D42891D6878E200379A5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGLPresentation;
+			productName = OpenGLPresentation;
+			productReference = 4D0D428B1D6878E200379A5F /* OpenGLPresentation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D0D42831D6878E200379A5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Emma Steimann";
+				TargetAttributes = {
+					4D0D428A1D6878E200379A5F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4D0D42861D6878E200379A5F /* Build configuration list for PBXProject "OpenGLPresentation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D0D42821D6878E200379A5F;
+			productRefGroup = 4D0D428C1D6878E200379A5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D0D428A1D6878E200379A5F /* OpenGLPresentation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D0D42891D6878E200379A5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */,
+				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D0D42871D6878E200379A5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D41F8EA1D68A1B50014E865 /* GLViewController.m in Sources */,
+				4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */,
+				4D41F8E41D68A1810014E865 /* PresentationGLView.m in Sources */,
+				4D0D42931D6878E200379A5F /* main.m in Sources */,
+				4D41F8E71D68A19A0014E865 /* PresentationViewController.m in Sources */,
+				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4D0D42991D6878E200379A5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D0D429A1D6878E200379A5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D0D429D1D6878E200379A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4D0D429E1D6878E200379A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4D0D42A01D6878E200379A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4D0D42A11D6878E200379A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D0D42861D6878E200379A5F /* Build configuration list for PBXProject "OpenGLPresentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0D429D1D6878E200379A5F /* Debug */,
+				4D0D429E1D6878E200379A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D0D429F1D6878E200379A5F /* Build configuration list for PBXNativeTarget "OpenGLPresentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0D42A01D6878E200379A5F /* Debug */,
+				4D0D42A11D6878E200379A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D0D42831D6878E200379A5F /* Project object */;
+}
