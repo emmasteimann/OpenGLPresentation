@@ -17,6 +17,12 @@
 		4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */; };
 		4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D41F8EE1D68A4E70014E865 /* OpenGL.framework */; };
 		4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8F41D68D6BB0014E865 /* GLNode.m */; };
+		4D4597B91D6A5D100018ED50 /* AssimpAccessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D4597B81D6A5D100018ED50 /* AssimpAccessor.mm */; };
+		4D4597BB1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4597BA1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib */; };
+		4D4597C21D6A5F9B0018ED50 /* bt0023_00_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4597BF1D6A5F9B0018ED50 /* bt0023_00_body.png */; };
+		4D4597C31D6A5F9B0018ED50 /* bt0023_00_hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4597C01D6A5F9B0018ED50 /* bt0023_00_hair.png */; };
+		4D4597C41D6A5F9B0018ED50 /* bt0023_00_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4597C11D6A5F9B0018ED50 /* bt0023_00_head.png */; };
+		4D4597C61D6A63480018ED50 /* TeamFlareAdmin.DAE in Resources */ = {isa = PBXBuildFile; fileRef = 4D4597BC1D6A5F710018ED50 /* TeamFlareAdmin.DAE */; settings = {ATTRIBUTES = ("--compress", ); }; };
 		4D88E5451D68FAEE00D67AEF /* GLBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */; };
 		4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */; };
 		4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */; };
@@ -25,8 +31,10 @@
 		4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5521D68FCF500D67AEF /* GLMushroom.m */; };
 		4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5551D68FE2900D67AEF /* GLScene.m */; };
 		4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5581D68FEE000D67AEF /* GLDirector.m */; };
-		4DE0C0FF1D6A07EF0002D0F7 /* skybox0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */; };
 		4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C1001D6A16A90002D0F7 /* skybox1.png */; };
+		4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */; };
+		4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */; };
+		4DE0C10F1D6A43080002D0F7 /* grasslight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C10E1D6A43080002D0F7 /* grasslight.png */; };
 		4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */; };
 		4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */; };
 /* End PBXBuildFile section */
@@ -50,6 +58,13 @@
 		4D41F8EE1D68A4E70014E865 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4D41F8F31D68D6BB0014E865 /* GLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLNode.h; sourceTree = "<group>"; };
 		4D41F8F41D68D6BB0014E865 /* GLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLNode.m; sourceTree = "<group>"; };
+		4D4597B71D6A5D100018ED50 /* AssimpAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssimpAccessor.h; sourceTree = "<group>"; };
+		4D4597B81D6A5D100018ED50 /* AssimpAccessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssimpAccessor.mm; sourceTree = "<group>"; };
+		4D4597BA1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libassimpd.3.1.1.dylib; sourceTree = "<group>"; };
+		4D4597BC1D6A5F710018ED50 /* TeamFlareAdmin.DAE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = TeamFlareAdmin.DAE; sourceTree = "<group>"; };
+		4D4597BF1D6A5F9B0018ED50 /* bt0023_00_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt0023_00_body.png; sourceTree = "<group>"; };
+		4D4597C01D6A5F9B0018ED50 /* bt0023_00_hair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt0023_00_hair.png; sourceTree = "<group>"; };
+		4D4597C11D6A5F9B0018ED50 /* bt0023_00_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt0023_00_head.png; sourceTree = "<group>"; };
 		4D88E5421D68F8DE00D67AEF /* GLVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLVertex.h; sourceTree = "<group>"; };
 		4D88E5431D68FAEE00D67AEF /* GLBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseEffect.h; sourceTree = "<group>"; };
 		4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseEffect.m; sourceTree = "<group>"; };
@@ -57,15 +72,19 @@
 		4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLSimpleVertex.glsl; sourceTree = "<group>"; };
 		4D88E54C1D68FCE900D67AEF /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
 		4D88E54D1D68FCE900D67AEF /* mushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mushroom.m; sourceTree = "<group>"; };
-		4D88E54E1D68FCE900D67AEF /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
+		4D88E54E1D68FCE900D67AEF /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mushroom.png; path = mushroom/mushroom.png; sourceTree = "<group>"; };
 		4D88E5511D68FCF500D67AEF /* GLMushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMushroom.h; sourceTree = "<group>"; };
 		4D88E5521D68FCF500D67AEF /* GLMushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMushroom.m; sourceTree = "<group>"; };
 		4D88E5541D68FE2900D67AEF /* GLScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLScene.h; sourceTree = "<group>"; };
 		4D88E5551D68FE2900D67AEF /* GLScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLScene.m; sourceTree = "<group>"; };
 		4D88E5571D68FEE000D67AEF /* GLDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDirector.h; sourceTree = "<group>"; };
 		4D88E5581D68FEE000D67AEF /* GLDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDirector.m; sourceTree = "<group>"; };
-		4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox0.png; sourceTree = "<group>"; };
 		4DE0C1001D6A16A90002D0F7 /* skybox1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox1.png; sourceTree = "<group>"; };
+		4DE0C1021D6A20A30002D0F7 /* GLTerrainNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTerrainNode.h; sourceTree = "<group>"; };
+		4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTerrainNode.m; sourceTree = "<group>"; };
+		4DE0C1051D6A34DC0002D0F7 /* GLPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPlane.h; sourceTree = "<group>"; };
+		4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPlane.m; sourceTree = "<group>"; };
+		4DE0C10E1D6A43080002D0F7 /* grasslight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grasslight.png; sourceTree = "<group>"; };
 		4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessEval.glsl; sourceTree = "<group>"; };
 		4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessControl.glsl; sourceTree = "<group>"; };
 		4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLHelper.h; sourceTree = "<group>"; };
@@ -77,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */,
+				4D4597BB1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +124,7 @@
 			children = (
 				4D0D428E1D6878E200379A5F /* AppDelegate.h */,
 				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
+				4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */,
 				4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */,
 				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
 				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
@@ -114,21 +135,26 @@
 				4D88E5581D68FEE000D67AEF /* GLDirector.m */,
 				4D41F8F31D68D6BB0014E865 /* GLNode.h */,
 				4D41F8F41D68D6BB0014E865 /* GLNode.m */,
-				4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */,
+				4DE0C1051D6A34DC0002D0F7 /* GLPlane.h */,
+				4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */,
+				4DE0C1021D6A20A30002D0F7 /* GLTerrainNode.h */,
+				4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */,
 				4D88E5541D68FE2900D67AEF /* GLScene.h */,
 				4D88E5551D68FE2900D67AEF /* GLScene.m */,
 				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
 				4D41F8E91D68A1B50014E865 /* GLViewController.m */,
+				4D4597B71D6A5D100018ED50 /* AssimpAccessor.h */,
+				4D4597B81D6A5D100018ED50 /* AssimpAccessor.mm */,
 				4D88E5511D68FCF500D67AEF /* GLMushroom.h */,
 				4D88E5521D68FCF500D67AEF /* GLMushroom.m */,
-				4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */,
-				4DE0C1001D6A16A90002D0F7 /* skybox1.png */,
+				4D4597C51D6A5FA30018ED50 /* Emma */,
+				4DE0C1101D6A439C0002D0F7 /* Textures */,
 				4D88E54B1D68FCE900D67AEF /* mushroom */,
 				4D88E54A1D68FC1400D67AEF /* Shaders */,
 				4D0D42971D6878E200379A5F /* Assets.xcassets */,
 				4D0D42991D6878E200379A5F /* Main.storyboard */,
 				4D0D429C1D6878E200379A5F /* Info.plist */,
-				4D41F8EE1D68A4E70014E865 /* OpenGL.framework */,
+				4D8D79731D6A54FB00263EC5 /* Frameworks */,
 				4D0D42911D6878E200379A5F /* Supporting Files */,
 			);
 			path = OpenGLPresentation;
@@ -142,6 +168,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4D4597BE1D6A5F9B0018ED50 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4D4597BF1D6A5F9B0018ED50 /* bt0023_00_body.png */,
+				4D4597C01D6A5F9B0018ED50 /* bt0023_00_hair.png */,
+				4D4597C11D6A5F9B0018ED50 /* bt0023_00_head.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		4D4597C51D6A5FA30018ED50 /* Emma */ = {
+			isa = PBXGroup;
+			children = (
+				4D4597BC1D6A5F710018ED50 /* TeamFlareAdmin.DAE */,
+				4D4597BE1D6A5F9B0018ED50 /* images */,
+			);
+			name = Emma;
+			sourceTree = "<group>";
+		};
 		4D88E54A1D68FC1400D67AEF /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +194,9 @@
 				4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */,
 				4D88E5421D68F8DE00D67AEF /* GLVertex.h */,
 				4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */,
+				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
 				4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */,
 				4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */,
-				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -161,9 +206,27 @@
 			children = (
 				4D88E54C1D68FCE900D67AEF /* mushroom.h */,
 				4D88E54D1D68FCE900D67AEF /* mushroom.m */,
-				4D88E54E1D68FCE900D67AEF /* mushroom.png */,
 			);
 			path = mushroom;
+			sourceTree = "<group>";
+		};
+		4D8D79731D6A54FB00263EC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D4597BA1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib */,
+				4D41F8EE1D68A4E70014E865 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DE0C1101D6A439C0002D0F7 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4DE0C1001D6A16A90002D0F7 /* skybox1.png */,
+				4DE0C10E1D6A43080002D0F7 /* grasslight.png */,
+				4D88E54E1D68FCE900D67AEF /* mushroom.png */,
+			);
+			name = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,15 +286,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4597C61D6A63480018ED50 /* TeamFlareAdmin.DAE in Resources */,
 				4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */,
 				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
+				4D4597C41D6A5F9B0018ED50 /* bt0023_00_head.png in Resources */,
+				4D4597C21D6A5F9B0018ED50 /* bt0023_00_body.png in Resources */,
 				4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */,
 				4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */,
 				4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */,
 				4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */,
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
-				4DE0C0FF1D6A07EF0002D0F7 /* skybox0.png in Resources */,
 				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
+				4D4597C31D6A5F9B0018ED50 /* bt0023_00_hair.png in Resources */,
+				4DE0C10F1D6A43080002D0F7 /* grasslight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,10 +314,13 @@
 				4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */,
 				4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */,
 				4D41F8E41D68A1810014E865 /* PresentationGLView.m in Sources */,
+				4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */,
 				4D88E5451D68FAEE00D67AEF /* GLBaseEffect.m in Sources */,
 				4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */,
 				4D0D42931D6878E200379A5F /* main.m in Sources */,
+				4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */,
 				4D88E54F1D68FCE900D67AEF /* mushroom.m in Sources */,
+				4D4597B91D6A5D100018ED50 /* AssimpAccessor.mm in Sources */,
 				4D41F8E71D68A19A0014E865 /* PresentationViewController.m in Sources */,
 				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
 				4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */,
@@ -357,8 +427,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenGLPresentation",
+					/usr/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,8 +445,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenGLPresentation",
+					/usr/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

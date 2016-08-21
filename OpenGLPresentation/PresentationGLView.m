@@ -156,4 +156,13 @@ static CVReturn renderCallback(CVDisplayLinkRef displayLink,
 
 }
 
+-(void)update {
+  CGRect frame = self.frame;
+  GLsizei width = frame.size.width;
+  GLsizei height = frame.size.height;
+
+  // Update the viewport.
+  glViewport(0, 0, width, height);
+}
+
 @end

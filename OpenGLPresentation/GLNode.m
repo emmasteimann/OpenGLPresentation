@@ -13,15 +13,22 @@
   char *_name;
   GLuint _vao;
   GLuint _vertexBuffer;
+  GLuint _indexBuffer;
   unsigned int _vertexCount;
+  unsigned int _indexCount;
   GLBaseEffect *_shader;
 }
 
 - (instancetype)initWithName:(char *)name shader:(GLBaseEffect *)shader vertices:(GLVertex *)vertices vertexCount:(unsigned int)vertexCount {
+  return [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount inidices:nil indexCount:0];
+}
+
+- (instancetype)initWithName:(char *)name shader:(GLBaseEffect *)shader vertices:(GLVertex *)vertices vertexCount:(unsigned int)vertexCount inidices:(GLubyte *)indices indexCount:(unsigned int)indexCount {
   if ((self = [super init])) {
 
     _name = name;
     _vertexCount = vertexCount;
+    _indexCount = indexCount;
     _shader = shader;
     
     self.position = GLKVector3Make(0, 0, 0);
@@ -41,13 +48,25 @@
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, vertexCount * sizeof(GLVertex), vertices, GL_STATIC_DRAW);
 
+    if (_indexCount > 0) {
+      // Generate index buffer
+      glGenBuffers(1, &_indexBuffer);
+      glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
+      glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * sizeof(GLubyte), indices, GL_STATIC_DRAW);
+    }
+    NSLog(@"%s", name);
+    NSLog(@"%lu", sizeof(vertices[0]));
+
     // Enable vertex attributes
     glEnableVertexAttribArray(GLVertexAttribPosition);
     glVertexAttribPointer(GLVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLVertex), (const GLvoid *) offsetof(GLVertex, Position));
+
     glEnableVertexAttribArray(GLVertexAttribColor);
     glVertexAttribPointer(GLVertexAttribColor, 4, GL_FLOAT, GL_FALSE, sizeof(GLVertex), (const GLvoid *) offsetof(GLVertex, Color));
+
     glEnableVertexAttribArray(GLVertexAttribTexCoord);
     glVertexAttribPointer(GLVertexAttribTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(GLVertex), (const GLvoid *) offsetof(GLVertex, TexCoord));
+
     glEnableVertexAttribArray(GLVertexAttribNormal);
     glVertexAttribPointer(GLVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(GLVertex), (const GLvoid *) offsetof(GLVertex, Normal));
 
@@ -56,7 +75,6 @@
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
   }
   return self;
 }
@@ -84,8 +102,11 @@
   [_shader prepareToDraw];
 
   glBindVertexArray(_vao);
-  glDrawArrays(GL_TRIANGLES, 0, _vertexCount);
-//  glDrawElements(GL_PATCHES, _vertexCount, GL_UNSIGNED_INT, 0);
+  if (_indexCount > 0) {
+    glDrawElements(GL_TRIANGLES, _indexCount, GL_UNSIGNED_BYTE, 0);
+  } else {
+    glDrawArrays(GL_TRIANGLES, 0, _vertexCount);
+  }
   glBindVertexArray(0);
 
 }

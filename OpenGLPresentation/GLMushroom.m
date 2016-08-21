@@ -16,7 +16,7 @@
     [self loadTexture:@"mushroom.png"];
     self.rotationY = M_PI;
     self.rotationX = M_PI_2;
-    self.scale = 0.5;  
+//    self.scale = 0.5;  
   }
   return self;
 }

@@ -8,6 +8,7 @@
 
 #import "GLScene.h"
 #import "GLMushroom.h"
+#import "GLPlane.h"
 @import GLKit;
 
 @interface GLScene ()
@@ -22,6 +23,7 @@
   CGSize _gameArea;
   float _sceneOffset;
   GLMushroom *_mushroom;
+  GLPlane *_plane;
 }
 
 - (instancetype)initWithShader:(GLBaseEffect *)shader {
@@ -30,7 +32,6 @@
     _shader = shader;
 
     // Load cubeMap texture
-
     NSString *path = [[NSBundle bundleForClass:[self class]]
                       pathForResource:@"skybox1" ofType:@"png"];
     NSAssert(nil != path, @"Path to skybox image not found");
@@ -49,12 +50,17 @@
     self.skyboxEffect.xSize = 100.0f;
     self.skyboxEffect.ySize = 100.0f;
     self.skyboxEffect.zSize = 100.0f;
-    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -11, -17, _mushroom.position.x, _mushroom.position.y, _mushroom.position.z, 0, 1, 0);
 
+    _plane = [[GLPlane alloc] initWithShader:shader];
+    _plane.position = GLKVector3Make(0, -5, 0);
+
+    [self.children addObject:_plane];
 
     _mushroom = [[GLMushroom alloc] initWithShader:shader];
     _mushroom.position = GLKVector3Make(0, -10, 0);
     [self.children addObject:_mushroom];
+
+    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, 5, -20, _plane.position.x, _plane.position.y, _plane.position.z, 0, 1, 0);
   }
   return self;
 }

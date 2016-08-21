@@ -83,16 +83,21 @@
   glLinkProgram(_programHandle);
 
   self.modelViewMatrix = GLKMatrix4Identity;
+
   _modelViewMatrixUniform = glGetUniformLocation(_programHandle, "u_ModelViewMatrix");
   _projectionMatrixUniform = glGetUniformLocation(_programHandle, "u_ProjectionMatrix");
+
   _texUniform = glGetUniformLocation(_programHandle, "u_Texture");
+
   _lightColorUniform = glGetUniformLocation(_programHandle, "u_Light.Color");
   _lightAmbientIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.AmbientIntensity");
   _lightDiffuseIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.DiffuseIntensity");
   _lightDirectionUniform = glGetUniformLocation(_programHandle, "u_Light.Direction");
+
   _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
   _matColorUniform = glGetUniformLocation(_programHandle, "u_MatColor");
+  
 //  _tessLevelInnerUniform = glGetUniformLocation(_programHandle, "TessLevelInner");
 //  _tessLevelOuterUniform = glGetUniformLocation(_programHandle, "TessLevelOuter");
 
@@ -118,7 +123,7 @@
 
   glUniform3f(_lightColorUniform, 1, 1, 1);
   glUniform1f(_lightAmbientIntensityUniform, 0.1);
-  GLKVector3 lightDirection = GLKVector3Normalize(GLKVector3Make(0, 1, -1));
+  GLKVector3 lightDirection = GLKVector3Normalize(GLKVector3Make(0, -3, -3));
   glUniform3f(_lightDirectionUniform, lightDirection.x, lightDirection.y, lightDirection.z);
   glUniform1f(_lightDiffuseIntensityUniform, 0.7);
   glUniform1f(_matSpecularIntensityUniform, 2.0);

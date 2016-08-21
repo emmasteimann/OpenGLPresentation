@@ -12,6 +12,7 @@
 #import "GLBaseEffect.h"
 #import "GLScene.h"
 #import "GLDirector.h"
+#import "AssimpAccessor.h"
 
 @interface GLViewController ()
 
@@ -23,14 +24,13 @@
 }
 
 - (void)setupScene {
-
   [GLDirector sharedInstance].view = self.view;
 
   _shader = [[GLBaseEffect alloc] initWithVertexShader:@"GLSimpleVertex.glsl" fragmentShader:@"GLSimpleFragment.glsl"];
 
   _scene = [[GLScene alloc] initWithShader:_shader];
   _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width/self.view.bounds.size.height, 1, 150);
-
+  [[AssimpAccessor alloc] init];
   [GLDirector sharedInstance].scene = _scene;
 }
 
