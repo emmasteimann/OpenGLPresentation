@@ -16,6 +16,17 @@
 		4D41F8EA1D68A1B50014E865 /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8E91D68A1B50014E865 /* GLViewController.m */; };
 		4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */; };
 		4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D41F8EE1D68A4E70014E865 /* OpenGL.framework */; };
+		4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8F41D68D6BB0014E865 /* GLNode.m */; };
+		4D88E5451D68FAEE00D67AEF /* GLBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */; };
+		4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */; };
+		4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */; };
+		4D88E54F1D68FCE900D67AEF /* mushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E54D1D68FCE900D67AEF /* mushroom.m */; };
+		4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E54E1D68FCE900D67AEF /* mushroom.png */; };
+		4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5521D68FCF500D67AEF /* GLMushroom.m */; };
+		4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5551D68FE2900D67AEF /* GLScene.m */; };
+		4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5581D68FEE000D67AEF /* GLDirector.m */; };
+		4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */; };
+		4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +46,24 @@
 		4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationSplitViewController.h; sourceTree = "<group>"; };
 		4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationSplitViewController.m; sourceTree = "<group>"; };
 		4D41F8EE1D68A4E70014E865 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4D41F8F31D68D6BB0014E865 /* GLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLNode.h; sourceTree = "<group>"; };
+		4D41F8F41D68D6BB0014E865 /* GLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLNode.m; sourceTree = "<group>"; };
+		4D88E5421D68F8DE00D67AEF /* GLVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLVertex.h; sourceTree = "<group>"; };
+		4D88E5431D68FAEE00D67AEF /* GLBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseEffect.h; sourceTree = "<group>"; };
+		4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseEffect.m; sourceTree = "<group>"; };
+		4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLSimpleFragment.glsl; sourceTree = "<group>"; };
+		4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLSimpleVertex.glsl; sourceTree = "<group>"; };
+		4D88E54C1D68FCE900D67AEF /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
+		4D88E54D1D68FCE900D67AEF /* mushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mushroom.m; sourceTree = "<group>"; };
+		4D88E54E1D68FCE900D67AEF /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
+		4D88E5511D68FCF500D67AEF /* GLMushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMushroom.h; sourceTree = "<group>"; };
+		4D88E5521D68FCF500D67AEF /* GLMushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMushroom.m; sourceTree = "<group>"; };
+		4D88E5541D68FE2900D67AEF /* GLScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLScene.h; sourceTree = "<group>"; };
+		4D88E5551D68FE2900D67AEF /* GLScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLScene.m; sourceTree = "<group>"; };
+		4D88E5571D68FEE000D67AEF /* GLDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDirector.h; sourceTree = "<group>"; };
+		4D88E5581D68FEE000D67AEF /* GLDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDirector.m; sourceTree = "<group>"; };
+		4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessEval.glsl; sourceTree = "<group>"; };
+		4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessControl.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +103,20 @@
 				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
 				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
 				4D41F8E31D68A1810014E865 /* PresentationGLView.m */,
+				4D88E5571D68FEE000D67AEF /* GLDirector.h */,
+				4D88E5581D68FEE000D67AEF /* GLDirector.m */,
+				4D41F8F31D68D6BB0014E865 /* GLNode.h */,
+				4D41F8F41D68D6BB0014E865 /* GLNode.m */,
+				4D88E5541D68FE2900D67AEF /* GLScene.h */,
+				4D88E5551D68FE2900D67AEF /* GLScene.m */,
 				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
 				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
 				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
 				4D41F8E91D68A1B50014E865 /* GLViewController.m */,
+				4D88E5511D68FCF500D67AEF /* GLMushroom.h */,
+				4D88E5521D68FCF500D67AEF /* GLMushroom.m */,
+				4D88E54B1D68FCE900D67AEF /* mushroom */,
+				4D88E54A1D68FC1400D67AEF /* Shaders */,
 				4D0D42971D6878E200379A5F /* Assets.xcassets */,
 				4D0D42991D6878E200379A5F /* Main.storyboard */,
 				4D0D429C1D6878E200379A5F /* Info.plist */,
@@ -93,6 +132,30 @@
 				4D0D42921D6878E200379A5F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D88E54A1D68FC1400D67AEF /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E5431D68FAEE00D67AEF /* GLBaseEffect.h */,
+				4D88E5441D68FAEE00D67AEF /* GLBaseEffect.m */,
+				4D88E5421D68F8DE00D67AEF /* GLVertex.h */,
+				4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */,
+				4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */,
+				4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */,
+				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		4D88E54B1D68FCE900D67AEF /* mushroom */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E54C1D68FCE900D67AEF /* mushroom.h */,
+				4D88E54D1D68FCE900D67AEF /* mushroom.m */,
+				4D88E54E1D68FCE900D67AEF /* mushroom.png */,
+			);
+			path = mushroom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +215,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */,
+				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
+				4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */,
+				4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */,
 				4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */,
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
+				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,10 +234,16 @@
 			files = (
 				4D41F8EA1D68A1B50014E865 /* GLViewController.m in Sources */,
 				4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */,
+				4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */,
+				4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */,
 				4D41F8E41D68A1810014E865 /* PresentationGLView.m in Sources */,
+				4D88E5451D68FAEE00D67AEF /* GLBaseEffect.m in Sources */,
+				4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */,
 				4D0D42931D6878E200379A5F /* main.m in Sources */,
+				4D88E54F1D68FCE900D67AEF /* mushroom.m in Sources */,
 				4D41F8E71D68A19A0014E865 /* PresentationViewController.m in Sources */,
 				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
+				4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

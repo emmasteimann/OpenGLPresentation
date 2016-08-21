@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PresentationGLView.h"
 
-@interface GLViewController : NSViewController
+@interface GLViewController : NSViewController <PresentationGLViewDelegate>
 
 @end

@@ -8,5 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol PresentationGLViewDelegate <NSObject>
+
+-(void)updateGLView;
+
+@end
+
 @interface PresentationGLView : NSOpenGLView
+@property (weak, nonatomic) id<PresentationGLViewDelegate>delegate;
 @end

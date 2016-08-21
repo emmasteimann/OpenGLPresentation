@@ -8,9 +8,9 @@
 
 #import "PresentationGLView.h"
 @import GLKit;
-#include <GLUT/glut.h>
+//#include <GLUT/glut.h>
 #include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
+//#include <OpenGL/glu.h>
 
 // This is the renderer output callback function
 
@@ -42,7 +42,7 @@
 //  };
     NSOpenGLPixelFormatAttribute pixelFormatAttributes[] =
     {
-      NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersionLegacy,
+      NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion4_1Core,
       NSOpenGLPFADoubleBuffer,
       0
     };
@@ -56,7 +56,6 @@
 -(void)drawRect: (NSRect) bounds
 {
  [super drawRect:bounds];
-  NSLog(@"drawing");
   glClearColor(_curRed, 104.0/255.0, 55.0/255.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
@@ -133,7 +132,9 @@ static CVReturn renderCallback(CVDisplayLinkRef displayLink,
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  [self drawAnObject];
+  [self.delegate updateGLView];
+
+//  [self drawAnObject];
 
   // Single Buffering
   // glFlush();
