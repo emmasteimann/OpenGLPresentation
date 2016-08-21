@@ -25,6 +25,8 @@
 		4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5521D68FCF500D67AEF /* GLMushroom.m */; };
 		4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5551D68FE2900D67AEF /* GLScene.m */; };
 		4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E5581D68FEE000D67AEF /* GLDirector.m */; };
+		4DE0C0FF1D6A07EF0002D0F7 /* skybox0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */; };
+		4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C1001D6A16A90002D0F7 /* skybox1.png */; };
 		4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */; };
 		4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */; };
 /* End PBXBuildFile section */
@@ -62,8 +64,11 @@
 		4D88E5551D68FE2900D67AEF /* GLScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLScene.m; sourceTree = "<group>"; };
 		4D88E5571D68FEE000D67AEF /* GLDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDirector.h; sourceTree = "<group>"; };
 		4D88E5581D68FEE000D67AEF /* GLDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDirector.m; sourceTree = "<group>"; };
+		4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox0.png; sourceTree = "<group>"; };
+		4DE0C1001D6A16A90002D0F7 /* skybox1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox1.png; sourceTree = "<group>"; };
 		4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessEval.glsl; sourceTree = "<group>"; };
 		4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessControl.glsl; sourceTree = "<group>"; };
+		4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,20 +106,23 @@
 				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
 				4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */,
 				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
+				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
+				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
 				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
 				4D41F8E31D68A1810014E865 /* PresentationGLView.m */,
 				4D88E5571D68FEE000D67AEF /* GLDirector.h */,
 				4D88E5581D68FEE000D67AEF /* GLDirector.m */,
 				4D41F8F31D68D6BB0014E865 /* GLNode.h */,
 				4D41F8F41D68D6BB0014E865 /* GLNode.m */,
+				4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */,
 				4D88E5541D68FE2900D67AEF /* GLScene.h */,
 				4D88E5551D68FE2900D67AEF /* GLScene.m */,
-				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
-				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
 				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
 				4D41F8E91D68A1B50014E865 /* GLViewController.m */,
 				4D88E5511D68FCF500D67AEF /* GLMushroom.h */,
 				4D88E5521D68FCF500D67AEF /* GLMushroom.m */,
+				4DE0C0FE1D6A07EF0002D0F7 /* skybox0.png */,
+				4DE0C1001D6A16A90002D0F7 /* skybox1.png */,
 				4D88E54B1D68FCE900D67AEF /* mushroom */,
 				4D88E54A1D68FC1400D67AEF /* Shaders */,
 				4D0D42971D6878E200379A5F /* Assets.xcassets */,
@@ -218,9 +226,11 @@
 				4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */,
 				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
 				4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */,
+				4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */,
 				4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */,
 				4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */,
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
+				4DE0C0FF1D6A07EF0002D0F7 /* skybox0.png in Resources */,
 				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

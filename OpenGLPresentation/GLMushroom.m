@@ -23,6 +23,7 @@
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
   self.rotationZ += M_PI * dt;
+//  self.position = GLKVector3Make(self.position.x, self.position.y + dt, self.position.z);
 }
 
 @end

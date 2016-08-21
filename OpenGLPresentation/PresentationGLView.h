@@ -10,7 +10,7 @@
 
 @protocol PresentationGLViewDelegate <NSObject>
 
--(void)updateGLView;
+-(void)updateGLView:(NSTimeInterval)deltaTime;
 
 @end
 

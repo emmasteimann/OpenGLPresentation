@@ -27,8 +27,9 @@
   [GLDirector sharedInstance].view = self.view;
 
   _shader = [[GLBaseEffect alloc] initWithVertexShader:@"GLSimpleVertex.glsl" fragmentShader:@"GLSimpleFragment.glsl"];
+
   _scene = [[GLScene alloc] initWithShader:_shader];
-  _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 0.1, 600);
+  _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width/self.view.bounds.size.height, 1, 150);
 
   [GLDirector sharedInstance].scene = _scene;
 }
@@ -38,11 +39,11 @@
     PresentationGLView *view = (PresentationGLView *)self.view;
     [view setDelegate:self];
     [self setupScene];
-    NSLog(@"setup scene");
 }
 
-- (void)updateGLView {
+- (void)updateGLView:(NSTimeInterval)deltaTime {
   GLKMatrix4 viewMatrix = GLKMatrix4Identity;
+  [_scene updateWithDelta:deltaTime];
   [[GLDirector sharedInstance].scene renderWithParentModelViewMatrix:viewMatrix];
 }
 

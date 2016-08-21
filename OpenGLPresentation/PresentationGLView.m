@@ -28,7 +28,8 @@
 
 - (void)awakeFromNib {
   [super awakeFromNib];
-
+  self.layer.borderWidth = 5.0f;
+  self.layer.borderColor = [NSColor blackColor].CGColor;
   _dt = 0.0;
   _lastUpdateTime = 0.0;
 
@@ -52,6 +53,14 @@
   [openGLContext makeCurrentContext];
 
 }
+-(void)reshape {
+  CGRect frame = self.frame;
+  GLsizei width = frame.size.width;
+  GLsizei height = frame.size.height;
+
+  // Update the viewport.
+  glViewport(0, 0, width, height);
+}
 
 -(void)drawRect: (NSRect) bounds
 {
@@ -63,6 +72,7 @@
   glEnable(GL_CULL_FACE);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  [[self openGLContext] update];
 }
 
 -(void)drawAnObject
@@ -132,7 +142,7 @@ static CVReturn renderCallback(CVDisplayLinkRef displayLink,
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  [self.delegate updateGLView];
+  [self.delegate updateGLView:deltaTime];
 
 //  [self drawAnObject];
 
