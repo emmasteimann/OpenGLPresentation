@@ -54,8 +54,6 @@
       glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
       glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * sizeof(GLubyte), indices, GL_STATIC_DRAW);
     }
-    NSLog(@"%s", name);
-    NSLog(@"%lu", sizeof(vertices[0]));
 
     // Enable vertex attributes
     glEnableVertexAttribArray(GLVertexAttribPosition);
@@ -106,6 +104,8 @@
     glDrawElements(GL_TRIANGLES, _indexCount, GL_UNSIGNED_BYTE, 0);
   } else {
     glDrawArrays(GL_TRIANGLES, 0, _vertexCount);
+//    glPointSize(5);
+//    glDrawArrays(GL_POINTS, 0, _vertexCount);
   }
   glBindVertexArray(0);
 

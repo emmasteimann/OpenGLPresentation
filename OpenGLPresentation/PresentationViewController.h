@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PresentationViewController : NSViewController
+@interface PresentationViewController : NSViewController <NSPageControllerDelegate>
 
 @end

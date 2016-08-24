@@ -57,7 +57,7 @@
     [self.children addObject:_plane];
 
     _mushroom = [[GLMushroom alloc] initWithShader:shader];
-    _mushroom.position = GLKVector3Make(0, -10, 0);
+    _mushroom.position = GLKVector3Make(0, -5, 0);
     [self.children addObject:_mushroom];
 
     self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, 5, -20, _plane.position.x, _plane.position.y, _plane.position.z, 0, 1, 0);

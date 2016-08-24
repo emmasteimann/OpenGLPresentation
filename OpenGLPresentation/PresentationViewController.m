@@ -9,14 +9,13 @@
 #import "PresentationViewController.h"
 
 @interface PresentationViewController ()
-
 @end
 
-@implementation PresentationViewController
+@implementation PresentationViewController {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
-}
 
+}
 @end

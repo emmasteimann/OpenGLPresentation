@@ -1,5 +1,5 @@
 //
-//  Assimp.h
+//  AssimpMesh.h
 //  OpenGLPresentation
 //
 //  Created by Emma Steimann on 8/22/16.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AssimpAccessor : NSObject
+@interface AssimpMesh : NSObject
 
 @end

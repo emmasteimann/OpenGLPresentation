@@ -9,7 +9,7 @@
 #import "GLBaseEffect.h"
 #import "GLVertex.h"
 
-@implementation GLBaseEffect{
+@implementation GLBaseEffect {
   GLuint _programHandle;
   GLuint _modelViewMatrixUniform;
   GLuint _projectionMatrixUniform;
