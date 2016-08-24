@@ -481,13 +481,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenGLPresentation/include";
 				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGLPresentation",
-					/usr/local/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,13 +498,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenGLPresentation/include";
 				INFOPLIST_FILE = OpenGLPresentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGLPresentation",
-					/usr/local/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = come.emmasteimann.OpenGLPresentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
