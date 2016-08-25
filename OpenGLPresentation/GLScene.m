@@ -9,6 +9,8 @@
 #import "GLScene.h"
 #import "GLMushroom.h"
 #import "GLPlane.h"
+#import "AssimpMesh.hpp"
+
 @import GLKit;
 
 @interface GLScene ()
@@ -51,29 +53,35 @@
     self.skyboxEffect.ySize = 100.0f;
     self.skyboxEffect.zSize = 100.0f;
 
+
+    AssimpMesh *mesh = [[AssimpMesh alloc] initWithName:"test"];
+    mesh.position = GLKVector3Make(0, -5, 0);
+    [self.children addObject:mesh];
+    
+
     _plane = [[GLPlane alloc] initWithShader:shader];
-    _plane.position = GLKVector3Make(0, -5, 0);
+    _plane.position = GLKVector3Make(0, -15, 0);
 
     [self.children addObject:_plane];
 
     _mushroom = [[GLMushroom alloc] initWithShader:shader];
     _mushroom.position = GLKVector3Make(0, -5, 0);
-    [self.children addObject:_mushroom];
+//    [self.children addObject:_mushroom];
 
-    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, 5, -20, _plane.position.x, _plane.position.y, _plane.position.z, 0, 1, 0);
+    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, 5, -20, mesh.position.x, mesh.position.y, mesh.position.z, 0, 1, 0);
   }
   return self;
 }
 
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
   // Draw skybox centered on eye position
-  self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
-  self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
-  self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
-  [self.skyboxEffect prepareToDraw];
-  glDepthMask(false);
-  [self.skyboxEffect draw];
-  glDepthMask(true);
+//  self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
+//  self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
+//  self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
+//  [self.skyboxEffect prepareToDraw];
+//  glDepthMask(false);
+//  [self.skyboxEffect draw];
+//  glDepthMask(true);
   [super renderWithParentModelViewMatrix:parentModelViewMatrix];
 }
 

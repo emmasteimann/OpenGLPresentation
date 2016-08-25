@@ -26,6 +26,7 @@
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
+  NSLog(@"Compiling Shader: %@", shaderName);
   NSString* shaderPath = [[NSBundle mainBundle] pathForResource:shaderName ofType:nil];
   NSError* error;
   NSString* shaderString = [NSString stringWithContentsOfFile:shaderPath encoding:NSUTF8StringEncoding error:&error];

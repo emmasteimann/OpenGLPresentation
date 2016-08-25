@@ -30,8 +30,9 @@
 
   _scene = [[GLScene alloc] initWithShader:_shader];
   _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width/self.view.bounds.size.height, 1, 150);
-  [[AssimpMesh alloc] init];
+
   [GLDirector sharedInstance].scene = _scene;
+  [GLDirector sharedInstance].sceneProjectionMatrix = _shader.projectionMatrix;
 }
 
 - (void)viewDidLoad {

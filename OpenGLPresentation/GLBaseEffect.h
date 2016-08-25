@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@import GLKit;
+#include <GLKit/GLKit.h>
 
 @interface GLBaseEffect : NSObject
 @property (nonatomic, assign) GLuint programHandle;

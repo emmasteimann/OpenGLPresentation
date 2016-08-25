@@ -13,6 +13,14 @@
   GLuint _programHandle;
   GLuint _modelViewMatrixUniform;
   GLuint _projectionMatrixUniform;
+//  GLuint _texUniform;
+//  GLuint _lightColorUniform;
+//  GLuint _lightAmbientIntensityUniform;
+//  GLuint _lightDiffuseIntensityUniform;
+//  GLuint _lightDirectionUniform;
+//  GLuint _matSpecularIntensityUniform;
+//  GLuint _shininessUniform;
+//  GLuint _matColorUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -31,6 +39,9 @@
   glAttachShader(_programHandle, fragmentShaderName);
 
   glBindAttribLocation(_programHandle, 0, "a_Position");
+//  glBindAttribLocation(_programHandle, 1, "a_TexCoord");
+//  glBindAttribLocation(_programHandle, 2, "a_Normal");
+
 
   glLinkProgram(_programHandle);
 
@@ -38,6 +49,17 @@
 
   _modelViewMatrixUniform = glGetUniformLocation(_programHandle, "u_ModelViewMatrix");
   _projectionMatrixUniform = glGetUniformLocation(_programHandle, "u_ProjectionMatrix");
+
+//  _texUniform = glGetUniformLocation(_programHandle, "u_Texture");
+//
+//  _lightColorUniform = glGetUniformLocation(_programHandle, "u_Light.Color");
+//  _lightAmbientIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.AmbientIntensity");
+//  _lightDiffuseIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.DiffuseIntensity");
+//  _lightDirectionUniform = glGetUniformLocation(_programHandle, "u_Light.Direction");
+//
+//  _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
+//  _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
+//  _matColorUniform = glGetUniformLocation(_programHandle, "u_MatColor");
 
 
   GLint linkSuccess;
@@ -55,6 +77,17 @@
   glUseProgram(_programHandle);
   glUniformMatrix4fv(_modelViewMatrixUniform, 1, 0, self.modelViewMatrix.m);
   glUniformMatrix4fv(_projectionMatrixUniform, 1, 0, self.projectionMatrix.m);
+  
+//  glUniform1i(_texUniform, 1);
+//
+//  glUniform3f(_lightColorUniform, 1, 1, 1);
+//  glUniform1f(_lightAmbientIntensityUniform, 0.1);
+//  GLKVector3 lightDirection = GLKVector3Normalize(GLKVector3Make(0, -3, -3));
+//  glUniform3f(_lightDirectionUniform, lightDirection.x, lightDirection.y, lightDirection.z);
+//  glUniform1f(_lightDiffuseIntensityUniform, 0.7);
+//  glUniform1f(_matSpecularIntensityUniform, 2.0);
+//  glUniform1f(_shininessUniform, 8.0);
+//  glUniform4f(_matColorUniform, self.matColor.r, self.matColor.g, self.matColor.b, self.matColor.a);
 }
 
 @end

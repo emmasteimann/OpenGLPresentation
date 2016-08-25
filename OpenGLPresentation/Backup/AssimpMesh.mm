@@ -22,8 +22,6 @@
   std::vector<MeshEntry> m_Entries;
   std::vector<GLKTextureInfo*> m_Textures;
   char *_name;
-  GLAssimpEffect *_assimpShader;
-  GLuint _vao;
 }
 
 -(instancetype)initWithName:(char *)name {
@@ -37,8 +35,6 @@
     self.scale = 1.0;
     self.children = [NSMutableArray array];
     self.matColor = GLKVector4Make(1, 1, 1, 1);
-
-    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"shader.vs" fragmentShader:@"shader.fs"];
 
     [self loadMeshWithFileName:@"TeamFlareAdmin" andExtension:@"DAE"];
   }
@@ -81,6 +77,7 @@
     [self initMesh:paiMesh withIndex:i];
   }
 
+//  return true;
   return [self initMaterials:pScene withFilePath:filePath]; // InitMaterials(pScene, Filename);
 }
 
@@ -109,7 +106,7 @@
     Indices.push_back(Face.mIndices[1]);
     Indices.push_back(Face.mIndices[2]);
   }
-  
+
   m_Entries[index].Init(Vertices, Indices);
 }
 
@@ -186,6 +183,12 @@
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
 
   GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
+  
+  GLAssimpEffect *assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"shader.vs" fragmentShader:@"shader.fs"];
+
+  assimpShader.modelViewMatrix = modelViewMatrix;
+  assimpShader.projectionMatrix = [GLDirector sharedInstance].sceneProjectionMatrix;
+  assimpShader.matColor = self.matColor;
 
   for (id child in self.children) {
     if ([child respondsToSelector:@selector(renderWithParentModelViewMatrix:)]) {
@@ -193,28 +196,35 @@
     }
   }
 
-  glGenVertexArrays(1, &_vao);
-  glBindVertexArray(_vao);
   glEnableVertexAttribArray(0);
+//  glEnableVertexAttribArray(1);
+//  glEnableVertexAttribArray(2);
 
   for (unsigned int i = 0 ; i < m_Entries.size() ; i++) {
     glBindBuffer(GL_ARRAY_BUFFER, m_Entries[i].VB);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+//    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)12);
+//    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)20);
+
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Entries[i].IB);
 
-    _assimpShader.modelViewMatrix = modelViewMatrix;
-    _assimpShader.projectionMatrix = [GLDirector sharedInstance].sceneProjectionMatrix;
-    _assimpShader.matColor = self.matColor;
+    const unsigned int MaterialIndex = m_Entries[i].MaterialIndex;
 
-    [_assimpShader prepareToDraw];
+    if (MaterialIndex < m_Textures.size() && m_Textures[MaterialIndex]) {
+      glActiveTexture(GL_TEXTURE1);
+      glBindTexture(GL_TEXTURE_2D, m_Textures[MaterialIndex].name);
+//      assimpShader.texture = m_Textures[MaterialIndex].name;
+    }
 
-    glBindVertexArray(_vao);
-    glPointSize(5);
-    glDrawArrays(GL_POINTS, 0, m_Entries[i].MeshVertices.size());
+    [assimpShader prepareToDraw];
+        glPointSize(5);
+        glDrawArrays(GL_POINTS, 0, m_Entries[i].MeshVertices.size());
 //    glDrawElements(GL_TRIANGLES, m_Entries[i].NumIndices, GL_UNSIGNED_INT, 0);
   }
 
   glDisableVertexAttribArray(0);
+//  glDisableVertexAttribArray(1);
+//  glDisableVertexAttribArray(2);
 }
 
 - (GLKMatrix4)modelMatrix {
