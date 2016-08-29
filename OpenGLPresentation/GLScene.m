@@ -54,9 +54,7 @@
     self.skyboxEffect.zSize = 100.0f;
 
 
-    AssimpMesh *mesh = [[AssimpMesh alloc] initWithName:"test"];
-    mesh.position = GLKVector3Make(0, -5, 0);
-    [self.children addObject:mesh];
+
     
 
     _plane = [[GLPlane alloc] initWithShader:shader];
@@ -64,24 +62,35 @@
 
     [self.children addObject:_plane];
 
-    _mushroom = [[GLMushroom alloc] initWithShader:shader];
-    _mushroom.position = GLKVector3Make(0, -5, 0);
-//    [self.children addObject:_mushroom];
+    AssimpMesh *mesh = [[AssimpMesh alloc] initWithName:"test"];
+    mesh.position = GLKVector3Make(0, -15, 0);
+    mesh.scale = 0.05;
+    [self.children addObject:mesh];
 
-    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, 5, -20, mesh.position.x, mesh.position.y, mesh.position.z, 0, 1, 0);
+    _mushroom = [[GLMushroom alloc] initWithShader:shader];
+    _mushroom.position = GLKVector3Make(5, -15, -5);
+    _mushroom.scale = 0.5;
+    [self.children addObject:_mushroom];
+
+    GLMushroom *mushroomA = [[GLMushroom alloc] initWithShader:shader];
+    mushroomA.position = GLKVector3Make(-5, -15, 5);
+    mushroomA.scale = 0.5;
+    [self.children addObject:mushroomA];
+
+    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, mesh.position.x, mesh.position.y, mesh.position.z, 0, 1, 0);
   }
   return self;
 }
 
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
-  // Draw skybox centered on eye position
-//  self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
-//  self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
-//  self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
-//  [self.skyboxEffect prepareToDraw];
-//  glDepthMask(false);
-//  [self.skyboxEffect draw];
-//  glDepthMask(true);
+//   Draw skybox centered on eye position
+  self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
+  self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
+  self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
+  [self.skyboxEffect prepareToDraw];
+  glDepthMask(false);
+  [self.skyboxEffect draw];
+  glDepthMask(true);
   [super renderWithParentModelViewMatrix:parentModelViewMatrix];
 }
 

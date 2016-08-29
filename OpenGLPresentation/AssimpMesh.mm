@@ -31,14 +31,14 @@
     _name = name;
 
     self.position = GLKVector3Make(0, 0, 0);
-    self.rotationX = 0;
+    self.rotationX = -M_PI_2;
     self.rotationY = 0;
     self.rotationZ = 0;
     self.scale = 1.0;
     self.children = [NSMutableArray array];
     self.matColor = GLKVector4Make(1, 1, 1, 1);
 
-    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"shader.vs" fragmentShader:@"shader.fs"];
+    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"GLSimpleVertex.glsl" fragmentShader:@"GLSimpleFragment.glsl"];
 
     [self loadMeshWithFileName:@"TeamFlareAdmin" andExtension:@"DAE"];
   }
@@ -147,9 +147,9 @@
 
           NSString *path = [[NSBundle mainBundle] pathForResource:[pathString lastPathComponent] ofType:nil];
 
-          NSDictionary *options = @{ GLKTextureLoaderOriginBottomLeft: @YES };
+          NSDictionary *options = @{ };
 
-          GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
+          GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:nil error:&error];
           if (info == nil) {
             NSLog(@"%@", path);
             NSLog(@"Error loading file: %@", error.localizedDescription);
@@ -166,7 +166,7 @@
         NSError *error = nil;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"white.png" ofType:nil];
 
-        NSDictionary *options = @{ GLKTextureLoaderOriginBottomLeft: @YES };
+        NSDictionary *options = @{};
         GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
         m_Textures[i] = info;
 
@@ -196,25 +196,48 @@
   glGenVertexArrays(1, &_vao);
   glBindVertexArray(_vao);
   glEnableVertexAttribArray(0);
-
+  glEnableVertexAttribArray(1);
+  glEnableVertexAttribArray(2);
+//  GLenum enums[] = {GL_TEXTURE0,GL_TEXTURE1,GL_TEXTURE2,GL_TEXTURE3,GL_TEXTURE4,GL_TEXTURE4,GL_TEXTURE6,GL_TEXTURE8,GL_TEXTURE9,GL_TEXTURE10,GL_TEXTURE11,GL_TEXTURE12,GL_TEXTURE13};
   for (unsigned int i = 0 ; i < m_Entries.size() ; i++) {
     glBindBuffer(GL_ARRAY_BUFFER, m_Entries[i].VB);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*) offsetof(Vertex, m_pos));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*) offsetof(Vertex, m_tex));
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*) offsetof(Vertex, m_normal));
+
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Entries[i].IB);
 
     _assimpShader.modelViewMatrix = modelViewMatrix;
     _assimpShader.projectionMatrix = [GLDirector sharedInstance].sceneProjectionMatrix;
     _assimpShader.matColor = self.matColor;
 
+    const unsigned int MaterialIndex = m_Entries[i].MaterialIndex;
+
+    if (MaterialIndex < m_Textures.size() && m_Textures[MaterialIndex]) {
+      if (m_Textures[MaterialIndex].name == 3){
+        glActiveTexture(GL_TEXTURE3);
+      } else if (m_Textures[MaterialIndex].name == 4) {
+        glActiveTexture(GL_TEXTURE4);
+      } else {
+        glActiveTexture(GL_TEXTURE5);
+      }
+      _assimpShader.texture = m_Textures[MaterialIndex].name;
+      glBindTexture(GL_TEXTURE_2D, m_Textures[MaterialIndex].name);
+
+    }
+
     [_assimpShader prepareToDraw];
 
     glBindVertexArray(_vao);
-    glPointSize(5);
-    glDrawArrays(GL_POINTS, 0, m_Entries[i].MeshVertices.size());
-//    glDrawElements(GL_TRIANGLES, m_Entries[i].NumIndices, GL_UNSIGNED_INT, 0);
+//    glPointSize(5);
+//    glDrawArrays(GL_POINTS, 0, m_Entries[i].MeshVertices.size());
+    glDrawElements(GL_TRIANGLES, m_Entries[i].NumIndices, GL_UNSIGNED_INT, 0);
   }
-
+  
   glDisableVertexAttribArray(0);
+  glDisableVertexAttribArray(1);
+  glDisableVertexAttribArray(2);
 }
 
 - (GLKMatrix4)modelMatrix {

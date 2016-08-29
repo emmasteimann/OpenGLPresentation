@@ -17,6 +17,7 @@
 		4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */; };
 		4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D41F8EE1D68A4E70014E865 /* OpenGL.framework */; };
 		4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F8F41D68D6BB0014E865 /* GLNode.m */; };
+		4D429BB61D725765007A5F0F /* doctor_who_k9.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4D429BB51D725765007A5F0F /* doctor_who_k9.obj */; };
 		4D4597B91D6A5D100018ED50 /* AssimpMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D4597B81D6A5D100018ED50 /* AssimpMesh.mm */; };
 		4D4597BB1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4597BA1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib */; };
 		4D4597C21D6A5F9B0018ED50 /* bt0023_00_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4597BF1D6A5F9B0018ED50 /* bt0023_00_body.png */; };
@@ -67,6 +68,7 @@
 		4D41F8EE1D68A4E70014E865 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4D41F8F31D68D6BB0014E865 /* GLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLNode.h; sourceTree = "<group>"; };
 		4D41F8F41D68D6BB0014E865 /* GLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLNode.m; sourceTree = "<group>"; };
+		4D429BB51D725765007A5F0F /* doctor_who_k9.obj */ = {isa = PBXFileReference; explicitFileType = compiled; fileEncoding = 4; path = doctor_who_k9.obj; sourceTree = "<group>"; };
 		4D4597B71D6A5D100018ED50 /* AssimpMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssimpMesh.hpp; sourceTree = "<group>"; };
 		4D4597B81D6A5D100018ED50 /* AssimpMesh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssimpMesh.mm; sourceTree = "<group>"; };
 		4D4597BA1D6A5EC60018ED50 /* libassimpd.3.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libassimpd.3.1.1.dylib; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				4D88E5551D68FE2900D67AEF /* GLScene.m */,
 				4D88E5511D68FCF500D67AEF /* GLMushroom.h */,
 				4D88E5521D68FCF500D67AEF /* GLMushroom.m */,
+				4D429BB51D725765007A5F0F /* doctor_who_k9.obj */,
 				4D88E54B1D68FCE900D67AEF /* mushroom */,
 			);
 			name = Nodes;
@@ -365,6 +368,7 @@
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
 				4DD4B9BE1D6E4D66005EF2C6 /* basic_lighting.fs in Resources */,
 				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
+				4D429BB61D725765007A5F0F /* doctor_who_k9.obj in Resources */,
 				4D4597C31D6A5F9B0018ED50 /* bt0023_00_hair.png in Resources */,
 				4DE0C10F1D6A43080002D0F7 /* grasslight.png in Resources */,
 				4DD4B9BF1D6E4D66005EF2C6 /* basic_lighting.vs in Resources */,

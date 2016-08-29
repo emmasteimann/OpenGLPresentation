@@ -41,7 +41,7 @@
     NSOpenGLPixelFormatAttribute pixelFormatAttributes[] =
     {
       NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion4_1Core,
-      NSOpenGLPFADoubleBuffer,
+      NSOpenGLPFADoubleBuffer,NSOpenGLPFADepthSize, 64, NSOpenGLPFAMultisample,NSOpenGLPFASampleBuffers, 8, NSOpenGLPFAColorSize, 24, NSOpenGLPFAAlphaSize, 8,
       0
     };
   NSOpenGLPixelFormat *pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes:pixelFormatAttributes];
