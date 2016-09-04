@@ -6,14 +6,15 @@
 //  Copyright © 2016 Emma Steimann. All rights reserved.
 //
 
-#import "AssimpMesh.hpp"
-
+#import "AssimpMesh.h"
+#import "GLAssimpEffect.hpp"
 #include <assimp/Importer.hpp>      // C++ importer interface
 #include <assimp/scene.h>           // Output data structure
 #include <assimp/postprocess.h>
-
+#include "Common.hpp"
 #include "AssimpMeshEntry.hpp"
 #import "GLDirector.h"
+#include "Animator.hpp"
 #include <map>
 
 #define POSITION_LOCATION    0
@@ -41,6 +42,7 @@
   GLuint m_Buffers[NUM_VBs];
   const aiScene* m_pScene;
   Assimp::Importer m_Importer;
+  Animator * m_pAnimator;
 }
 
 -(instancetype)initWithName:(char *)name {
@@ -57,7 +59,7 @@
 
     ZERO_MEM(m_Buffers);
 
-    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"GLSimpleVertex.glsl" fragmentShader:@"GLSimpleFragment.glsl"];
+    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"GLSimpleBoneVertex.glsl" fragmentShader:@"GLSimpleBoneFragment.glsl"];
 
     [self loadMeshWithFileName:@"TeamFlareAdmin" andExtension:@"DAE"];
   }
@@ -96,6 +98,10 @@
     printf("Error parsing '%s': '%s'\n", cPath, importer.GetErrorString());
   }
 
+  if (m_pScene->HasAnimations()) {
+    m_pAnimator = new Animator(m_pScene, 0);
+  }
+
   glBindVertexArray(0);
 
   return Ret;
@@ -120,6 +126,7 @@
     m_Entries[i].NumIndices    = pScene->mMeshes[i]->mNumFaces * 3;
     m_Entries[i].BaseVertex    = NumVertices;
     m_Entries[i].BaseIndex     = NumIndices;
+    m_Entries[i].ReferenceId   = i;
 
     NumVertices += pScene->mMeshes[i]->mNumVertices;
     NumIndices  += m_Entries[i].NumIndices;
@@ -174,7 +181,7 @@
 }
 
 - (void)initMesh:(const aiMesh*)paiMesh withIndex:(unsigned int)MeshIndex andPosition:(std::vector<GLKVector3> &)Positions andNormals:(std::vector<GLKVector3> &)Normals andTex:(std::vector<GLKVector2> &)TexCoords andBones:(std::vector<VertexBoneData> &)Bones andIndices:(std::vector<uint> &)Indices {
-  
+
   const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 
   // Populate the vertex attribute vectors
@@ -187,11 +194,11 @@
     Normals.push_back(GLKVector3Make(pNormal->x, pNormal->y, pNormal->z));
     TexCoords.push_back(GLKVector2Make(pTexCoord->x, pTexCoord->y));
   }
-//
-//  for (int i=0; i<Positions.size(); i++)
-//    printf("Px: %f, Py: %f, Pz: %f", Positions.at(i).x, Positions.at(i).y, Positions.at(i).z);
-//  for (int i=0; i<Normals.size(); i++)
-//    printf("Nx: %f, Ny: %f, Nz: %f", Normals.at(i).x, Normals.at(i).y, Normals.at(i).z);
+  //
+  //  for (int i=0; i<Positions.size(); i++)
+  //    printf("Px: %f, Py: %f, Pz: %f", Positions.at(i).x, Positions.at(i).y, Positions.at(i).z);
+  //  for (int i=0; i<Normals.size(); i++)
+  //    printf("Nx: %f, Ny: %f, Nz: %f", Normals.at(i).x, Normals.at(i).y, Normals.at(i).z);
 
 
 
@@ -235,68 +242,68 @@
 }
 
 - (BOOL)initMaterials:(const aiScene *)pScene withFilePath:(const char *)filePath {
-    // Extract the directory part from the file name
-    std::string Filename = std::string(filePath);
-    std::string::size_type SlashIndex = Filename.find_last_of("/");
-    std::string Dir;
-  
-    if (SlashIndex == std::string::npos) {
-      Dir = ".";
-    }
-    else if (SlashIndex == 0) {
-      Dir = "/";
-    }
-    else {
-      Dir = Filename.substr(0, SlashIndex);
-    }
-  
-    bool Ret = true;
-  
-    // Initialize the materials
-    for (unsigned int i = 0 ; i < pScene->mNumMaterials ; i++) {
-      const aiMaterial* pMaterial = pScene->mMaterials[i];
-  
-      m_Textures[i] = NULL;
-  
-      if (pMaterial->GetTextureCount(aiTextureType_DIFFUSE) > 0) {
-        aiString Path;
-  
-        if (pMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &Path, NULL, NULL, NULL, NULL, NULL) == AI_SUCCESS) {
-          std::string FullPath = Dir + "/" + Path.data;
-          NSString *pathString = [NSString stringWithUTF8String:FullPath.c_str()];
-          NSError *error = nil;
+  // Extract the directory part from the file name
+  std::string Filename = std::string(filePath);
+  std::string::size_type SlashIndex = Filename.find_last_of("/");
+  std::string Dir;
 
-          NSString *path = [[NSBundle mainBundle] pathForResource:[pathString lastPathComponent] ofType:nil];
+  if (SlashIndex == std::string::npos) {
+    Dir = ".";
+  }
+  else if (SlashIndex == 0) {
+    Dir = "/";
+  }
+  else {
+    Dir = Filename.substr(0, SlashIndex);
+  }
 
-          GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:nil error:&error];
-          if (info == nil) {
-            NSLog(@"%@", path);
-            NSLog(@"Error loading file: %@", error.localizedDescription);
-            m_Textures[i] = NULL;
-            Ret = false;
-          } else {
-            m_Textures[i] = info;
-          }
-        }
-      }
-  
-      // Load a white texture in case the model does not include its own texture
-      if (!m_Textures[i]) {
+  bool Ret = true;
+
+  // Initialize the materials
+  for (unsigned int i = 0 ; i < pScene->mNumMaterials ; i++) {
+    const aiMaterial* pMaterial = pScene->mMaterials[i];
+
+    m_Textures[i] = NULL;
+
+    if (pMaterial->GetTextureCount(aiTextureType_DIFFUSE) > 0) {
+      aiString Path;
+
+      if (pMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &Path, NULL, NULL, NULL, NULL, NULL) == AI_SUCCESS) {
+        std::string FullPath = Dir + "/" + Path.data;
+        NSString *pathString = [NSString stringWithUTF8String:FullPath.c_str()];
         NSError *error = nil;
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"white.png" ofType:nil];
 
-        NSDictionary *options = @{};
-        GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
-        m_Textures[i] = info;
+        NSString *path = [[NSBundle mainBundle] pathForResource:[pathString lastPathComponent] ofType:nil];
 
+        GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:nil error:&error];
         if (info == nil) {
+          NSLog(@"%@", path);
           NSLog(@"Error loading file: %@", error.localizedDescription);
           m_Textures[i] = NULL;
           Ret = false;
+        } else {
+          m_Textures[i] = info;
         }
       }
     }
-  
+
+    // Load a white texture in case the model does not include its own texture
+    if (!m_Textures[i]) {
+      NSError *error = nil;
+      NSString *path = [[NSBundle mainBundle] pathForResource:@"white.png" ofType:nil];
+
+      NSDictionary *options = @{};
+      GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
+      m_Textures[i] = info;
+
+      if (info == nil) {
+        NSLog(@"Error loading file: %@", error.localizedDescription);
+        m_Textures[i] = NULL;
+        Ret = false;
+      }
+    }
+  }
+
   return Ret;
 }
 
@@ -335,13 +342,44 @@
 
     }
 
-//    printf("Num indices: %d", m_Entries[i].NumIndices);
-//    printf("Num indices: %d", m_Entries[i].BaseIndex);
-//    printf("Num indices: %d", m_Entries[i].BaseVertex);
+    //    printf("Num indices: %d", m_Entries[i].NumIndices);
+    //    printf("Num indices: %d", m_Entries[i].BaseIndex);
+    //    printf("Num indices: %d", m_Entries[i].BaseVertex);
 
     [_assimpShader prepareToDraw];
+//
+//    glm::mat4* pMatrices = new glm::mat4[MAXBONESPERMESH];
+//
+//    //upload bone matrices
+//    if ((m_pScene->mMeshes[m_Entries[i].ReferenceId]->HasBones()) && (m_pAnimator != NULL)) {
+//      const std::vector<aiMatrix4x4>& vBoneMatrices = m_pAnimator->GetBoneMatrices(pNode, i);
+//
+//      if (vBoneMatrices.size() != pCurrentMesh->mNumBones) {
+//        continue;
+//      }
+//
+//      for (unsigned int j = 0; j < pCurrentMesh->mNumBones; j++) {
+//        if (j < MAXBONESPERMESH) {
+//          pMatrices[j][0][0] = vBoneMatrices[j].a1;
+//          pMatrices[j][0][1] = vBoneMatrices[j].b1;
+//          pMatrices[j][0][2] = vBoneMatrices[j].c1;
+//          pMatrices[j][0][3] = vBoneMatrices[j].d1;
+//          pMatrices[j][1][0] = vBoneMatrices[j].a2;
+//          pMatrices[j][1][1] = vBoneMatrices[j].b2;
+//          pMatrices[j][1][2] = vBoneMatrices[j].c2;
+//          pMatrices[j][1][3] = vBoneMatrices[j].d2;
+//          pMatrices[j][2][0] = vBoneMatrices[j].a3;
+//          pMatrices[j][2][1] = vBoneMatrices[j].b3;
+//          pMatrices[j][2][2] = vBoneMatrices[j].c3;
+//          pMatrices[j][2][3] = vBoneMatrices[j].d3;
+//          pMatrices[j][3][0] = vBoneMatrices[j].a4;
+//          pMatrices[j][3][1] = vBoneMatrices[j].b4;
+//          pMatrices[j][3][2] = vBoneMatrices[j].c4;
+//          pMatrices[j][3][3] = vBoneMatrices[j].d4;
+//        }
+//      }
 
-    glDrawElementsBaseVertex(GL_TRIANGLES,
+      glDrawElementsBaseVertex(GL_TRIANGLES,
                              m_Entries[i].NumIndices,
                              GL_UNSIGNED_INT,
                              (void*)(sizeof(uint) * m_Entries[i].BaseIndex),

@@ -9,7 +9,8 @@
 #import "GLScene.h"
 #import "GLMushroom.h"
 #import "GLPlane.h"
-#import "AssimpMesh.hpp"
+#import "AssimpMesh.h"
+#import "GLDirector.h"
 
 @import GLKit;
 
@@ -26,6 +27,9 @@
   float _sceneOffset;
   GLMushroom *_mushroom;
   GLPlane *_plane;
+  AssimpMesh *_mesh;
+  BOOL _switched;
+  NSTimer *_timer;
 }
 
 - (instancetype)initWithShader:(GLBaseEffect *)shader {
@@ -33,6 +37,7 @@
   if ((self = [super initWithName:"GLScene" shader:shader vertices:nil vertexCount:0])) {
     _shader = shader;
 
+    _switched = NO;
     // Load cubeMap texture
     NSString *path = [[NSBundle bundleForClass:[self class]]
                       pathForResource:@"skybox1" ofType:@"png"];
@@ -47,8 +52,7 @@
     // Create and configure skybox
     self.skyboxEffect = [[GLKSkyboxEffect alloc] init];
     self.skyboxEffect.textureCubeMap.name = self.textureInfo.name;
-    self.skyboxEffect.textureCubeMap.target =
-    self.textureInfo.target;
+    self.skyboxEffect.textureCubeMap.target = self.textureInfo.target;
     self.skyboxEffect.xSize = 100.0f;
     self.skyboxEffect.ySize = 100.0f;
     self.skyboxEffect.zSize = 100.0f;
@@ -60,24 +64,28 @@
     _plane = [[GLPlane alloc] initWithShader:shader];
     _plane.position = GLKVector3Make(0, -15, 0);
 
-    [self.children addObject:_plane];
+//    [self.children addObject:_plane];
 
-    AssimpMesh *mesh = [[AssimpMesh alloc] initWithName:"test"];
-    mesh.position = GLKVector3Make(0, -15, 0);
-    mesh.scale = 0.05;
-    [self.children addObject:mesh];
+    _mesh = [[AssimpMesh alloc] initWithName:"test"];
+    _mesh.position = GLKVector3Make(0, -15, 0);
+    _mesh.scale = 0.05;
+    [self.children addObject:_mesh];
 
     _mushroom = [[GLMushroom alloc] initWithShader:shader];
     _mushroom.position = GLKVector3Make(5, -15, -5);
     _mushroom.scale = 0.5;
-    [self.children addObject:_mushroom];
+//    [self.children addObject:_mushroom];
 
     GLMushroom *mushroomA = [[GLMushroom alloc] initWithShader:shader];
     mushroomA.position = GLKVector3Make(-5, -15, 5);
     mushroomA.scale = 0.5;
-    [self.children addObject:mushroomA];
+//    [self.children addObject:mushroomA];
 
-    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, mesh.position.x, mesh.position.y, mesh.position.z, 0, 1, 0);
+    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+    [self performSelector:@selector(updateBones:)
+               withObject:nil
+               afterDelay:5.0];
+
   }
   return self;
 }
@@ -87,11 +95,12 @@
   self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
   self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
   self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
-  [self.skyboxEffect prepareToDraw];
-  glDepthMask(false);
-  [self.skyboxEffect draw];
-  glDepthMask(true);
+//  [self.skyboxEffect prepareToDraw];
+//  glDepthMask(false);
+//  [self.skyboxEffect draw];
+//  glDepthMask(true);
   [super renderWithParentModelViewMatrix:parentModelViewMatrix];
+
 }
 
 - (GLKMatrix4)modelMatrix {
@@ -108,7 +117,13 @@
   return modelMatrix;
 }
 
+- (void)updateBones:(NSTimer*) timer {
+   NSLog(@"updating");
+//  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
+}
+
 - (void)updateWithDelta:(NSTimeInterval)dt {
+//  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
   self.rotationY += M_PI * dt/7;
   [super updateWithDelta:dt];
 }

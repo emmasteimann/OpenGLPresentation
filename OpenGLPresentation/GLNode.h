@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <OpenGL/gl.h>
 #import "GLVertex.h"
-
-@import GLKit;
+#include <GLKit/GLKit.h>
 
 @class GLBaseEffect;
 

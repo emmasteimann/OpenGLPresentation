@@ -8,7 +8,10 @@
 
 #import "GLDirector.h"
 
-@implementation GLDirector
+@implementation GLDirector {
+  CFTimeInterval _startTime;
+}
+
 + (instancetype)sharedInstance {
   static dispatch_once_t pred;
   static GLDirector *_sharedInstance;
@@ -18,7 +21,12 @@
 
 - (instancetype)init {
   if ((self = [super init])) {
+    _startTime = CACurrentMediaTime();
   }
   return self;
+}
+
+- (CFTimeInterval)getRunningTime {
+  return CACurrentMediaTime() - _startTime;
 }
 @end

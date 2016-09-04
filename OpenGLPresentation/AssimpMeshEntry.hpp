@@ -86,7 +86,7 @@ void VertexBoneData::AddBoneData(uint BoneID, float Weight)
   }
 
   // should never get here - more bones than we have space for
-  assert(0);
+//  assert(0);
 }
 
 struct MeshEntry {
@@ -101,5 +101,7 @@ struct MeshEntry {
   unsigned int NumIndices;
   unsigned int BaseVertex;
   unsigned int BaseIndex;
+  unsigned int ReferenceId;
   unsigned int MaterialIndex;
+  aiNode* node;
 };

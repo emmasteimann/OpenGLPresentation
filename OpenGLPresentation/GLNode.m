@@ -91,7 +91,7 @@
 
   GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
   for (id child in self.children) {
-    NSLog(@"%@", child);
+//    NSLog(@"%@", child);
     if ([child respondsToSelector:@selector(renderWithParentModelViewMatrix:)]) {
       [child renderWithParentModelViewMatrix:modelViewMatrix];
     }

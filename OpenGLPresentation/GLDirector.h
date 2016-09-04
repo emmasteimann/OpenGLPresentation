@@ -12,6 +12,7 @@
 
 @interface GLDirector : NSObject
 + (instancetype)sharedInstance;
+- (CFTimeInterval)getRunningTime;
 @property (nonatomic, strong) NSView *view;
 @property (nonatomic, strong) GLNode *scene;
 @property (nonatomic, assign) GLKMatrix4 sceneProjectionMatrix;
