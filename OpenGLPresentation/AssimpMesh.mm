@@ -45,6 +45,27 @@
   Animator * m_pAnimator;
 }
 
+-(instancetype)initWithName:(char *)name andFileName:(NSString *)fileName andExtenstion:(NSString *)extension {
+  if (self = [super init]){
+    _name = name;
+
+    self.position = GLKVector3Make(0, 0, 0);
+    self.rotationX = -M_PI_2;
+    self.rotationY = 0;
+    self.rotationZ = 0;
+    self.scale = 1.0;
+    self.children = [NSMutableArray array];
+    self.matColor = GLKVector4Make(1, 1, 1, 1);
+
+    ZERO_MEM(m_Buffers);
+
+    _assimpShader = [[GLAssimpEffect alloc] initWithVertexShader:@"GLSimpleBoneVertex.glsl" fragmentShader:@"GLSimpleBoneFragment.glsl"];
+
+    [self loadMeshWithFileName:fileName andExtension:extension];
+  }
+  return self;
+}
+
 -(instancetype)initWithName:(char *)name {
   if (self = [super init]){
     _name = name;
@@ -81,26 +102,28 @@
 
   BOOL Ret = false;
 
-  Assimp::Importer importer;
-  importer.SetExtraVerbose(true);
+  Assimp::Importer* importer = new Assimp::Importer();
+  importer->SetExtraVerbose(true);
 
   NSBundle *bundle = [NSBundle mainBundle];
   NSString *path = [bundle pathForResource:fileName ofType:extension];
   const char *cPath =[path cStringUsingEncoding: NSUTF8StringEncoding];
 
-  m_pScene = importer.ReadFile(cPath, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
+  m_pScene = importer->ReadFile(cPath, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
 
   if (m_pScene) {
     m_GlobalInverseTransform = m_pScene->mRootNode->mTransformation;
     m_GlobalInverseTransform.Inverse();
     Ret = [self initFromScene:m_pScene withFilePath:cPath];
   } else {
-    printf("Error parsing '%s': '%s'\n", cPath, importer.GetErrorString());
+    printf("Error parsing '%s': '%s'\n", cPath, importer->GetErrorString());
   }
 
   if (m_pScene->HasAnimations()) {
     m_pAnimator = new Animator(m_pScene, 0);
   }
+
+  delete importer;
 
   glBindVertexArray(0);
 
@@ -197,8 +220,10 @@
   //
   //  for (int i=0; i<Positions.size(); i++)
   //    printf("Px: %f, Py: %f, Pz: %f", Positions.at(i).x, Positions.at(i).y, Positions.at(i).z);
-  //  for (int i=0; i<Normals.size(); i++)
-  //    printf("Nx: %f, Ny: %f, Nz: %f", Normals.at(i).x, Normals.at(i).y, Normals.at(i).z);
+//    for (int i=0; i<Normals.size(); i++)
+//      printf("Nx: %f, Ny: %f, Nz: %f", Normals.at(i).x, Normals.at(i).y, Normals.at(i).z);
+//      for (int i=0; i<TexCoords.size(); i++)
+//        printf("Tu: %f, Tv: %f", TexCoords.at(i).x, TexCoords.at(i).y);
 
 
 
@@ -330,13 +355,7 @@
     const unsigned int MaterialIndex = m_Entries[i].MaterialIndex;
 
     if (MaterialIndex < m_Textures.size() && m_Textures[MaterialIndex]) {
-      if (m_Textures[MaterialIndex].name == 3){
-        glActiveTexture(GL_TEXTURE3);
-      } else if (m_Textures[MaterialIndex].name == 4) {
-        glActiveTexture(GL_TEXTURE4);
-      } else {
-        glActiveTexture(GL_TEXTURE5);
-      }
+      glActiveTexture(GL_TEXTURE0+m_Textures[MaterialIndex].name);
       _assimpShader.texture = m_Textures[MaterialIndex].name;
       glBindTexture(GL_TEXTURE_2D, m_Textures[MaterialIndex].name);
 
@@ -379,11 +398,69 @@
 //        }
 //      }
 
-      glDrawElementsBaseVertex(GL_TRIANGLES,
+//    Normal Drawing:
+//
+//    [_assimpShader toggleNormalcy];
+    glDrawElementsBaseVertex(GL_TRIANGLES,
                              m_Entries[i].NumIndices,
                              GL_UNSIGNED_INT,
                              (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
                              m_Entries[i].BaseVertex);
+//    [_assimpShader toggleNormalcy];
+
+
+//    Drawing with overlayed wireframe:
+
+//    glEnable(GL_POLYGON_OFFSET_FILL);
+//    glPolygonOffset(5.0f, 5.0f);
+//    glDrawElementsBaseVertex(GL_TRIANGLES,
+//                             m_Entries[i].NumIndices,
+//                             GL_UNSIGNED_INT,
+//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                             m_Entries[i].BaseVertex);
+//    glDisable(GL_POLYGON_OFFSET_FILL);
+//
+//    [_assimpShader toggleBlackness];
+//      glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+//      glLineWidth(2.0f);
+//      glDrawElementsBaseVertex(GL_TRIANGLES,
+//                             m_Entries[i].NumIndices,
+//                             GL_UNSIGNED_INT,
+//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                             m_Entries[i].BaseVertex);
+//      glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+//    [_assimpShader toggleBlackness];
+//    glEnable(GL_POLYGON_OFFSET_FILL);
+//    glPolygonOffset(5.0f, 5.0f);
+//    glDrawElementsBaseVertex(GL_TRIANGLES,
+//                             m_Entries[i].NumIndices,
+//                             GL_UNSIGNED_INT,
+//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                             m_Entries[i].BaseVertex);
+//    glDisable(GL_POLYGON_OFFSET_FILL);
+
+//    Drawing just dots with blackness
+
+//    [_assimpShader toggleBlackness];
+//    glPointSize(5.0f);
+//    glDrawElementsBaseVertex(GL_POINTS,
+//                             m_Entries[i].NumIndices,
+//                             GL_UNSIGNED_INT,
+//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                             m_Entries[i].BaseVertex);
+//    [_assimpShader toggleBlackness];
+
+//    Drawing just dots with color
+
+//    [_assimpShader toggleBlackness];
+//    glPointSize(5.0f);
+//    glDrawElementsBaseVertex(GL_POINTS,
+//                             m_Entries[i].NumIndices,
+//                             GL_UNSIGNED_INT,
+//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                             m_Entries[i].BaseVertex);
+//    [_assimpShader toggleBlackness];
+
   }
 
   glBindVertexArray(0);
@@ -400,6 +477,7 @@
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
+//  self.rotationZ += M_PI * dt/2;
   for (id child in self.children) {
     if ([child respondsToSelector:@selector(updateWithDelta:)]) {
       [child updateWithDelta:dt];

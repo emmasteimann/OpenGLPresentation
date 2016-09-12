@@ -11,7 +11,7 @@ Camera::Camera(GLfloat fDistance, GLfloat fHeight, GLfloat fAngle) {
 	SetAngle(fAngle);
 	
 	m_vUpVector = glm::vec3(0.0f, 1.0f, 0.0f);
-	m_mProjection = glm::perspective(FOV, ASPECTRATIO, NEARPLANE, FARPLANE);
+	m_mProjection = glm::perspective(85.0f, ASPECTRATIO, 1.0f, 150.0f);
   
   float fNewAngle = m_fAngle;
 

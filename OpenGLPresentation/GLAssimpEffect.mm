@@ -33,8 +33,12 @@ static const uint MAX_BONES = 100;
   GLuint _lightDirectionUniform;
   GLuint _matSpecularIntensityUniform;
   GLuint _shininessUniform;
+  GLuint _blacknessUniform;
+  GLuint _normalnessUniform;
   GLuint _matColorUniform;
   GLuint m_boneLocation[MAX_BONES];
+  BOOL _blackness;
+  BOOL _abnormalness;
 }
 
 
@@ -49,7 +53,8 @@ static const uint MAX_BONES = 100;
                                        withType:GL_VERTEX_SHADER];
   GLuint fragmentShaderName = [self compileShader:fragmentShader
                                          withType:GL_FRAGMENT_SHADER];
-
+  _blackness = NO;
+  _abnormalness = NO;
   _programHandle = glCreateProgram();
   glAttachShader(_programHandle, vertexShaderName);
   glAttachShader(_programHandle, fragmentShaderName);
@@ -73,6 +78,9 @@ static const uint MAX_BONES = 100;
   _lightAmbientIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.AmbientIntensity");
   _lightDiffuseIntensityUniform = glGetUniformLocation(_programHandle, "u_Light.DiffuseIntensity");
   _lightDirectionUniform = glGetUniformLocation(_programHandle, "u_Light.Direction");
+
+  _blacknessUniform = glGetUniformLocation(_programHandle, "u_makeItBlack");
+  _normalnessUniform = glGetUniformLocation(_programHandle, "u_nothingIsNormal");
 
   _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
@@ -115,4 +123,13 @@ static const uint MAX_BONES = 100;
 
 }
 
+- (void)toggleBlackness {
+  _blackness = !_blackness;
+  glUniform1i(_blacknessUniform, _blackness);
+}
+
+- (void)toggleNormalcy {
+  _abnormalness = !_abnormalness;
+  glUniform1i(_normalnessUniform, _abnormalness);
+}
 @end

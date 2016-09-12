@@ -18,15 +18,15 @@ out vec3 frag_Normal;
 out vec3 frag_Position;
 
 void main(void) {
-  mat4 BoneTransform = gBones[BoneIDs[0]] * Weights[0];
-  BoneTransform     += gBones[BoneIDs[1]] * Weights[1];
-  BoneTransform     += gBones[BoneIDs[2]] * Weights[2];
-  BoneTransform     += gBones[BoneIDs[3]] * Weights[3];
-  
+//  mat4 BoneTransform = gBones[BoneIDs[0]] * Weights[0];
+//  BoneTransform     += gBones[BoneIDs[1]] * Weights[1];
+//  BoneTransform     += gBones[BoneIDs[2]] * Weights[2];
+//  BoneTransform     += gBones[BoneIDs[3]] * Weights[3];
+
   vec4 PosL    = vec4(Position, 1.0);
   gl_Position = u_ProjectionMatrix * u_ModelViewMatrix * PosL;
   frag_TexCoord = TexCoord;
-  vec4 NormalL = BoneTransform * vec4(Normal, 0.0);
-  frag_Normal = (u_ModelViewMatrix * NormalL).xyz;
+//  vec4 NormalL = BoneTransform * vec4(Normal, 0.0);
+  frag_Normal = (u_ModelViewMatrix * vec4(Normal, 0.0)).xyz;
   frag_Position = (u_ModelViewMatrix * PosL).xyz;
 }

@@ -31,6 +31,9 @@ Shader::Shader(const char* sVertexSource, const char* sFragmentSource) {
     std::cout << "Vertex shader compiled" << std::endl;
   }
   else {
+    GLchar messages[256];
+    glGetShaderInfoLog(m_uVertexShader, sizeof(messages), 0, &messages[0]);
+    printf("%s", messages);
     std::cerr << "Vertex shader not compiled" << std::endl;
   }
 

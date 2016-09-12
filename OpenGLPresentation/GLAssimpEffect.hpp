@@ -11,4 +11,6 @@
 
 @interface GLAssimpEffect : GLBaseEffect
 - (void)setBoneTransform:(const aiMatrix4x4t<float>&)Transform onIndex:(uint)Index;
+- (void)toggleBlackness;
+- (void)toggleNormalcy;
 @end

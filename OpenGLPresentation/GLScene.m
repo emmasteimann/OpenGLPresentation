@@ -28,6 +28,7 @@
   GLMushroom *_mushroom;
   GLPlane *_plane;
   AssimpMesh *_mesh;
+  AssimpMesh *_k9;
   BOOL _switched;
   NSTimer *_timer;
 }
@@ -57,31 +58,44 @@
     self.skyboxEffect.ySize = 100.0f;
     self.skyboxEffect.zSize = 100.0f;
 
-
-
-    
-
     _plane = [[GLPlane alloc] initWithShader:shader];
     _plane.position = GLKVector3Make(0, -15, 0);
 
-//    [self.children addObject:_plane];
+    [self.children addObject:_plane];
 
-    _mesh = [[AssimpMesh alloc] initWithName:"test"];
+    _mesh = [[AssimpMesh alloc] initWithName:"Emma" andFileName:@"TeamFlareAdmin" andExtenstion:@"DAE"];
     _mesh.position = GLKVector3Make(0, -15, 0);
+    _mesh.rotationZ += M_PI;
     _mesh.scale = 0.05;
     [self.children addObject:_mesh];
 
     _mushroom = [[GLMushroom alloc] initWithShader:shader];
     _mushroom.position = GLKVector3Make(5, -15, -5);
     _mushroom.scale = 0.5;
-//    [self.children addObject:_mushroom];
+    [self.children addObject:_mushroom];
 
     GLMushroom *mushroomA = [[GLMushroom alloc] initWithShader:shader];
     mushroomA.position = GLKVector3Make(-5, -15, 5);
     mushroomA.scale = 0.5;
-//    [self.children addObject:mushroomA];
+    [self.children addObject:mushroomA];
 
-    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+    _k9 = [[AssimpMesh alloc] initWithName:"k9" andFileName:@"k9" andExtenstion:@"dae"];
+    _k9.position = GLKVector3Make(-5, -15, 0);
+    _k9.scale = 0.05;
+    _k9.matColor = GLKVector4Make(0.3,0.3,0.3, 1);
+    [self.children addObject:_k9];
+
+    // Distance Shot
+//    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+
+    // Good for Orthographic projection
+//    self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, 0, _mesh.position.x, _mesh.position.y+4.5, _mesh.position.z, 0, 1, 0);
+
+//    Close Up on Emma
+    self.initialModelMatrix = GLKMatrix4MakeLookAt(0, -8.5, -3, _mesh.position.x, _mesh.position.y+5.5, _mesh.position.z, 0, 2, 0);
+
+//    Close up on K9
+//    self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
     [self performSelector:@selector(updateBones:)
                withObject:nil
                afterDelay:5.0];
@@ -95,10 +109,10 @@
   self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
   self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
   self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
-//  [self.skyboxEffect prepareToDraw];
-//  glDepthMask(false);
-//  [self.skyboxEffect draw];
-//  glDepthMask(true);
+  [self.skyboxEffect prepareToDraw];
+  glDepthMask(false);
+  [self.skyboxEffect draw];
+  glDepthMask(true);
   [super renderWithParentModelViewMatrix:parentModelViewMatrix];
 
 }
@@ -118,13 +132,14 @@
 }
 
 - (void)updateBones:(NSTimer*) timer {
-   NSLog(@"updating");
+  self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
+  NSLog(@"updating");
 //  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
 //  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
-  self.rotationY += M_PI * dt/7;
+//  self.rotationY += M_PI * dt/7;
   [super updateWithDelta:dt];
 }
 @end

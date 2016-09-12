@@ -8,6 +8,9 @@ uniform sampler2D u_Texture;
 uniform float u_MatSpecularIntensity;
 uniform float u_Shininess;
 uniform vec4 u_MatColor;
+uniform bool u_makeItBlack;
+uniform bool u_nothingIsNormal;
+
 
 struct Light {
   vec3 Color;
@@ -34,6 +37,19 @@ void main(void) {
   vec3 Reflection = reflect(u_Light.Direction, Normal);
   float SpecularFactor = pow(max(0.0, -dot(Reflection, Eye)), u_Shininess);
   vec3 SpecularColor = u_Light.Color * u_MatSpecularIntensity * SpecularFactor;
+  
+  if (u_makeItBlack) {
+    outputColor = vec4(0,0,0,1);
+  } else {
+//    if (u_Texture) {
+      if (u_nothingIsNormal) {
+        outputColor = u_MatColor * texture(u_Texture, frag_TexCoord);
+      } else {
+        outputColor = u_MatColor * texture(u_Texture, frag_TexCoord) * vec4((AmbientColor + DiffuseColor + SpecularColor), 1.0);
+      }
+//    } else {
+//      outputColor = u_MatColor * vec4((AmbientColor + DiffuseColor + SpecularColor), 1.0);
+//    }
 
-  outputColor = u_MatColor * texture(u_Texture, frag_TexCoord) * vec4((AmbientColor + DiffuseColor + SpecularColor), 1.0);
+  }
 }

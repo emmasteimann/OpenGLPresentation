@@ -8,43 +8,54 @@
 #include <OpenGL/gl3.h>
 #include <OpenGL/glu.h>
 
+enum VB_TYPES {
+  INDEX_BUFFER,
+  POS_VB,
+  NORMAL_VB,
+  TEXCOORD_VB,
+  BONE_VB,
+  NUM_VBs
+};
+
+typedef enum {
+  RWTVertexAttribPosition = 0,
+  RWTVertexAttribColor
+} RWTVertexAttributes;
+
+typedef struct {
+  GLfloat Position[3];
+  GLfloat Color[4];
+} RWTVertex;
+
+#define POSITION_LOCATION    0
+#define TEX_COORD_LOCATION   1
+#define NORMAL_LOCATION      2
+#define BONE_ID_LOCATION     3
+#define BONE_WEIGHT_LOCATION 4
+
 static const char* s_sShaderVertSource = "#version 330 core\n"
 "\n"
 "uniform mat4 projectionMatrix;\n"
 "uniform mat4 viewMatrix;\n"
 "uniform mat4 modelMatrix;\n"
-"uniform mat4 boneMatrices[60];\n"
 "\n"
 "in vec4 inPosition;\n"
 "in vec3 inNormal;\n"
 "in vec4 inColor;\n"
-"in vec2 inTexCoord;\n"
-"in vec4 inBoneWeights;\n"
-"in vec4 inBoneIndices;\n"
 "\n"
-"out vec4 worldPosition;\n"
-"out vec3 worldNormal;\n"
+//"out vec4 worldPosition;\n"
+//"out vec3 worldNormal;\n"
 "out vec4 outColor;\n"
-"out vec2 outTexCoord;\n"
+//"out vec2 outTexCoord;\n"
 "\n"
 "void main()\n"
 "{\n"
-"  vec4 boneWeights = inBoneWeights;\n"
-"  boneWeights.w = 1.0 - dot(boneWeights.xyz, vec3(1.0, 1.0, 1.0));\n"
+//"  vec4 newNormal = vec4(inNormal, 0.0);\n"
+//"	 worldNormal = (modelMatrix * newNormal).xyz;\n"
 "\n"
-"  mat4 transformMatrix = boneWeights.x * boneMatrices[int(inBoneIndices.x)];\n"
-"  transformMatrix += boneWeights.y * boneMatrices[int(inBoneIndices.y)];\n"
-"  transformMatrix += boneWeights.z * boneMatrices[int(inBoneIndices.z)];\n"
-"  transformMatrix += boneWeights.w * boneMatrices[int(inBoneIndices.w)];\n"
-"\n"
-"  vec4 newPosition = transformMatrix * inPosition;\n"
-"  vec4 newNormal = transformMatrix * vec4(inNormal, 0.0);\n"
-"	 worldNormal = (modelMatrix * newNormal).xyz;\n"
-"\n"
-"	 gl_Position = projectionMatrix * viewMatrix * modelMatrix * newPosition;\n"
-"	 worldPosition = modelMatrix * newPosition;\n"
+"	 gl_Position = projectionMatrix * viewMatrix * modelMatrix * inPosition;\n"
+//"	 worldPosition = modelMatrix * inPosition;\n"
 "	 outColor = inColor;\n"
-"	 outTexCoord = inTexCoord;\n"
 "}\n";
 
 static const char* s_sShaderFragSource = "#version 330 core\n"
@@ -52,37 +63,27 @@ static const char* s_sShaderFragSource = "#version 330 core\n"
 "uniform vec3 lightPosition;\n"
 "uniform vec4 lightAmbientColor;\n"
 "uniform vec4 lightDiffuseColor;\n"
-"uniform int useTexture;\n"
-//"uniform sampler2D texture;\n"
 "\n"
-"in vec4 worldPosition;\n"
-"in vec3 worldNormal;\n"
+//"in vec4 worldPosition;\n"
+//"in vec3 worldNormal;\n"
 "in vec4 outColor;\n"
-"in vec2 outTexCoord;\n"
-"out vec4 outputColor;\n"
+//"out vec4 outputColor;\n"
 "\n"
 "void main()\n"
 "{\n"
-"	 vec3 normal = normalize(worldNormal);\n"
-"  vec3 position = worldPosition.xyz - worldPosition.w;\n"
-"  vec3 lightVector = normalize(lightPosition);\n"
-"  vec4 fragColor;\n"
+//"	 vec3 normal = normalize(worldNormal);\n"
+//"  vec3 position = worldPosition.xyz - worldPosition.w;\n"
+//"  vec3 lightVector = normalize(lightPosition);\n"
+//"  vec4 fragColor;\n"
 "  \n"
-//"  if (useTexture == 0)\n"
-//"  {\n"
-"	  fragColor = outColor;\n"
-//"  } else\n"
-//"  {\n"
-//"	  fragColor = texture(texture, outTexCoord);\n"
-//"  }\n"
+"	  outputColor = outColor;\n"
 "  \n"
-"  vec4 ambient = fragColor * lightAmbientColor;\n"
-"  vec4 diffuse = fragColor * lightDiffuseColor * max(0.0, dot(normal, lightVector));\n"
-"  \n"
-"	 outputColor = ambient + diffuse;\n"
+//"  vec4 ambient = fragColor * lightAmbientColor;\n"
+//"  vec4 diffuse = fragColor * lightDiffuseColor * max(0.0, dot(normal, lightVector));\n"
+//"  \n"
+//"	 outputColor = ambient + diffuse;\n"
 "}\n";
 
-//SDL_Surface* g_pSDLSurface = NULL;
 long g_lLastTime = 0;
 long g_lElapsedTime = 0;
 
@@ -144,136 +145,7 @@ Model::~Model() {
 }
 
 bool Model::Init() {
-  if (SDL_Init(SDL_INIT_TIMER) < 0 ) {
-    std::cerr << "SDL_Init() failed" << std::endl;
-
-    return false;
-  }
-//    if (SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO) < 0 ) {
-//    std::cerr << "SDL_Init() failed" << std::endl;
-//
-//    return false;
-//  }
-
-//  SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-//  SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-//  SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-//  SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-//  SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-//  SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-//  SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-//  SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
-//  SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, MULTISAMPLING);
-//
-//  SDL_WM_SetCaption("AssimpOpenGLDemo", "");
-//
-//  g_pSDLSurface = SDL_SetVideoMode(WIDTH, HEIGHT, COLORBITS, SDL_OPENGL | SDL_RESIZABLE | SDL_HWSURFACE | SDL_DOUBLEBUF);
-//
-//  if (g_pSDLSurface == NULL) {
-//    std::cerr << "SDL_SetVideoMode() failed" << std::endl;
-//
-//    return false;
-//  }
-//
-//  GLenum err = glewInit();
-//
-//  if (GLEW_OK != err) {
-//    std::cerr << "glewInit() failed" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_EXT_framebuffer_object")) {
-//    std::cerr << "GL_EXT_framebuffer_object not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_EXT_framebuffer_sRGB")) {
-//    std::cerr << "GL_EXT_framebuffer_sRGB not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_EXT_vertex_array")) {
-//    std::cerr << "GL_EXT_vertex_array not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_ARB_vertex_program")) {
-//    std::cerr << "GL_ARB_vertex_program not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_ARB_fragment_program")) {
-//    std::cerr << "GL_ARB_fragment_program not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  if (!ExtensionSupported("GL_ARB_vertex_buffer_object")) {
-//    std::cerr << "GL_ARB_vertex_buffer_object not supported" << std::endl;
-//
-//    return false;
-//  }
-//
-//  glEnable(GL_TEXTURE_2D);
-//
-//  //enable normalization of normals
-//  glEnable(GL_NORMALIZE);
-//
-//  glEnable(GL_BLEND);
-//  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//
-//  glEnable(GL_LINE_SMOOTH);
-//  glEnable(GL_POLYGON_SMOOTH);
-//  glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
-//  glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
-//
-//  glEnable(GL_MULTISAMPLE);
-//
-//  //set polygon mode
-//  glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //polygons filled
-//  //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe
-//
-//  //background color
-  glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-//  glClearDepth(1.0f);
-//
-//  //z-buffer
-//  glEnable(GL_DEPTH_TEST);
-//  glDepthFunc(GL_LEQUAL);
-//
-//  //back face culling
-//  glFrontFace(GL_CCW);
-//  glEnable(GL_CULL_FACE);
-//  glCullFace(GL_BACK);
-//
-//  glViewport(0, 0, WIDTH, HEIGHT);
-
-//  if (CheckErrors()) {
-//    return false;
-//  }
-
   m_pShader = new Shader(s_sShaderVertSource, s_sShaderFragSource);
-
-//  if (CheckErrors()) {
-//    return false;
-//  }
-
-  m_pShader->Bind();
-
-//  if (CheckErrors()) {
-//    return false;
-//  }
-
-  m_pShader->Unbind();
-
-//  if (CheckErrors()) {
-//    return false;
-//  }
 
   //import the model via Assimp
   m_pStore = aiCreatePropertyStore();
@@ -304,33 +176,6 @@ bool Model::Init() {
     m_vSceneCenter.z = (m_vSceneMin.z + m_vSceneMax.z) / 2.0f;
 
     m_iNumMeshes = m_pScene->mNumMeshes;
-
-    //load the textures into the vram
-    m_vTextures = new GLuint[m_pScene->mNumMaterials];
-
-    struct aiString* sTexturePath = (aiString*) malloc(sizeof(struct aiString));
-
-    for (int i = 0; i < (int) m_pScene->mNumMaterials; i++) {
-      m_vTextures[i] = 0;
-      aiMaterial* pMat = m_pScene->mMaterials[i];
-      aiGetMaterialTexture(pMat, aiTextureType_DIFFUSE, 0, sTexturePath, 0, 0, 0, 0, 0, 0); 
-//
-//      SDL_Surface* pTex = SDL_LoadBMP(GetFullPath(m_sModelPath, sTexturePath->data).c_str());
-//
-//      if (pTex) {
-//        glGenTextures(1, &m_vTextures[i]);
-//        glBindTexture(GL_TEXTURE_2D, m_vTextures[i]);
-//
-//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//
-//        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, pTex->w,	pTex->h, GL_BGR, GL_UNSIGNED_BYTE, pTex->pixels);
-//      }
-//
-//      SDL_FreeSurface(pTex);
-    }
-
-    free(sTexturePath);
 
     for (int i = 0; i < m_iNumMeshes; i++) {
       aiMesh* pCurrentMesh = m_pScene->mMeshes[i];
@@ -379,93 +224,25 @@ bool Model::Init() {
         pNewMesh->m_pVertices[j].z = pCurrentMesh->mVertices[j].z;
         pNewMesh->m_pVertices[j].w = 1.0f;
 
-        printf("Vertices: x:%f, y:%f, z:%f\n", pNewMesh->m_pVertices[j].x, pNewMesh->m_pVertices[j].y, pNewMesh->m_pVertices[j].z);
-
-
         pNewMesh->m_pNormals[j].x = pCurrentMesh->mNormals[j].x;
         pNewMesh->m_pNormals[j].y = pCurrentMesh->mNormals[j].y;
         pNewMesh->m_pNormals[j].z = pCurrentMesh->mNormals[j].z;
 
-        if ((!pCurrentMesh->HasVertexColors(0)) || (pCurrentMesh->mColors[j] == NULL)) {
-          if ((pCurrentMesh->mMaterialIndex < m_pScene->mNumMaterials) &&
-            (m_pScene->mMaterials[pCurrentMesh->mMaterialIndex] != NULL)) {
-              aiMaterial * pCurrentMaterial = m_pScene->mMaterials[pCurrentMesh->mMaterialIndex];
-              aiColor4D color(0.5f, 0.5f, 0.5f, 1.0f);
-              aiGetMaterialColor(pCurrentMaterial, AI_MATKEY_COLOR_DIFFUSE, &color);
-
-              pNewMesh->m_pColors[j].r = color.r;
-              pNewMesh->m_pColors[j].g = color.g;
-              pNewMesh->m_pColors[j].b = color.b;
-              pNewMesh->m_pColors[j].a = 1.0f;
-          }
-          else {
-            pNewMesh->m_pColors[j].r = 0.5f;
-            pNewMesh->m_pColors[j].g = 0.5f;
-            pNewMesh->m_pColors[j].b = 0.5f;
-            pNewMesh->m_pColors[j].a = 1.0f;
-          }
-        }
-        else {
-          pNewMesh->m_pColors[j].r = pCurrentMesh->mColors[j]->r;
-          pNewMesh->m_pColors[j].g = pCurrentMesh->mColors[j]->g;
-          pNewMesh->m_pColors[j].b = pCurrentMesh->mColors[j]->b;
-          pNewMesh->m_pColors[j].a = pCurrentMesh->mColors[j]->a;
-        }
-
-        if ((pCurrentMesh->mTextureCoords != NULL) && (pCurrentMesh->mTextureCoords[0] != NULL)) {
-            pNewMesh->m_pTexCoords[j].x = pCurrentMesh->mTextureCoords[0][j].x;
-            pNewMesh->m_pTexCoords[j].y = 1.0f - pCurrentMesh->mTextureCoords[0][j].y;
-        }
-        else {
-          pNewMesh->m_pTexCoords[j].x = 0.0f;
-          pNewMesh->m_pTexCoords[j].y = 0.0f;
-        }
+        pNewMesh->m_pColors[j].r = 0.0;
+        pNewMesh->m_pColors[j].g = 0.0;
+        pNewMesh->m_pColors[j].b = 1.0;
+        pNewMesh->m_pColors[j].a = 1.0f;
       }
 
+      printf("%s\n", pCurrentMesh->mName.C_Str());
       for (int j = 0; j < pNewMesh->m_iNumFaces; j++) {
+        printf("index %d: {%d, %d, %d}\n", j, pCurrentMesh->mFaces[j].mIndices[0], pCurrentMesh->mFaces[j].mIndices[1], pCurrentMesh->mFaces[j].mIndices[2]);
         pNewMesh->m_pIndices[j * 3] = pCurrentMesh->mFaces[j].mIndices[0];
         pNewMesh->m_pIndices[j * 3 + 1] = pCurrentMesh->mFaces[j].mIndices[1];
         pNewMesh->m_pIndices[j * 3 + 2] = pCurrentMesh->mFaces[j].mIndices[2];
       }
-
-      //read bone indices and weights for bone animation
-      std::vector<aiVertexWeight> * vTempWeightsPerVertex = new std::vector<aiVertexWeight>[pCurrentMesh->mNumVertices];
-
-      for (unsigned int j = 0; j < pCurrentMesh->mNumBones; j++) {
-        const aiBone * pBone = pCurrentMesh->mBones[j];
-
-        for (unsigned int b = 0; b < pBone->mNumWeights; b++) {
-          vTempWeightsPerVertex[pBone->mWeights[b].mVertexId].push_back(aiVertexWeight(j, pBone->mWeights[b].mWeight));
-        }
-      }
-
-      for (int j = 0; j < pNewMesh->m_iNumVertices; j++) {
-        pNewMesh->m_pBoneIndices[j] = glm::uvec4(0, 0, 0, 0);
-        pNewMesh->m_pWeights[j] = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
-
-        if (pCurrentMesh->HasBones()) {
-          if (vTempWeightsPerVertex[j].size() > 4) {
-            std::cerr << "The model has invalid bone weights and is not loaded." << std::endl;
-
-            return false;
-          }
-
-          for (unsigned int k = 0; k < vTempWeightsPerVertex[j].size(); k++) {
-            pNewMesh->m_pBoneIndices[j][k] = (GLfloat) vTempWeightsPerVertex[j][k].mVertexId;
-            pNewMesh->m_pWeights[j][k] = (GLfloat) vTempWeightsPerVertex[j][k].mWeight;
-          }
-        }
-      }
-
-      if (vTempWeightsPerVertex != NULL) {
-        delete[] vTempWeightsPerVertex;
-        vTempWeightsPerVertex = NULL;
-      }
     }
 
-    if (m_pScene->HasAnimations()) {
-      m_pAnimator = new Animator(m_pScene, 0);
-    }
   }
   else {
     std::cerr << "Loading model failed." << std::endl;
@@ -475,13 +252,9 @@ bool Model::Init() {
 
   float fScale = GetScaleFactor();
 
-  m_mModelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(fScale, fScale, fScale));
-  m_mModelMatrix = glm::translate(m_mModelMatrix, glm::vec3(0.0f, -m_vSceneCenter.y, 0.0f));
-
-//  g_lLastTime =151;
-
-  g_lLastTime = SDL_GetTicks();
-
+//  m_mModelMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(fScale, fScale, fScale));
+  m_mModelMatrix = glm::translate(m_mModelMatrix, glm::vec3(0.0f, 0.0f, 0.0f));
+//  m_mModelMatrix = glm::mat4(1.0f);
   return true;
 }
 
@@ -534,159 +307,79 @@ void Model::GetBoundingBox(const struct aiNode* pNode, aiVector3D* pMin, aiVecto
 
 bool Model::Draw() {
   glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-
-//  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//  glClearColor(0,1,0,1.0);
-
-//  //check for key strokes
-//  SDL_PumpEvents();
-//  unsigned char* keystate;
-//  SDL_Event sdlEvent;
-//  int numkeys;
-//
-//  keystate = SDL_GetKeyState(&numkeys);
-//
-//  if (keystate[SDLK_ESCAPE])
-//  {
-//    return false;
-//  }
-//
-//  while (SDL_PollEvent(&sdlEvent))
-//  {
-//    if (sdlEvent.type == SDL_QUIT)
-//    {
-//      return false;
-//    }
-//  }
-
-  //set the bone animation to the specified timestamp
-  if (m_pAnimator != NULL) {
-//    long lTimeNow = 150;
-    long lTimeNow = SDL_GetTicks();
-    printf("Time: %ld\n", lTimeNow);
-    long lTimeDifference = lTimeNow - g_lLastTime;
-    g_lLastTime = lTimeNow;
-    g_lElapsedTime += lTimeDifference;
-
-    m_pAnimator->UpdateAnimation(g_lElapsedTime, ANIMATION_TICKS_PER_SECOND);
-  }
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   m_pShader->Bind();
 
-  //set shader uniforms
   glUniformMatrix4fv(m_pShader->GetProjectionMatrixLocation(), 1, GL_FALSE, glm::value_ptr(m_pCamera->GetProjectionMatrix()));
-  glUniformMatrix4fv(m_pShader->GetViewMatrixLocation(), 1, GL_FALSE, glm::value_ptr(m_pCamera->GetViewMatrix()));
-  glUniformMatrix4fv(m_pShader->GetModelMatrixLocation(), 1, GL_FALSE, glm::value_ptr(m_mModelMatrix));
+  glUniformMatrix4fv(m_pShader->GetViewMatrixLocation(), 1, GL_FALSE, glm::value_ptr(glm::lookAt(glm::vec3(-2, -10, -10), glm::vec3(0,0,0), glm::vec3(0,1,0))));
+  glUniformMatrix4fv(m_pShader->GetModelMatrixLocation(), 1, GL_FALSE, glm::value_ptr(glm::mat4(1.0)));
   glUniform3fv(m_pShader->GetLightPositionLocation(), 1, glm::value_ptr(m_pLight->GetPosition()));
   glUniform4fv(m_pShader->GetLightAmbientColorLocation(), 1, glm::value_ptr(m_pLight->GetAmbient()));
   glUniform4fv(m_pShader->GetLightDiffuseColorLocation(), 1, glm::value_ptr(m_pLight->GetDiffuse()));
 
-  //draw the model
   if (m_pScene->mRootNode != NULL) {
     RenderNode(m_pScene->mRootNode);
   }
 
   m_pShader->Unbind();
 
-//  SDL_GL_SwapBuffers();
-//  SDL_Delay(10);
-
   return true;
 }
 
 void Model::RenderNode(aiNode * pNode) {
+  printf("Name: %s\n", pNode->mName.C_Str());
   for (unsigned int i = 0; i < pNode->mNumMeshes; i++) {
-    const aiMesh* pCurrentMesh = m_pScene->mMeshes[pNode->mMeshes[i]];
-    glm::mat4* pMatrices = new glm::mat4[MAXBONESPERMESH];
-
-    //upload bone matrices
-    if ((pCurrentMesh->HasBones()) && (m_pAnimator != NULL)) {
-      const std::vector<aiMatrix4x4>& vBoneMatrices = m_pAnimator->GetBoneMatrices(pNode, i);
-
-      if (vBoneMatrices.size() != pCurrentMesh->mNumBones) {
-        continue;
-      }
-
-      for (unsigned int j = 0; j < pCurrentMesh->mNumBones; j++) {
-        if (j < MAXBONESPERMESH) {
-          pMatrices[j][0][0] = vBoneMatrices[j].a1;
-          pMatrices[j][0][1] = vBoneMatrices[j].b1;
-          pMatrices[j][0][2] = vBoneMatrices[j].c1;
-          pMatrices[j][0][3] = vBoneMatrices[j].d1;
-          pMatrices[j][1][0] = vBoneMatrices[j].a2;
-          pMatrices[j][1][1] = vBoneMatrices[j].b2;
-          pMatrices[j][1][2] = vBoneMatrices[j].c2;
-          pMatrices[j][1][3] = vBoneMatrices[j].d2;
-          pMatrices[j][2][0] = vBoneMatrices[j].a3;
-          pMatrices[j][2][1] = vBoneMatrices[j].b3;
-          pMatrices[j][2][2] = vBoneMatrices[j].c3;
-          pMatrices[j][2][3] = vBoneMatrices[j].d3;
-          pMatrices[j][3][0] = vBoneMatrices[j].a4;
-          pMatrices[j][3][1] = vBoneMatrices[j].b4;
-          pMatrices[j][3][2] = vBoneMatrices[j].c4;
-          pMatrices[j][3][3] = vBoneMatrices[j].d4;
-        }
-      }
-    }
-
-    //upload the complete bone matrices to the shaders
-    glUniformMatrix4fv(m_pShader->GetBoneMatricesLocation(), MAXBONESPERMESH, GL_FALSE, glm::value_ptr(*pMatrices));
-
-    delete[] pMatrices;
-     printf("Number of Meshes: %d\n", pNode->mNumMeshes);
     DrawMesh(pNode->mMeshes[i]);
   }
 
   //render all child nodes
-
+  printf("mesh has this many children: %d\n", pNode->mNumChildren);
   for (unsigned int i = 0; i < pNode->mNumChildren; i++) {
     RenderNode(pNode->mChildren[i]);
   }
 }
 
 void Model::DrawMesh(unsigned int uIndex) {
-  printf("Drawing mesh: %d\n", uIndex);
-  GLuint _vao;
+  GLuint _vaob;
   GLuint _indexBuffer;
-  glGenVertexArrays(1, &_vao);
-  glBindVertexArray(_vao);
+  GLuint _vertexBuffer;
   Mesh* pMesh = m_vMeshes.at(uIndex);
 
+//
+//  glGenVertexArrays(1, &_vaob);
+//  glBindVertexArray(_vaob);
+
+  glGenBuffers(1, &_vertexBuffer);
+  glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
+  printf("Size of Vertex: %lu\n", sizeof(pMesh->m_pVertices[0]));
+  printf("Number of Vertices: %lu\n", sizeof(pMesh->m_pVertices));
+  printf("iNum of Vertices: %d\n", pMesh->m_iNumVertices);
+  printf("Index Count: %lu\n", sizeof(pMesh->m_iNumFaces) * 3);
+
+  glBufferData(GL_ARRAY_BUFFER, sizeof(pMesh->m_pVertices[0]) * pMesh->m_iNumVertices, pMesh->m_pVertices, GL_STATIC_DRAW);
   glEnableVertexAttribArray(m_pShader->GetVertexLocation());
   glVertexAttribPointer(m_pShader->GetVertexLocation(), 4, GL_FLOAT, GL_FALSE, 0, pMesh->m_pVertices);
-//  printf("Vertices: x:%f, y:%f, z:%f\n", pMesh->m_pVertices->x, pMesh->m_pVertices->y, pMesh->m_pVertices->z);
-  glEnableVertexAttribArray(m_pShader->GetNormalLocation());
-  glVertexAttribPointer(m_pShader->GetNormalLocation(), 3, GL_FLOAT, GL_FALSE, 0, pMesh->m_pNormals);
 
-  glEnableVertexAttribArray(m_pShader->GetBoneWeightsLocation());
-  glVertexAttribPointer(m_pShader->GetBoneWeightsLocation(), 4, GL_FLOAT, GL_FALSE, 0, pMesh->m_pWeights);
-
-  glEnableVertexAttribArray(m_pShader->GetBoneIndicesLocation());
-  glVertexAttribPointer(m_pShader->GetBoneIndicesLocation(), 4, GL_FLOAT, GL_FALSE, 0, pMesh->m_pBoneIndices);
-
-  glEnableVertexAttribArray(m_pShader->GetTexCoordLocation());
-  glVertexAttribPointer(m_pShader->GetTexCoordLocation(), 2, GL_FLOAT, GL_FALSE, 0, pMesh->m_pTexCoords);
-  glBindVertexArray(0);
-
-  if (m_vTextures[pMesh->m_iMaterialIndex] != -1)
-  {
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, m_vTextures[pMesh->m_iMaterialIndex]);
-    glUniform1i(m_pShader->GetTextureLocation(), 0);
-    glUniform1i(m_pShader->GetUseTextureLocation(), 1);
-  } else
-  {
-    glEnableVertexAttribArray(m_pShader->GetColorLocation());
-    glVertexAttribPointer(m_pShader->GetColorLocation(), 4, GL_FLOAT, GL_FALSE, 0, pMesh->m_pColors);
-    glUniform1i(m_pShader->GetUseTextureLocation(), 0);
+  for (int i=0; i < pMesh->m_iNumVertices; i++) {
+    printf("Vertex (%d) - x:%f, y:%f, z:%f, w:%f\n", i, pMesh->m_pVertices[i].x, pMesh->m_pVertices[i].y, pMesh->m_pVertices[i].z, pMesh->m_pVertices[i].w);
   }
 
-  glBindVertexArray(_vao);
-//  glDrawArrays(GL_POINTS, 0, pMesh->m_iNumFaces * 3);
-//  glBindVertexArray(0);
-//  glDrawArrays(GL_POINTS, pMesh->m_iNumFaces * 3, <#GLsizei count#>)
   glGenBuffers(1, &_indexBuffer);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, pMesh->m_iNumFaces * 3 * sizeof(GLubyte), pMesh->m_pIndices, GL_STATIC_DRAW);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, pMesh->m_iNumFaces * 3 * sizeof(GLint), pMesh->m_pIndices, GL_STATIC_DRAW);
+
+  for (int i=0; i < sizeof(pMesh->m_pIndices); i++) {
+    printf("Index- %d\n", pMesh->m_pIndices[i]);
+  }
+
+  glEnableVertexAttribArray(m_pShader->GetColorLocation());
+  glVertexAttribPointer(m_pShader->GetColorLocation(), 4, GL_FLOAT, GL_FALSE, 0, pMesh->m_pColors);
+
+  printf("Drawing...\n\n");
+  printf("Number of faces: %d\n", pMesh->m_iNumFaces);
+
+//  glBindVertexArray(_vao);
   glDrawElements(GL_TRIANGLES, pMesh->m_iNumFaces * 3, GL_UNSIGNED_INT, pMesh->m_pIndices);
+//  glBindVertexArray(0);
 }

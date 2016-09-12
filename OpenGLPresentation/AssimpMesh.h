@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NSMutableArray *children;
 -(instancetype)initWithName:(char *)name;
+-(instancetype)initWithName:(char *)name andFileName:(NSString *)fileName andExtenstion:(NSString *)extension;
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
 - (void)updateWithDelta:(NSTimeInterval)dt;
 @end

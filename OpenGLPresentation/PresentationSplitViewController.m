@@ -9,6 +9,7 @@
 #import "PresentationSplitViewController.h"
 #import "PresentationViewController.h"
 #import "GLViewController.h"
+#import "SceneKitController.h"
 
 @interface PresentationSplitViewController ()
 
