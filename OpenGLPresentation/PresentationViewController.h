@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface PresentationViewController : NSViewController <NSPageControllerDelegate>
-
+- (void)nextPage;
+- (void)previousPage;
 @end

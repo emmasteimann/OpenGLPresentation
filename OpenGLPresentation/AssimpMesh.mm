@@ -397,7 +397,60 @@
 //          pMatrices[j][3][3] = vBoneMatrices[j].d4;
 //        }
 //      }
+    if ([[GLDirector sharedInstance] currentView] == ShowDots) {
+      //    Drawing just dots with blackness
 
+          [_assimpShader toggleBlackness];
+          glPointSize(2.0f);
+          glDrawElementsBaseVertex(GL_POINTS,
+                                   m_Entries[i].NumIndices,
+                                   GL_UNSIGNED_INT,
+                                   (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+                                   m_Entries[i].BaseVertex);
+          [_assimpShader toggleBlackness];
+    } else if ([[GLDirector sharedInstance] currentView] == ShowWireFrame) {
+      //    Drawing with overlayed wireframe:
+
+          glEnable(GL_POLYGON_OFFSET_FILL);
+          glPolygonOffset(5.0f, 5.0f);
+          glDrawElementsBaseVertex(GL_TRIANGLES,
+                                   m_Entries[i].NumIndices,
+                                   GL_UNSIGNED_INT,
+                                   (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+                                   m_Entries[i].BaseVertex);
+          glDisable(GL_POLYGON_OFFSET_FILL);
+      
+          [_assimpShader toggleBlackness];
+            glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+            glLineWidth(2.0f);
+            glDrawElementsBaseVertex(GL_TRIANGLES,
+                                   m_Entries[i].NumIndices,
+                                   GL_UNSIGNED_INT,
+                                   (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+                                   m_Entries[i].BaseVertex);
+            glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+          [_assimpShader toggleBlackness];
+
+//          glEnable(GL_POLYGON_OFFSET_FILL);
+//          glPolygonOffset(5.0f, 5.0f);
+//          glDrawElementsBaseVertex(GL_TRIANGLES,
+//                                   m_Entries[i].NumIndices,
+//                                   GL_UNSIGNED_INT,
+//                                   (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+//                                   m_Entries[i].BaseVertex);
+//          glDisable(GL_POLYGON_OFFSET_FILL);
+
+    }  else if ([[GLDirector sharedInstance] currentView] == ShowColorDots) {
+//          [_assimpShader toggleBlackness];
+          glPointSize(5.0f);
+          glDrawElementsBaseVertex(GL_POINTS,
+                                   m_Entries[i].NumIndices,
+                                   GL_UNSIGNED_INT,
+                                   (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
+                                   m_Entries[i].BaseVertex);
+//          [_assimpShader toggleBlackness];
+
+    } else {
 //    Normal Drawing:
 //
 //    [_assimpShader toggleNormalcy];
@@ -407,48 +460,11 @@
                              (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
                              m_Entries[i].BaseVertex);
 //    [_assimpShader toggleNormalcy];
+    }
 
 
-//    Drawing with overlayed wireframe:
 
-//    glEnable(GL_POLYGON_OFFSET_FILL);
-//    glPolygonOffset(5.0f, 5.0f);
-//    glDrawElementsBaseVertex(GL_TRIANGLES,
-//                             m_Entries[i].NumIndices,
-//                             GL_UNSIGNED_INT,
-//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
-//                             m_Entries[i].BaseVertex);
-//    glDisable(GL_POLYGON_OFFSET_FILL);
-//
-//    [_assimpShader toggleBlackness];
-//      glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-//      glLineWidth(2.0f);
-//      glDrawElementsBaseVertex(GL_TRIANGLES,
-//                             m_Entries[i].NumIndices,
-//                             GL_UNSIGNED_INT,
-//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
-//                             m_Entries[i].BaseVertex);
-//      glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
-//    [_assimpShader toggleBlackness];
-//    glEnable(GL_POLYGON_OFFSET_FILL);
-//    glPolygonOffset(5.0f, 5.0f);
-//    glDrawElementsBaseVertex(GL_TRIANGLES,
-//                             m_Entries[i].NumIndices,
-//                             GL_UNSIGNED_INT,
-//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
-//                             m_Entries[i].BaseVertex);
-//    glDisable(GL_POLYGON_OFFSET_FILL);
 
-//    Drawing just dots with blackness
-
-//    [_assimpShader toggleBlackness];
-//    glPointSize(5.0f);
-//    glDrawElementsBaseVertex(GL_POINTS,
-//                             m_Entries[i].NumIndices,
-//                             GL_UNSIGNED_INT,
-//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
-//                             m_Entries[i].BaseVertex);
-//    [_assimpShader toggleBlackness];
 
 //    Drawing just dots with color
 
@@ -477,7 +493,17 @@
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
-//  self.rotationZ += M_PI * dt/2;
+  switch ([[GLDirector sharedInstance] currentView]) {
+    case ShowDots:
+      self.rotationZ += M_PI * dt/2;
+      break;
+    case ShowWireFrame:
+      self.rotationZ += M_PI * dt/2;
+      break;
+    default:
+      self.rotationX = -M_PI_2;
+      break;
+  }
   for (id child in self.children) {
     if ([child respondsToSelector:@selector(updateWithDelta:)]) {
       [child updateWithDelta:dt];

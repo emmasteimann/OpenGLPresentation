@@ -96,7 +96,6 @@ Cat::~Cat(){}
   [_scene updateWithDelta:deltaTime];
   [[GLDirector sharedInstance].scene renderWithParentModelViewMatrix:viewMatrix];
 }
-
 @end
 
 

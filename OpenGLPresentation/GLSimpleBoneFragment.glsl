@@ -39,7 +39,7 @@ void main(void) {
   vec3 SpecularColor = u_Light.Color * u_MatSpecularIntensity * SpecularFactor;
   
   if (u_makeItBlack) {
-    outputColor = vec4(0,0,0,1);
+    outputColor = vec4(1,1,1,1);
   } else {
 //    if (u_Texture) {
       if (u_nothingIsNormal) {

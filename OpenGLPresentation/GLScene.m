@@ -14,7 +14,14 @@
 
 @import GLKit;
 
+typedef enum {
+  EverythingIsPeachy,
+  EverythingWentDark,
+  EverythingSpinning
+} SceneState;
+
 @interface GLScene ()
+@property (assign, nonatomic) SceneState sceneState;
 @property (strong, nonatomic) GLKTextureInfo *textureInfo;
 @property (strong, nonatomic) GLKSkyboxEffect *skyboxEffect;
 @property (strong, nonatomic) GLBaseEffect *shader;
@@ -36,6 +43,7 @@
 - (instancetype)initWithShader:(GLBaseEffect *)shader {
 
   if ((self = [super initWithName:"GLScene" shader:shader vertices:nil vertexCount:0])) {
+    _sceneState = EverythingIsPeachy;
     _shader = shader;
 
     _switched = NO;
@@ -96,9 +104,9 @@
 
 //    Close up on K9
 //    self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
-    [self performSelector:@selector(updateBones:)
-               withObject:nil
-               afterDelay:5.0];
+//    [self performSelector:@selector(updateBones:)
+//               withObject:nil
+//               afterDelay:5.0];
 
   }
   return self;
@@ -106,15 +114,16 @@
 
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
 //   Draw skybox centered on eye position
-  self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
-  self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
-  self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
-  [self.skyboxEffect prepareToDraw];
-  glDepthMask(false);
-  [self.skyboxEffect draw];
-  glDepthMask(true);
-  [super renderWithParentModelViewMatrix:parentModelViewMatrix];
-
+  if (_sceneState != EverythingWentDark) {
+    self.skyboxEffect.center = GLKVector3Make(-2, 0, -5);
+    self.skyboxEffect.transform.projectionMatrix = _shader.projectionMatrix;
+    self.skyboxEffect.transform.modelviewMatrix = [self modelMatrix];
+    [self.skyboxEffect prepareToDraw];
+    glDepthMask(false);
+    [self.skyboxEffect draw];
+    glDepthMask(true);
+    [super renderWithParentModelViewMatrix:parentModelViewMatrix];
+  }
 }
 
 - (GLKMatrix4)modelMatrix {
@@ -132,12 +141,35 @@
 }
 
 - (void)updateBones:(NSTimer*) timer {
-  self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
-  NSLog(@"updating");
+//  self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
+//  NSLog(@"updating");
 //  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
+  _sceneState = EverythingIsPeachy;
+  switch ([[GLDirector sharedInstance] currentView]) {
+    case ShowDog:
+      self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
+      self.rotationY = 0;
+      break;
+    case EverythingBlack:
+      self.initialModelMatrix = GLKMatrix4MakeLookAt(-4, -13, -2, _k9.position.x, _k9.position.y+1, _k9.position.z, 0, 2, 0);
+      _sceneState = EverythingWentDark;
+      break;
+    case WideShot:
+      self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+      self.rotationY += M_PI * dt/7;
+      _sceneState = EverythingSpinning;
+      break;
+    case ShowWireFrame:
+      self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+      break;
+    default:
+      self.initialModelMatrix = GLKMatrix4MakeLookAt(0, -8.5, -3, _mesh.position.x, _mesh.position.y+5.5, _mesh.position.z, 0, 2, 0);
+      self.rotationY = 0;
+      break;
+  }
 //  [_mesh boneTransformWithTime:[[GLDirector sharedInstance] getRunningTime]];
 //  self.rotationY += M_PI * dt/7;
   [super updateWithDelta:dt];

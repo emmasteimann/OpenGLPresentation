@@ -10,5 +10,6 @@
 #import "PresentationGLView.h"
 
 @interface GLViewController : NSViewController <PresentationGLViewDelegate>
-
+- (void)nextPage;
+- (void)previousPage;
 @end

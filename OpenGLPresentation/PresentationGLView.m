@@ -133,7 +133,7 @@ static CVReturn renderCallback(CVDisplayLinkRef displayLink,
   _curRed = (sinf(_lastUpdateTime * 2*M_PI / secsPerFlash) * 0.5) + 0.5;
 
 //  glClearColor(_curRed, 104.0/255.0, 55.0/255.0, 1.0);
-  glClearColor(1,0,0,1.0);
+  glClearColor(0,0,0,1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_CULL_FACE);

@@ -15,6 +15,21 @@
 		4D11F5FF1D7E0887005DCFF8 /* SceneKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D11F5FE1D7E0887005DCFF8 /* SceneKitController.m */; };
 		4D11F6011D7E0B38005DCFF8 /* Spaceship.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4D11F6001D7E0B38005DCFF8 /* Spaceship.dae */; };
 		4D11F6051D7E23DF005DCFF8 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D11F6041D7E23DF005DCFF8 /* Pacifico.ttf */; };
+		4D1245BE1D89726700106AB1 /* SplitKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1245BD1D89726700106AB1 /* SplitKeyView.m */; };
+		4D1245C11D897AD200106AB1 /* PresentationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1245C01D897AD200106AB1 /* PresentationView.m */; };
+		4D1245C41D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1245C31D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m */; };
+		4D1245C71D89867000106AB1 /* prez-0.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245C61D89867000106AB1 /* prez-0.html */; };
+		4D1245C91D8986F400106AB1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1245C81D8986F400106AB1 /* WebKit.framework */; };
+		4D1245D01D89898600106AB1 /* prez-1.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CA1D89898600106AB1 /* prez-1.html */; };
+		4D1245D11D89898600106AB1 /* prez-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CB1D89898600106AB1 /* prez-2.html */; };
+		4D1245D21D89898600106AB1 /* prez-3.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CC1D89898600106AB1 /* prez-3.html */; };
+		4D1245D31D89898600106AB1 /* prez-4.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CD1D89898600106AB1 /* prez-4.html */; };
+		4D1245D41D89898600106AB1 /* prez-5.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CE1D89898600106AB1 /* prez-5.html */; };
+		4D1245D51D89898600106AB1 /* prez-6.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245CF1D89898600106AB1 /* prez-6.html */; };
+		4D1245D71D89938300106AB1 /* NoisyStaticFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245D61D89938300106AB1 /* NoisyStaticFragmentShader.glsl */; };
+		4D1245D91D89A75A00106AB1 /* prez-7.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D1245D81D89A75A00106AB1 /* prez-7.html */; };
+		4D1245DC1D89A83C00106AB1 /* TheoryImplementationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1245DB1D89A83C00106AB1 /* TheoryImplementationViewController.m */; };
+		4D1245DF1D89A85500106AB1 /* TheoryImplementationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1245DE1D89A85500106AB1 /* TheoryImplementationView.m */; };
 		4D132DF01D807EF9003066BD /* K93DS.3ds in Resources */ = {isa = PBXBuildFile; fileRef = 4D132DEF1D807EC0003066BD /* K93DS.3ds */; };
 		4D132E2D1D808503003066BD /* Eevee_ColladaMax.DAE in Resources */ = {isa = PBXBuildFile; fileRef = 4D132E101D808503003066BD /* Eevee_ColladaMax.DAE */; };
 		4D132E2E1D808503003066BD /* pm0133_00_Body1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D132E121D808503003066BD /* pm0133_00_Body1.png */; };
@@ -84,6 +99,17 @@
 		4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */; };
 		4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */; };
 		4DE0C10F1D6A43080002D0F7 /* grasslight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C10E1D6A43080002D0F7 /* grasslight.png */; };
+		4DE3ACEF1D89BF690000B012 /* prez-8.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEC1D89BF690000B012 /* prez-8.html */; };
+		4DE3ACF01D89BF690000B012 /* prez-9.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACED1D89BF690000B012 /* prez-9.html */; };
+		4DE3ACF11D89BF690000B012 /* prez-10.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEE1D89BF690000B012 /* prez-10.html */; };
+		4DE3ACF31D89C33F0000B012 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3ACF21D89C33F0000B012 /* CoreGraphics.framework */; };
+		4DE3ACF51D89CEA70000B012 /* connect-dots.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF41D89CEA70000B012 /* connect-dots.jpg */; };
+		4DE3ACF71D89CFC40000B012 /* prez-11.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF61D89CFC40000B012 /* prez-11.html */; };
+		4DE3ACFC1D89D7290000B012 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF91D89D7290000B012 /* default.css */; };
+		4DE3ACFD1D89D7290000B012 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACFB1D89D7290000B012 /* highlight.js */; };
+		4DE3ACFF1D89DA6D0000B012 /* run.js in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACFE1D89DA6D0000B012 /* run.js */; };
+		4DE3AD011D89DFD60000B012 /* prez-12.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3AD001D89DFD60000B012 /* prez-12.html */; };
+		4DE3AD031D89E8E50000B012 /* prez-13.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3AD021D89E8E50000B012 /* prez-13.html */; };
 		4DE70B421D6F13E30001FBD2 /* shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B401D6F13E30001FBD2 /* shader.fs */; };
 		4DE70B431D6F13E30001FBD2 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B411D6F13E30001FBD2 /* shader.vs */; };
 		4DE70B461D6F14650001FBD2 /* RWTSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */; };
@@ -137,6 +163,26 @@
 		4D11F5FE1D7E0887005DCFF8 /* SceneKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneKitController.m; sourceTree = "<group>"; };
 		4D11F6001D7E0B38005DCFF8 /* Spaceship.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Spaceship.dae; sourceTree = "<group>"; };
 		4D11F6041D7E23DF005DCFF8 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		4D1245BC1D89726700106AB1 /* SplitKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitKeyView.h; sourceTree = "<group>"; };
+		4D1245BD1D89726700106AB1 /* SplitKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitKeyView.m; sourceTree = "<group>"; };
+		4D1245BF1D897AD200106AB1 /* PresentationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationView.h; sourceTree = "<group>"; };
+		4D1245C01D897AD200106AB1 /* PresentationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationView.m; sourceTree = "<group>"; };
+		4D1245C21D897DFC00106AB1 /* NS(Attributed)String+Geometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NS(Attributed)String+Geometrics.h"; sourceTree = "<group>"; };
+		4D1245C31D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NS(Attributed)String+Geometrics.m"; sourceTree = "<group>"; };
+		4D1245C61D89867000106AB1 /* prez-0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-0.html"; sourceTree = "<group>"; };
+		4D1245C81D8986F400106AB1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		4D1245CA1D89898600106AB1 /* prez-1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-1.html"; sourceTree = "<group>"; };
+		4D1245CB1D89898600106AB1 /* prez-2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-2.html"; sourceTree = "<group>"; };
+		4D1245CC1D89898600106AB1 /* prez-3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-3.html"; sourceTree = "<group>"; };
+		4D1245CD1D89898600106AB1 /* prez-4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-4.html"; sourceTree = "<group>"; };
+		4D1245CE1D89898600106AB1 /* prez-5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-5.html"; sourceTree = "<group>"; };
+		4D1245CF1D89898600106AB1 /* prez-6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-6.html"; sourceTree = "<group>"; };
+		4D1245D61D89938300106AB1 /* NoisyStaticFragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NoisyStaticFragmentShader.glsl; sourceTree = "<group>"; };
+		4D1245D81D89A75A00106AB1 /* prez-7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-7.html"; sourceTree = "<group>"; };
+		4D1245DA1D89A83C00106AB1 /* TheoryImplementationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheoryImplementationViewController.h; sourceTree = "<group>"; };
+		4D1245DB1D89A83C00106AB1 /* TheoryImplementationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoryImplementationViewController.m; sourceTree = "<group>"; };
+		4D1245DD1D89A85500106AB1 /* TheoryImplementationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheoryImplementationView.h; sourceTree = "<group>"; };
+		4D1245DE1D89A85500106AB1 /* TheoryImplementationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoryImplementationView.m; sourceTree = "<group>"; };
 		4D132DEF1D807EC0003066BD /* K93DS.3ds */ = {isa = PBXFileReference; explicitFileType = compiled; path = K93DS.3ds; sourceTree = "<group>"; };
 		4D132E101D808503003066BD /* Eevee_ColladaMax.DAE */ = {isa = PBXFileReference; explicitFileType = compiled; fileEncoding = 4; path = Eevee_ColladaMax.DAE; sourceTree = "<group>"; };
 		4D132E121D808503003066BD /* pm0133_00_Body1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pm0133_00_Body1.png; sourceTree = "<group>"; };
@@ -231,6 +277,17 @@
 		4DE0C1051D6A34DC0002D0F7 /* GLPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPlane.h; sourceTree = "<group>"; };
 		4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPlane.m; sourceTree = "<group>"; };
 		4DE0C10E1D6A43080002D0F7 /* grasslight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grasslight.png; sourceTree = "<group>"; };
+		4DE3ACEC1D89BF690000B012 /* prez-8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-8.html"; sourceTree = "<group>"; };
+		4DE3ACED1D89BF690000B012 /* prez-9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-9.html"; sourceTree = "<group>"; };
+		4DE3ACEE1D89BF690000B012 /* prez-10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-10.html"; sourceTree = "<group>"; };
+		4DE3ACF21D89C33F0000B012 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4DE3ACF41D89CEA70000B012 /* connect-dots.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "connect-dots.jpg"; path = "../../../Desktop/connect-dots.jpg"; sourceTree = "<group>"; };
+		4DE3ACF61D89CFC40000B012 /* prez-11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-11.html"; sourceTree = "<group>"; };
+		4DE3ACF91D89D7290000B012 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		4DE3ACFB1D89D7290000B012 /* highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.js; sourceTree = "<group>"; };
+		4DE3ACFE1D89DA6D0000B012 /* run.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = run.js; sourceTree = "<group>"; };
+		4DE3AD001D89DFD60000B012 /* prez-12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-12.html"; sourceTree = "<group>"; };
+		4DE3AD021D89E8E50000B012 /* prez-13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-13.html"; sourceTree = "<group>"; };
 		4DE70B401D6F13E30001FBD2 /* shader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
 		4DE70B411D6F13E30001FBD2 /* shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragment.glsl; sourceTree = "<group>"; };
@@ -280,6 +337,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE3ACF31D89C33F0000B012 /* CoreGraphics.framework in Frameworks */,
+				4D1245C91D8986F400106AB1 /* WebKit.framework in Frameworks */,
 				4DC8A67A1D77863800C2ACA6 /* libassimp.3.3.1.dylib in Frameworks */,
 				4D9B720D1D7A095E0086E387 /* libSDL-1.2.0.dylib in Frameworks */,
 				4D41F8EF1D68A4E70014E865 /* OpenGL.framework in Frameworks */,
@@ -292,6 +351,8 @@
 		4D0D42821D6878E200379A5F = {
 			isa = PBXGroup;
 			children = (
+				4DE3ACF21D89C33F0000B012 /* CoreGraphics.framework */,
+				4D1245C81D8986F400106AB1 /* WebKit.framework */,
 				4D0D428D1D6878E200379A5F /* OpenGLPresentation */,
 				4D0D428C1D6878E200379A5F /* Products */,
 			);
@@ -310,7 +371,10 @@
 			children = (
 				4D9B70731D78CB730086E387 /* 3D Models */,
 				4D0D428E1D6878E200379A5F /* AppDelegate.h */,
+				4D1245C51D89865900106AB1 /* WebViews */,
 				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
+				4DE3ACF81D89D7290000B012 /* css */,
+				4DE3ACFA1D89D7290000B012 /* js */,
 				4DD4B9C21D6E4EFB005EF2C6 /* Nodes */,
 				4DD4B9C11D6E4EE7005EF2C6 /* View Controllers */,
 				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
@@ -337,6 +401,27 @@
 				4D0D42921D6878E200379A5F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D1245C51D89865900106AB1 /* WebViews */ = {
+			isa = PBXGroup;
+			children = (
+				4D1245C61D89867000106AB1 /* prez-0.html */,
+				4D1245CA1D89898600106AB1 /* prez-1.html */,
+				4D1245CB1D89898600106AB1 /* prez-2.html */,
+				4D1245CC1D89898600106AB1 /* prez-3.html */,
+				4D1245CD1D89898600106AB1 /* prez-4.html */,
+				4D1245CE1D89898600106AB1 /* prez-5.html */,
+				4D1245CF1D89898600106AB1 /* prez-6.html */,
+				4D1245D81D89A75A00106AB1 /* prez-7.html */,
+				4DE3ACEC1D89BF690000B012 /* prez-8.html */,
+				4DE3ACED1D89BF690000B012 /* prez-9.html */,
+				4DE3ACEE1D89BF690000B012 /* prez-10.html */,
+				4DE3ACF61D89CFC40000B012 /* prez-11.html */,
+				4DE3AD001D89DFD60000B012 /* prez-12.html */,
+				4DE3AD021D89E8E50000B012 /* prez-13.html */,
+			);
+			name = WebViews;
 			sourceTree = "<group>";
 		};
 		4D132E0E1D8084C4003066BD /* Eevee */ = {
@@ -426,6 +511,7 @@
 				4DF5FF2B1D7649AE00565135 /* Matrix4f.cpp */,
 				4D88E5421D68F8DE00D67AEF /* GLVertex.h */,
 				4DF5FF2D1D764E7C00565135 /* GLSimpleBoneFragment.glsl */,
+				4D1245D61D89938300106AB1 /* NoisyStaticFragmentShader.glsl */,
 				4DF5FF2E1D764E7C00565135 /* GLSimpleBoneVertex.glsl */,
 				4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */,
 				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
@@ -507,10 +593,20 @@
 		4DD4B9C11D6E4EE7005EF2C6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D1245C21D897DFC00106AB1 /* NS(Attributed)String+Geometrics.h */,
+				4D1245C31D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m */,
 				4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */,
 				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
+				4D1245BC1D89726700106AB1 /* SplitKeyView.h */,
+				4D1245BD1D89726700106AB1 /* SplitKeyView.m */,
 				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
 				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
+				4D1245DA1D89A83C00106AB1 /* TheoryImplementationViewController.h */,
+				4D1245DB1D89A83C00106AB1 /* TheoryImplementationViewController.m */,
+				4D1245DD1D89A85500106AB1 /* TheoryImplementationView.h */,
+				4D1245DE1D89A85500106AB1 /* TheoryImplementationView.m */,
+				4D1245BF1D897AD200106AB1 /* PresentationView.h */,
+				4D1245C01D897AD200106AB1 /* PresentationView.m */,
 				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
 				4D41F8E91D68A1B50014E865 /* GLViewController.mm */,
 				4D11F5FD1D7E0887005DCFF8 /* SceneKitController.h */,
@@ -562,12 +658,30 @@
 		4DE0C1101D6A439C0002D0F7 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				4DE3ACF41D89CEA70000B012 /* connect-dots.jpg */,
 				4DD4B9BA1D6E481A005EF2C6 /* white.png */,
 				4DE0C1001D6A16A90002D0F7 /* skybox1.png */,
 				4DE0C10E1D6A43080002D0F7 /* grasslight.png */,
 				4D88E54E1D68FCE900D67AEF /* mushroom.png */,
 			);
 			name = Textures;
+			sourceTree = "<group>";
+		};
+		4DE3ACF81D89D7290000B012 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				4DE3ACF91D89D7290000B012 /* default.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		4DE3ACFA1D89D7290000B012 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				4DE3ACFB1D89D7290000B012 /* highlight.js */,
+				4DE3ACFE1D89DA6D0000B012 /* run.js */,
+			);
+			path = js;
 			sourceTree = "<group>";
 		};
 		4DF5FF311D76542200565135 /* McCoy */ = {
@@ -673,34 +787,45 @@
 				4DF5FF4D1D76542200565135 /* McCoy.obj in Resources */,
 				4D4597C61D6A63480018ED50 /* TeamFlareAdmin.DAE in Resources */,
 				4DE70B431D6F13E30001FBD2 /* shader.vs in Resources */,
+				4DE3ACEF1D89BF690000B012 /* prez-8.html in Resources */,
 				4DC8A67C1D77874100C2ACA6 /* bob_lamp_1.dae in Resources */,
+				4DE3ACF51D89CEA70000B012 /* connect-dots.jpg in Resources */,
 				4DC8A6781D775C3A00C2ACA6 /* walking.dae in Resources */,
 				4DF5FF581D76542200565135 /* McCoy_hand_D.tga in Resources */,
 				4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */,
 				4D132E301D808503003066BD /* pm0133_00_Body2.png in Resources */,
+				4DE3ACF11D89BF690000B012 /* prez-10.html in Resources */,
 				4D132E391D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
 				4DFA30D71D86BF3D00BB698D /* k9.dae in Resources */,
+				4D1245C71D89867000106AB1 /* prez-0.html in Resources */,
+				4DE3AD031D89E8E50000B012 /* prez-13.html in Resources */,
 				4DF5FF4B1D76542200565135 /* McCoy.dae in Resources */,
+				4DE3AD011D89DFD60000B012 /* prez-12.html in Resources */,
 				4DF5FF571D76542200565135 /* McCoy_hair_S.tga in Resources */,
 				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
+				4D1245D51D89898600106AB1 /* prez-6.html in Resources */,
 				4D9B71F51D78DA7C0086E387 /* emma-new.dae in Resources */,
 				4DF5FF681D76BE6200565135 /* pumaMap.jpg in Resources */,
 				4DE70B421D6F13E30001FBD2 /* shader.fs in Resources */,
 				4DF5FF531D76542200565135 /* McCoy_eye_S.tga in Resources */,
 				4DE70B461D6F14650001FBD2 /* RWTSimpleFragment.glsl in Resources */,
 				4D132E3C1D808503003066BD /* pm0133_00_Body1Id.png in Resources */,
+				4DE3ACF71D89CFC40000B012 /* prez-11.html in Resources */,
 				4DF5FF5F1D76542200565135 /* McCoy_legs_N.tga in Resources */,
 				4D132E471D808503003066BD /* pm0133_00_MouthNor.png in Resources */,
 				4DF5FF501D76542200565135 /* McCoy_badge_S.tga in Resources */,
 				4DF5FF6B1D76F3F700565135 /* emma.dae in Resources */,
+				4D1245D41D89898600106AB1 /* prez-5.html in Resources */,
 				4D4597C41D6A5F9B0018ED50 /* bt0023_00_head.png in Resources */,
 				4D4597C21D6A5F9B0018ED50 /* bt0023_00_body.png in Resources */,
 				4D5A5D601D76FA6700EBD629 /* astroBoy.dae in Resources */,
 				4DF5FF5C1D76542200565135 /* McCoy_head_N.tga in Resources */,
 				4D132E2E1D808503003066BD /* pm0133_00_Body1.png in Resources */,
 				4DF5FF301D764E7C00565135 /* GLSimpleBoneVertex.glsl in Resources */,
+				4D1245D91D89A75A00106AB1 /* prez-7.html in Resources */,
 				4DF5FF591D76542200565135 /* McCoy_hand_N.tga in Resources */,
 				4D132E361D808503003066BD /* pm0133_00_EyeNor.png in Resources */,
+				4D1245D71D89938300106AB1 /* NoisyStaticFragmentShader.glsl in Resources */,
 				4DF5FF5B1D76542200565135 /* McCoy_head_D.tga in Resources */,
 				4DD4B9BB1D6E481A005EF2C6 /* white.png in Resources */,
 				4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */,
@@ -709,12 +834,15 @@
 				4D132E351D808503003066BD /* pm0133_00_Eye2.png in Resources */,
 				4D11F5FC1D7D68CA005DCFF8 /* cube.dae in Resources */,
 				4D11F6011D7E0B38005DCFF8 /* Spaceship.dae in Resources */,
+				4DE3ACF01D89BF690000B012 /* prez-9.html in Resources */,
 				4D132E2F1D808503003066BD /* pm0133_00_Body1Id.png in Resources */,
+				4DE3ACFC1D89D7290000B012 /* default.css in Resources */,
 				4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */,
 				4D132E431D808503003066BD /* pm0133_00_EyeNor.png in Resources */,
 				4D132E381D808503003066BD /* pm0133_00_Mouth1Id.png in Resources */,
 				4D132E321D808503003066BD /* pm0133_00_BodyNor_Alpha.png in Resources */,
 				4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */,
+				4D1245D21D89898600106AB1 /* prez-3.html in Resources */,
 				4D132E401D808503003066BD /* pm0133_00_Eye1.png in Resources */,
 				4DF5FF511D76542200565135 /* McCoy_eye_D.tga in Resources */,
 				4D132E451D808503003066BD /* pm0133_00_Mouth1Id.png in Resources */,
@@ -736,9 +864,11 @@
 				4D132E311D808503003066BD /* pm0133_00_BodyNor.png in Resources */,
 				4DF5FF621D76542200565135 /* McCoy_torso_N.tga in Resources */,
 				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
+				4D1245D11D89898600106AB1 /* prez-2.html in Resources */,
 				4DF5FF5A1D76542200565135 /* McCoy_hand_S.tga in Resources */,
 				4D429BB61D725765007A5F0F /* doctor_who_k9.obj in Resources */,
 				4D132E3E1D808503003066BD /* pm0133_00_BodyNor.png in Resources */,
+				4D1245D31D89898600106AB1 /* prez-4.html in Resources */,
 				4D132DF01D807EF9003066BD /* K93DS.3ds in Resources */,
 				4D11F6051D7E23DF005DCFF8 /* Pacifico.ttf in Resources */,
 				4D4597C31D6A5F9B0018ED50 /* bt0023_00_hair.png in Resources */,
@@ -752,7 +882,10 @@
 				4DC8A6771D775C3A00C2ACA6 /* piratevoid_diffuse.png in Resources */,
 				4DF5FF4E1D76542200565135 /* McCoy_badge_D.tga in Resources */,
 				4D132E341D808503003066BD /* pm0133_00_Eye1Id.png in Resources */,
+				4DE3ACFD1D89D7290000B012 /* highlight.js in Resources */,
 				4D132E3F1D808503003066BD /* pm0133_00_BodyNor_Alpha.png in Resources */,
+				4D1245D01D89898600106AB1 /* prez-1.html in Resources */,
+				4DE3ACFF1D89DA6D0000B012 /* run.js in Resources */,
 				4D132E2D1D808503003066BD /* Eevee_ColladaMax.DAE in Resources */,
 				4D132E371D808503003066BD /* pm0133_00_Mouth1.png in Resources */,
 				4D132E461D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
@@ -767,9 +900,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1245C11D897AD200106AB1 /* PresentationView.m in Sources */,
 				4D9B72031D78E4E90086E387 /* Light.cpp in Sources */,
 				4D9B72091D7A06B30086E387 /* Model.cpp in Sources */,
 				4D9B71FC1D78DCFA0086E387 /* Animator.cpp in Sources */,
+				4D1245DF1D89A85500106AB1 /* TheoryImplementationView.m in Sources */,
 				4D41F8EA1D68A1B50014E865 /* GLViewController.mm in Sources */,
 				4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */,
 				4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */,
@@ -779,6 +914,7 @@
 				4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */,
 				4D88E5451D68FAEE00D67AEF /* GLBaseEffect.m in Sources */,
 				4D88E5561D68FE2900D67AEF /* GLScene.m in Sources */,
+				4D1245C41D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m in Sources */,
 				4DD4B9C61D6E5089005EF2C6 /* GLAssimpEffect.mm in Sources */,
 				4D9B71FD1D78DCFA0086E387 /* Tools.cpp in Sources */,
 				4D9B72021D78E4E90086E387 /* Camera.cpp in Sources */,
@@ -791,6 +927,8 @@
 				4D41F8E71D68A19A0014E865 /* PresentationViewController.m in Sources */,
 				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
 				4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */,
+				4D1245BE1D89726700106AB1 /* SplitKeyView.m in Sources */,
+				4D1245DC1D89A83C00106AB1 /* TheoryImplementationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

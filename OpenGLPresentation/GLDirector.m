@@ -22,6 +22,7 @@
 - (instancetype)init {
   if ((self = [super init])) {
     _startTime = CACurrentMediaTime();
+    _currentPage = 0;
   }
   return self;
 }
@@ -29,4 +30,29 @@
 - (CFTimeInterval)getRunningTime {
   return CACurrentMediaTime() - _startTime;
 }
+
+- (DesiredView)currentView {
+  switch (_currentPage) {
+    case 1:
+      return ShowDog;
+      break;
+    case 2:
+      return EverythingBlack;
+      break;
+    case 4:
+    case 5:
+    case 6:
+      return WideShot;
+      break;
+    case 12:
+      return ShowDots;
+      break;
+    case 13:
+      return ShowColorDots;
+      break;
+    default:
+      return ShowEmma;
+  }
+}
+
 @end

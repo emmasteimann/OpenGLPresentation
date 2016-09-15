@@ -10,9 +10,22 @@
 #include <GLKit/GLKit.h>
 @class GLNode;
 
+typedef enum {
+  ShowEmma,
+  ShowDog,
+  EverythingBlack,
+  WideShot,
+  ShowDots,
+  ShowColorDots,
+  ShowWireFrame
+} DesiredView;
+
 @interface GLDirector : NSObject
 + (instancetype)sharedInstance;
 - (CFTimeInterval)getRunningTime;
+@property (nonatomic, assign) int currentPage;
+@property (nonatomic, assign) int slideCount;
+- (DesiredView)currentView;
 @property (nonatomic, strong) NSView *view;
 @property (nonatomic, strong) GLNode *scene;
 @property (nonatomic, assign) GLKMatrix4 sceneProjectionMatrix;
