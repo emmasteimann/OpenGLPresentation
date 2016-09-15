@@ -399,6 +399,7 @@
 //      }
     if ([[GLDirector sharedInstance] currentView] == ShowDots) {
       //    Drawing just dots with blackness
+          [_assimpShader toggleNormalcy];
 
           [_assimpShader toggleBlackness];
           glPointSize(2.0f);
@@ -408,9 +409,11 @@
                                    (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
                                    m_Entries[i].BaseVertex);
           [_assimpShader toggleBlackness];
+          [_assimpShader toggleNormalcy];
+
     } else if ([[GLDirector sharedInstance] currentView] == ShowWireFrame) {
       //    Drawing with overlayed wireframe:
-
+          [_assimpShader toggleNormalcy];
           glEnable(GL_POLYGON_OFFSET_FILL);
           glPolygonOffset(5.0f, 5.0f);
           glDrawElementsBaseVertex(GL_TRIANGLES,
@@ -430,7 +433,7 @@
                                    m_Entries[i].BaseVertex);
             glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
           [_assimpShader toggleBlackness];
-
+          [_assimpShader toggleNormalcy];
 //          glEnable(GL_POLYGON_OFFSET_FILL);
 //          glPolygonOffset(5.0f, 5.0f);
 //          glDrawElementsBaseVertex(GL_TRIANGLES,
@@ -442,12 +445,14 @@
 
     }  else if ([[GLDirector sharedInstance] currentView] == ShowColorDots) {
 //          [_assimpShader toggleBlackness];
+          [_assimpShader toggleNormalcy];
           glPointSize(5.0f);
           glDrawElementsBaseVertex(GL_POINTS,
                                    m_Entries[i].NumIndices,
                                    GL_UNSIGNED_INT,
                                    (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
                                    m_Entries[i].BaseVertex);
+          [_assimpShader toggleNormalcy];
 //          [_assimpShader toggleBlackness];
 
     } else {
@@ -462,20 +467,6 @@
 //    [_assimpShader toggleNormalcy];
     }
 
-
-
-
-
-//    Drawing just dots with color
-
-//    [_assimpShader toggleBlackness];
-//    glPointSize(5.0f);
-//    glDrawElementsBaseVertex(GL_POINTS,
-//                             m_Entries[i].NumIndices,
-//                             GL_UNSIGNED_INT,
-//                             (void*)(sizeof(uint) * m_Entries[i].BaseIndex),
-//                             m_Entries[i].BaseVertex);
-//    [_assimpShader toggleBlackness];
 
   }
 
@@ -498,10 +489,16 @@
       self.rotationZ += M_PI * dt/2;
       break;
     case ShowWireFrame:
+    case ShowColorDots:
+    case ShowNormals:
       self.rotationZ += M_PI * dt/2;
       break;
     default:
-      self.rotationX = -M_PI_2;
+      if (!strcmp(_name, "k9")){
+        self.rotationZ = 0;
+      } else {
+        self.rotationZ = M_PI;
+      }
       break;
   }
   for (id child in self.children) {

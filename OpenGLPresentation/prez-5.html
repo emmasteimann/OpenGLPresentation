@@ -5,7 +5,7 @@
         margin: 0 auto;
         width: 90%;
         font-family: Avenir;
-        font-size: 50px;
+        font-size: 30px;
         display: table;
         position: relative;
         text-align: left;
@@ -14,9 +14,29 @@
       position: absolute;
       top: 50%;
     }
+    h1 {
+      font-family: Avenir;
+      font-size: 40px;
+    }
+    table {
+      font-weight: bold;
+      margin-top:10px;
+      font-size: 25px;
+    }
+    td {
+      min-width: 40px;
+    }
     </style>
   </head>
   <body>
-    It begins with choices, more than what most developers care to make.
+    <h1>Understanding a core problem...</h1><p>
+    There are <strong>DOZENS</strong> of low level APIs that let you start creating graphics on your computer:</p>
+    <table>
+      <tr><td>Direct3D</td><td></td><td>OpenGL (Legacy, 3, 4)</td></tr>
+      <tr><td>Metal</td><td></td><td>Mantle</td></tr>
+      <tr><td>OpenGLES (1, 2, 3)</td><td></td><td>Vulkan</td></tr>
+      <tr><td>WebGL</td><td></td><td>Quartz</td></tr>
+    </table>
+    <p>Sadly, most require a deep understanding of linear algebra, trigonometry, GPU architecture, platform coding and have terrible support systems for their users.</p>
   </body>
 </html>

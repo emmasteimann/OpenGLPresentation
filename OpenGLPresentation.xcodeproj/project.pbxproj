@@ -95,10 +95,52 @@
 		4DD4B9BE1D6E4D66005EF2C6 /* basic_lighting.fs in Resources */ = {isa = PBXBuildFile; fileRef = 4DD4B9BC1D6E4D66005EF2C6 /* basic_lighting.fs */; };
 		4DD4B9BF1D6E4D66005EF2C6 /* basic_lighting.vs in Resources */ = {isa = PBXBuildFile; fileRef = 4DD4B9BD1D6E4D66005EF2C6 /* basic_lighting.vs */; };
 		4DD4B9C61D6E5089005EF2C6 /* GLAssimpEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4B9C51D6E5089005EF2C6 /* GLAssimpEffect.mm */; };
+		4DD6D5C31D8B3C6A00139E72 /* CodeViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C21D8B3C6A00139E72 /* CodeViewViewController.m */; };
+		4DD6D5D01D8B3F2C00139E72 /* code-0.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C51D8B3F2C00139E72 /* code-0.html */; };
+		4DD6D5D11D8B3F2C00139E72 /* code-1.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C61D8B3F2C00139E72 /* code-1.html */; };
+		4DD6D5D21D8B3F2C00139E72 /* code-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C71D8B3F2C00139E72 /* code-2.html */; };
+		4DD6D5D31D8B3F2C00139E72 /* code-3.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C81D8B3F2C00139E72 /* code-3.html */; };
+		4DD6D5D41D8B3F2C00139E72 /* code-4.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C91D8B3F2C00139E72 /* code-4.html */; };
+		4DD6D5D51D8B3F2C00139E72 /* code-5.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CA1D8B3F2C00139E72 /* code-5.html */; };
+		4DD6D5D61D8B3F2C00139E72 /* code-6.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CB1D8B3F2C00139E72 /* code-6.html */; };
+		4DD6D5D71D8B3F2C00139E72 /* code-7.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CC1D8B3F2C00139E72 /* code-7.html */; };
+		4DD6D5D81D8B3F2C00139E72 /* code-8.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CD1D8B3F2C00139E72 /* code-8.html */; };
+		4DD6D5D91D8B3F2C00139E72 /* code-9.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CE1D8B3F2C00139E72 /* code-9.html */; };
+		4DD6D5DA1D8B3F2C00139E72 /* code-10.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CF1D8B3F2C00139E72 /* code-10.html */; };
 		4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C1001D6A16A90002D0F7 /* skybox1.png */; };
 		4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */; };
 		4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */; };
 		4DE0C10F1D6A43080002D0F7 /* grasslight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C10E1D6A43080002D0F7 /* grasslight.png */; };
+		4DE133591D8A981F0012A9A0 /* prez-14.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133581D8A981F0012A9A0 /* prez-14.html */; };
+		4DE1335B1D8A9AEB0012A9A0 /* prez-15.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1335A1D8A9AEB0012A9A0 /* prez-15.html */; };
+		4DE133601D8A9EA00012A9A0 /* gl_normaltransform02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1335F1D8A9EA00012A9A0 /* gl_normaltransform02.png */; };
+		4DE133751D8AACC60012A9A0 /* prez-17.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133611D8AACC60012A9A0 /* prez-17.html */; };
+		4DE133761D8AACC60012A9A0 /* prez-16.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133621D8AACC60012A9A0 /* prez-16.html */; };
+		4DE133771D8AACC60012A9A0 /* prez-23.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133631D8AACC60012A9A0 /* prez-23.html */; };
+		4DE133781D8AACC60012A9A0 /* prez-18.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133641D8AACC60012A9A0 /* prez-18.html */; };
+		4DE133791D8AACC60012A9A0 /* prez-21.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133651D8AACC60012A9A0 /* prez-21.html */; };
+		4DE1337A1D8AACC60012A9A0 /* prez-19.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133661D8AACC60012A9A0 /* prez-19.html */; };
+		4DE1337B1D8AACC60012A9A0 /* prez-20.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133671D8AACC60012A9A0 /* prez-20.html */; };
+		4DE1337C1D8AACC60012A9A0 /* prez-22.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133681D8AACC60012A9A0 /* prez-22.html */; };
+		4DE1337D1D8AACC60012A9A0 /* prez-31.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133691D8AACC60012A9A0 /* prez-31.html */; };
+		4DE1337E1D8AACC60012A9A0 /* prez-33.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336A1D8AACC60012A9A0 /* prez-33.html */; };
+		4DE1337F1D8AACC60012A9A0 /* prez-26.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336B1D8AACC60012A9A0 /* prez-26.html */; };
+		4DE133801D8AACC60012A9A0 /* prez-27.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336C1D8AACC60012A9A0 /* prez-27.html */; };
+		4DE133811D8AACC60012A9A0 /* prez-28.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336D1D8AACC60012A9A0 /* prez-28.html */; };
+		4DE133821D8AACC60012A9A0 /* prez-30.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336E1D8AACC60012A9A0 /* prez-30.html */; };
+		4DE133831D8AACC60012A9A0 /* prez-32.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1336F1D8AACC60012A9A0 /* prez-32.html */; };
+		4DE133841D8AACC60012A9A0 /* prez-29.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133701D8AACC60012A9A0 /* prez-29.html */; };
+		4DE133851D8AACC60012A9A0 /* prez-24.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133711D8AACC60012A9A0 /* prez-24.html */; };
+		4DE133861D8AACC60012A9A0 /* prez-34.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133721D8AACC60012A9A0 /* prez-34.html */; };
+		4DE133871D8AACC60012A9A0 /* prez-25.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133731D8AACC60012A9A0 /* prez-25.html */; };
+		4DE133881D8AACC60012A9A0 /* prez-35.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133741D8AACC60012A9A0 /* prez-35.html */; };
+		4DE1338A1D8AB2E50012A9A0 /* context.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133891D8AB2E50012A9A0 /* context.png */; };
+		4DE1338C1D8AC01F0012A9A0 /* viewport.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1338B1D8AC01F0012A9A0 /* viewport.png */; };
+		4DE1338F1D8AC1B10012A9A0 /* SimpleGLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1338E1D8AC1B10012A9A0 /* SimpleGLController.m */; };
+		4DE133931D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */; };
+		4DE133941D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */; };
+		4DE133971D8ACA7A0012A9A0 /* RWTBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */; };
+		4DE1339A1D8ACBEA0012A9A0 /* SimplePresentationGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE133991D8ACBEA0012A9A0 /* SimplePresentationGLView.m */; };
 		4DE3ACEF1D89BF690000B012 /* prez-8.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEC1D89BF690000B012 /* prez-8.html */; };
 		4DE3ACF01D89BF690000B012 /* prez-9.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACED1D89BF690000B012 /* prez-9.html */; };
 		4DE3ACF11D89BF690000B012 /* prez-10.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEE1D89BF690000B012 /* prez-10.html */; };
@@ -271,12 +313,58 @@
 		4DD4B9C41D6E5089005EF2C6 /* GLAssimpEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLAssimpEffect.hpp; sourceTree = "<group>"; };
 		4DD4B9C51D6E5089005EF2C6 /* GLAssimpEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLAssimpEffect.mm; sourceTree = "<group>"; };
 		4DD4B9C71D6E5319005EF2C6 /* GLBaseEffect+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLBaseEffect+Protected.h"; sourceTree = "<group>"; };
+		4DD6D5C11D8B3C6A00139E72 /* CodeViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewViewController.h; sourceTree = "<group>"; };
+		4DD6D5C21D8B3C6A00139E72 /* CodeViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewViewController.m; sourceTree = "<group>"; };
+		4DD6D5C51D8B3F2C00139E72 /* code-0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-0.html"; sourceTree = "<group>"; };
+		4DD6D5C61D8B3F2C00139E72 /* code-1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-1.html"; sourceTree = "<group>"; };
+		4DD6D5C71D8B3F2C00139E72 /* code-2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-2.html"; sourceTree = "<group>"; };
+		4DD6D5C81D8B3F2C00139E72 /* code-3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-3.html"; sourceTree = "<group>"; };
+		4DD6D5C91D8B3F2C00139E72 /* code-4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-4.html"; sourceTree = "<group>"; };
+		4DD6D5CA1D8B3F2C00139E72 /* code-5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-5.html"; sourceTree = "<group>"; };
+		4DD6D5CB1D8B3F2C00139E72 /* code-6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-6.html"; sourceTree = "<group>"; };
+		4DD6D5CC1D8B3F2C00139E72 /* code-7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-7.html"; sourceTree = "<group>"; };
+		4DD6D5CD1D8B3F2C00139E72 /* code-8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-8.html"; sourceTree = "<group>"; };
+		4DD6D5CE1D8B3F2C00139E72 /* code-9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-9.html"; sourceTree = "<group>"; };
+		4DD6D5CF1D8B3F2C00139E72 /* code-10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-10.html"; sourceTree = "<group>"; };
 		4DE0C1001D6A16A90002D0F7 /* skybox1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox1.png; sourceTree = "<group>"; };
 		4DE0C1021D6A20A30002D0F7 /* GLTerrainNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTerrainNode.h; sourceTree = "<group>"; };
 		4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTerrainNode.m; sourceTree = "<group>"; };
 		4DE0C1051D6A34DC0002D0F7 /* GLPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPlane.h; sourceTree = "<group>"; };
 		4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPlane.m; sourceTree = "<group>"; };
 		4DE0C10E1D6A43080002D0F7 /* grasslight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grasslight.png; sourceTree = "<group>"; };
+		4DE133581D8A981F0012A9A0 /* prez-14.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-14.html"; sourceTree = "<group>"; };
+		4DE1335A1D8A9AEB0012A9A0 /* prez-15.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-15.html"; sourceTree = "<group>"; };
+		4DE1335F1D8A9EA00012A9A0 /* gl_normaltransform02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gl_normaltransform02.png; sourceTree = "<group>"; };
+		4DE133611D8AACC60012A9A0 /* prez-17.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-17.html"; sourceTree = "<group>"; };
+		4DE133621D8AACC60012A9A0 /* prez-16.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-16.html"; sourceTree = "<group>"; };
+		4DE133631D8AACC60012A9A0 /* prez-23.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-23.html"; sourceTree = "<group>"; };
+		4DE133641D8AACC60012A9A0 /* prez-18.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-18.html"; sourceTree = "<group>"; };
+		4DE133651D8AACC60012A9A0 /* prez-21.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-21.html"; sourceTree = "<group>"; };
+		4DE133661D8AACC60012A9A0 /* prez-19.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-19.html"; sourceTree = "<group>"; };
+		4DE133671D8AACC60012A9A0 /* prez-20.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-20.html"; sourceTree = "<group>"; };
+		4DE133681D8AACC60012A9A0 /* prez-22.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-22.html"; sourceTree = "<group>"; };
+		4DE133691D8AACC60012A9A0 /* prez-31.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-31.html"; sourceTree = "<group>"; };
+		4DE1336A1D8AACC60012A9A0 /* prez-33.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-33.html"; sourceTree = "<group>"; };
+		4DE1336B1D8AACC60012A9A0 /* prez-26.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-26.html"; sourceTree = "<group>"; };
+		4DE1336C1D8AACC60012A9A0 /* prez-27.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-27.html"; sourceTree = "<group>"; };
+		4DE1336D1D8AACC60012A9A0 /* prez-28.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-28.html"; sourceTree = "<group>"; };
+		4DE1336E1D8AACC60012A9A0 /* prez-30.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-30.html"; sourceTree = "<group>"; };
+		4DE1336F1D8AACC60012A9A0 /* prez-32.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-32.html"; sourceTree = "<group>"; };
+		4DE133701D8AACC60012A9A0 /* prez-29.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-29.html"; sourceTree = "<group>"; };
+		4DE133711D8AACC60012A9A0 /* prez-24.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-24.html"; sourceTree = "<group>"; };
+		4DE133721D8AACC60012A9A0 /* prez-34.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-34.html"; sourceTree = "<group>"; };
+		4DE133731D8AACC60012A9A0 /* prez-25.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-25.html"; sourceTree = "<group>"; };
+		4DE133741D8AACC60012A9A0 /* prez-35.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-35.html"; sourceTree = "<group>"; };
+		4DE133891D8AB2E50012A9A0 /* context.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = context.png; sourceTree = "<group>"; };
+		4DE1338B1D8AC01F0012A9A0 /* viewport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewport.png; sourceTree = "<group>"; };
+		4DE1338D1D8AC1B10012A9A0 /* SimpleGLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGLController.h; sourceTree = "<group>"; };
+		4DE1338E1D8AC1B10012A9A0 /* SimpleGLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleGLController.m; sourceTree = "<group>"; };
+		4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragmentWhite.glsl; sourceTree = "<group>"; };
+		4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleVertexWhite.glsl; sourceTree = "<group>"; };
+		4DE133951D8ACA7A0012A9A0 /* RWTBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBaseEffect.h; sourceTree = "<group>"; };
+		4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBaseEffect.m; sourceTree = "<group>"; };
+		4DE133981D8ACBEA0012A9A0 /* SimplePresentationGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePresentationGLView.h; sourceTree = "<group>"; };
+		4DE133991D8ACBEA0012A9A0 /* SimplePresentationGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePresentationGLView.m; sourceTree = "<group>"; };
 		4DE3ACEC1D89BF690000B012 /* prez-8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-8.html"; sourceTree = "<group>"; };
 		4DE3ACED1D89BF690000B012 /* prez-9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-9.html"; sourceTree = "<group>"; };
 		4DE3ACEE1D89BF690000B012 /* prez-10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-10.html"; sourceTree = "<group>"; };
@@ -371,10 +459,12 @@
 			children = (
 				4D9B70731D78CB730086E387 /* 3D Models */,
 				4D0D428E1D6878E200379A5F /* AppDelegate.h */,
+				4DD6D5C41D8B3F1F00139E72 /* Code Views */,
 				4D1245C51D89865900106AB1 /* WebViews */,
 				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
 				4DE3ACF81D89D7290000B012 /* css */,
 				4DE3ACFA1D89D7290000B012 /* js */,
+				4DE133901D8AC4EE0012A9A0 /* RWT */,
 				4DD4B9C21D6E4EFB005EF2C6 /* Nodes */,
 				4DD4B9C11D6E4EE7005EF2C6 /* View Controllers */,
 				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
@@ -420,6 +510,28 @@
 				4DE3ACF61D89CFC40000B012 /* prez-11.html */,
 				4DE3AD001D89DFD60000B012 /* prez-12.html */,
 				4DE3AD021D89E8E50000B012 /* prez-13.html */,
+				4DE133581D8A981F0012A9A0 /* prez-14.html */,
+				4DE1335A1D8A9AEB0012A9A0 /* prez-15.html */,
+				4DE133621D8AACC60012A9A0 /* prez-16.html */,
+				4DE133611D8AACC60012A9A0 /* prez-17.html */,
+				4DE133641D8AACC60012A9A0 /* prez-18.html */,
+				4DE133661D8AACC60012A9A0 /* prez-19.html */,
+				4DE133671D8AACC60012A9A0 /* prez-20.html */,
+				4DE133651D8AACC60012A9A0 /* prez-21.html */,
+				4DE133681D8AACC60012A9A0 /* prez-22.html */,
+				4DE133631D8AACC60012A9A0 /* prez-23.html */,
+				4DE133711D8AACC60012A9A0 /* prez-24.html */,
+				4DE133731D8AACC60012A9A0 /* prez-25.html */,
+				4DE1336B1D8AACC60012A9A0 /* prez-26.html */,
+				4DE1336C1D8AACC60012A9A0 /* prez-27.html */,
+				4DE1336D1D8AACC60012A9A0 /* prez-28.html */,
+				4DE133701D8AACC60012A9A0 /* prez-29.html */,
+				4DE1336E1D8AACC60012A9A0 /* prez-30.html */,
+				4DE133691D8AACC60012A9A0 /* prez-31.html */,
+				4DE1336F1D8AACC60012A9A0 /* prez-32.html */,
+				4DE1336A1D8AACC60012A9A0 /* prez-33.html */,
+				4DE133721D8AACC60012A9A0 /* prez-34.html */,
+				4DE133741D8AACC60012A9A0 /* prez-35.html */,
 			);
 			name = WebViews;
 			sourceTree = "<group>";
@@ -510,13 +622,17 @@
 				4DF5FF2A1D76493D00565135 /* Matrix4f.hpp */,
 				4DF5FF2B1D7649AE00565135 /* Matrix4f.cpp */,
 				4D88E5421D68F8DE00D67AEF /* GLVertex.h */,
-				4DF5FF2D1D764E7C00565135 /* GLSimpleBoneFragment.glsl */,
 				4D1245D61D89938300106AB1 /* NoisyStaticFragmentShader.glsl */,
+				4DF5FF2D1D764E7C00565135 /* GLSimpleBoneFragment.glsl */,
 				4DF5FF2E1D764E7C00565135 /* GLSimpleBoneVertex.glsl */,
 				4D88E5461D68FBED00D67AEF /* GLSimpleFragment.glsl */,
 				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
 				4DE70B401D6F13E30001FBD2 /* shader.fs */,
 				4DE70B411D6F13E30001FBD2 /* shader.vs */,
+				4DE133951D8ACA7A0012A9A0 /* RWTBaseEffect.h */,
+				4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */,
+				4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */,
+				4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */,
 				4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */,
 				4DE70B451D6F14650001FBD2 /* RWTSimpleVertex.glsl */,
 			);
@@ -597,14 +713,20 @@
 				4D1245C31D897DFC00106AB1 /* NS(Attributed)String+Geometrics.m */,
 				4D41F8EB1D68A2000014E865 /* PresentationSplitViewController.h */,
 				4D41F8EC1D68A2000014E865 /* PresentationSplitViewController.m */,
+				4DE133981D8ACBEA0012A9A0 /* SimplePresentationGLView.h */,
+				4DE133991D8ACBEA0012A9A0 /* SimplePresentationGLView.m */,
 				4D1245BC1D89726700106AB1 /* SplitKeyView.h */,
 				4D1245BD1D89726700106AB1 /* SplitKeyView.m */,
 				4D41F8E51D68A19A0014E865 /* PresentationViewController.h */,
 				4D41F8E61D68A19A0014E865 /* PresentationViewController.m */,
+				4DD6D5C11D8B3C6A00139E72 /* CodeViewViewController.h */,
+				4DD6D5C21D8B3C6A00139E72 /* CodeViewViewController.m */,
 				4D1245DA1D89A83C00106AB1 /* TheoryImplementationViewController.h */,
 				4D1245DB1D89A83C00106AB1 /* TheoryImplementationViewController.m */,
 				4D1245DD1D89A85500106AB1 /* TheoryImplementationView.h */,
 				4D1245DE1D89A85500106AB1 /* TheoryImplementationView.m */,
+				4DE1338D1D8AC1B10012A9A0 /* SimpleGLController.h */,
+				4DE1338E1D8AC1B10012A9A0 /* SimpleGLController.m */,
 				4D1245BF1D897AD200106AB1 /* PresentationView.h */,
 				4D1245C01D897AD200106AB1 /* PresentationView.m */,
 				4D41F8E81D68A1B50014E865 /* GLViewController.h */,
@@ -655,6 +777,24 @@
 			name = Assimp;
 			sourceTree = "<group>";
 		};
+		4DD6D5C41D8B3F1F00139E72 /* Code Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D5C51D8B3F2C00139E72 /* code-0.html */,
+				4DD6D5C61D8B3F2C00139E72 /* code-1.html */,
+				4DD6D5C71D8B3F2C00139E72 /* code-2.html */,
+				4DD6D5C81D8B3F2C00139E72 /* code-3.html */,
+				4DD6D5C91D8B3F2C00139E72 /* code-4.html */,
+				4DD6D5CA1D8B3F2C00139E72 /* code-5.html */,
+				4DD6D5CB1D8B3F2C00139E72 /* code-6.html */,
+				4DD6D5CC1D8B3F2C00139E72 /* code-7.html */,
+				4DD6D5CD1D8B3F2C00139E72 /* code-8.html */,
+				4DD6D5CE1D8B3F2C00139E72 /* code-9.html */,
+				4DD6D5CF1D8B3F2C00139E72 /* code-10.html */,
+			);
+			name = "Code Views";
+			sourceTree = "<group>";
+		};
 		4DE0C1101D6A439C0002D0F7 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,9 +807,27 @@
 			name = Textures;
 			sourceTree = "<group>";
 		};
+		4DE1335C1D8A9DAB0012A9A0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4DE1335F1D8A9EA00012A9A0 /* gl_normaltransform02.png */,
+				4DE133891D8AB2E50012A9A0 /* context.png */,
+				4DE1338B1D8AC01F0012A9A0 /* viewport.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		4DE133901D8AC4EE0012A9A0 /* RWT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RWT;
+			sourceTree = "<group>";
+		};
 		4DE3ACF81D89D7290000B012 /* css */ = {
 			isa = PBXGroup;
 			children = (
+				4DE1335C1D8A9DAB0012A9A0 /* images */,
 				4DE3ACF91D89D7290000B012 /* default.css */,
 			);
 			path = css;
@@ -798,35 +956,52 @@
 				4D132E391D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
 				4DFA30D71D86BF3D00BB698D /* k9.dae in Resources */,
 				4D1245C71D89867000106AB1 /* prez-0.html in Resources */,
+				4DD6D5DA1D8B3F2C00139E72 /* code-10.html in Resources */,
+				4DD6D5D11D8B3F2C00139E72 /* code-1.html in Resources */,
 				4DE3AD031D89E8E50000B012 /* prez-13.html in Resources */,
 				4DF5FF4B1D76542200565135 /* McCoy.dae in Resources */,
 				4DE3AD011D89DFD60000B012 /* prez-12.html in Resources */,
+				4DD6D5D31D8B3F2C00139E72 /* code-3.html in Resources */,
 				4DF5FF571D76542200565135 /* McCoy_hair_S.tga in Resources */,
+				4DE133941D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl in Resources */,
 				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
 				4D1245D51D89898600106AB1 /* prez-6.html in Resources */,
 				4D9B71F51D78DA7C0086E387 /* emma-new.dae in Resources */,
 				4DF5FF681D76BE6200565135 /* pumaMap.jpg in Resources */,
 				4DE70B421D6F13E30001FBD2 /* shader.fs in Resources */,
+				4DE133821D8AACC60012A9A0 /* prez-30.html in Resources */,
 				4DF5FF531D76542200565135 /* McCoy_eye_S.tga in Resources */,
 				4DE70B461D6F14650001FBD2 /* RWTSimpleFragment.glsl in Resources */,
 				4D132E3C1D808503003066BD /* pm0133_00_Body1Id.png in Resources */,
 				4DE3ACF71D89CFC40000B012 /* prez-11.html in Resources */,
 				4DF5FF5F1D76542200565135 /* McCoy_legs_N.tga in Resources */,
+				4DE133831D8AACC60012A9A0 /* prez-32.html in Resources */,
 				4D132E471D808503003066BD /* pm0133_00_MouthNor.png in Resources */,
 				4DF5FF501D76542200565135 /* McCoy_badge_S.tga in Resources */,
+				4DD6D5D01D8B3F2C00139E72 /* code-0.html in Resources */,
+				4DE1338A1D8AB2E50012A9A0 /* context.png in Resources */,
 				4DF5FF6B1D76F3F700565135 /* emma.dae in Resources */,
 				4D1245D41D89898600106AB1 /* prez-5.html in Resources */,
+				4DD6D5D41D8B3F2C00139E72 /* code-4.html in Resources */,
 				4D4597C41D6A5F9B0018ED50 /* bt0023_00_head.png in Resources */,
+				4DE1335B1D8A9AEB0012A9A0 /* prez-15.html in Resources */,
 				4D4597C21D6A5F9B0018ED50 /* bt0023_00_body.png in Resources */,
 				4D5A5D601D76FA6700EBD629 /* astroBoy.dae in Resources */,
 				4DF5FF5C1D76542200565135 /* McCoy_head_N.tga in Resources */,
 				4D132E2E1D808503003066BD /* pm0133_00_Body1.png in Resources */,
 				4DF5FF301D764E7C00565135 /* GLSimpleBoneVertex.glsl in Resources */,
+				4DE133791D8AACC60012A9A0 /* prez-21.html in Resources */,
+				4DE1337C1D8AACC60012A9A0 /* prez-22.html in Resources */,
+				4DE1337D1D8AACC60012A9A0 /* prez-31.html in Resources */,
+				4DE133781D8AACC60012A9A0 /* prez-18.html in Resources */,
 				4D1245D91D89A75A00106AB1 /* prez-7.html in Resources */,
 				4DF5FF591D76542200565135 /* McCoy_hand_N.tga in Resources */,
 				4D132E361D808503003066BD /* pm0133_00_EyeNor.png in Resources */,
 				4D1245D71D89938300106AB1 /* NoisyStaticFragmentShader.glsl in Resources */,
+				4DE133801D8AACC60012A9A0 /* prez-27.html in Resources */,
 				4DF5FF5B1D76542200565135 /* McCoy_head_D.tga in Resources */,
+				4DE133841D8AACC60012A9A0 /* prez-29.html in Resources */,
+				4DE133851D8AACC60012A9A0 /* prez-24.html in Resources */,
 				4DD4B9BB1D6E481A005EF2C6 /* white.png in Resources */,
 				4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */,
 				4DF5FF521D76542200565135 /* McCoy_eye_N.tga in Resources */,
@@ -841,10 +1016,12 @@
 				4D132E431D808503003066BD /* pm0133_00_EyeNor.png in Resources */,
 				4D132E381D808503003066BD /* pm0133_00_Mouth1Id.png in Resources */,
 				4D132E321D808503003066BD /* pm0133_00_BodyNor_Alpha.png in Resources */,
+				4DE133861D8AACC60012A9A0 /* prez-34.html in Resources */,
 				4D88E5491D68FBED00D67AEF /* GLSimpleVertex.glsl in Resources */,
 				4D1245D21D89898600106AB1 /* prez-3.html in Resources */,
 				4D132E401D808503003066BD /* pm0133_00_Eye1.png in Resources */,
 				4DF5FF511D76542200565135 /* McCoy_eye_D.tga in Resources */,
+				4DD6D5D91D8B3F2C00139E72 /* code-9.html in Resources */,
 				4D132E451D808503003066BD /* pm0133_00_Mouth1Id.png in Resources */,
 				4D132E411D808503003066BD /* pm0133_00_Eye1Id.png in Resources */,
 				4D132E3D1D808503003066BD /* pm0133_00_Body2.png in Resources */,
@@ -853,19 +1030,29 @@
 				4DF5FF541D76542200565135 /* McCoy_eyeref_D.tga in Resources */,
 				4DF5FF551D76542200565135 /* McCoy_hair_D.tga in Resources */,
 				4DF5FF631D76542200565135 /* McCoy_torso_S.tga in Resources */,
+				4DE133591D8A981F0012A9A0 /* prez-14.html in Resources */,
 				4DF5FF601D76542200565135 /* McCoy_legs_S.tga in Resources */,
+				4DE133771D8AACC60012A9A0 /* prez-23.html in Resources */,
 				4DF5FF611D76542200565135 /* McCoy_torso_D.tga in Resources */,
+				4DE133871D8AACC60012A9A0 /* prez-25.html in Resources */,
 				4DE70B471D6F14650001FBD2 /* RWTSimpleVertex.glsl in Resources */,
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
+				4DE1337B1D8AACC60012A9A0 /* prez-20.html in Resources */,
+				4DE1337A1D8AACC60012A9A0 /* prez-19.html in Resources */,
 				4DD4B9BE1D6E4D66005EF2C6 /* basic_lighting.fs in Resources */,
+				4DE1337F1D8AACC60012A9A0 /* prez-26.html in Resources */,
 				4DF5FF5E1D76542200565135 /* McCoy_legs_D.tga in Resources */,
 				4DF5FF5D1D76542200565135 /* McCoy_head_S.tga in Resources */,
 				4D132E331D808503003066BD /* pm0133_00_Eye1.png in Resources */,
 				4D132E311D808503003066BD /* pm0133_00_BodyNor.png in Resources */,
 				4DF5FF621D76542200565135 /* McCoy_torso_N.tga in Resources */,
+				4DD6D5D21D8B3F2C00139E72 /* code-2.html in Resources */,
 				4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */,
+				4DD6D5D71D8B3F2C00139E72 /* code-7.html in Resources */,
 				4D1245D11D89898600106AB1 /* prez-2.html in Resources */,
 				4DF5FF5A1D76542200565135 /* McCoy_hand_S.tga in Resources */,
+				4DD6D5D81D8B3F2C00139E72 /* code-8.html in Resources */,
+				4DE133751D8AACC60012A9A0 /* prez-17.html in Resources */,
 				4D429BB61D725765007A5F0F /* doctor_who_k9.obj in Resources */,
 				4D132E3E1D808503003066BD /* pm0133_00_BodyNor.png in Resources */,
 				4D1245D31D89898600106AB1 /* prez-4.html in Resources */,
@@ -879,17 +1066,26 @@
 				4D132E3B1D808503003066BD /* pm0133_00_Body1.png in Resources */,
 				4D132E421D808503003066BD /* pm0133_00_Eye2.png in Resources */,
 				4DF5FF561D76542200565135 /* McCoy_hair_N.tga in Resources */,
+				4DE133601D8A9EA00012A9A0 /* gl_normaltransform02.png in Resources */,
+				4DE133761D8AACC60012A9A0 /* prez-16.html in Resources */,
 				4DC8A6771D775C3A00C2ACA6 /* piratevoid_diffuse.png in Resources */,
 				4DF5FF4E1D76542200565135 /* McCoy_badge_D.tga in Resources */,
+				4DE1338C1D8AC01F0012A9A0 /* viewport.png in Resources */,
 				4D132E341D808503003066BD /* pm0133_00_Eye1Id.png in Resources */,
 				4DE3ACFD1D89D7290000B012 /* highlight.js in Resources */,
 				4D132E3F1D808503003066BD /* pm0133_00_BodyNor_Alpha.png in Resources */,
 				4D1245D01D89898600106AB1 /* prez-1.html in Resources */,
 				4DE3ACFF1D89DA6D0000B012 /* run.js in Resources */,
+				4DE1337E1D8AACC60012A9A0 /* prez-33.html in Resources */,
 				4D132E2D1D808503003066BD /* Eevee_ColladaMax.DAE in Resources */,
+				4DD6D5D61D8B3F2C00139E72 /* code-6.html in Resources */,
+				4DE133881D8AACC60012A9A0 /* prez-35.html in Resources */,
 				4D132E371D808503003066BD /* pm0133_00_Mouth1.png in Resources */,
 				4D132E461D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
+				4DE133811D8AACC60012A9A0 /* prez-28.html in Resources */,
 				4D132E441D808503003066BD /* pm0133_00_Mouth1.png in Resources */,
+				4DE133931D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl in Resources */,
+				4DD6D5D51D8B3F2C00139E72 /* code-5.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,7 +1104,9 @@
 				4D41F8EA1D68A1B50014E865 /* GLViewController.mm in Sources */,
 				4D41F8ED1D68A2000014E865 /* PresentationSplitViewController.m in Sources */,
 				4D88E5591D68FEE000D67AEF /* GLDirector.m in Sources */,
+				4DD6D5C31D8B3C6A00139E72 /* CodeViewViewController.m in Sources */,
 				4D41F8F51D68D6BB0014E865 /* GLNode.m in Sources */,
+				4DE1339A1D8ACBEA0012A9A0 /* SimplePresentationGLView.m in Sources */,
 				4DF5FF2C1D7649AE00565135 /* Matrix4f.cpp in Sources */,
 				4D41F8E41D68A1810014E865 /* PresentationGLView.m in Sources */,
 				4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */,
@@ -918,6 +1116,7 @@
 				4DD4B9C61D6E5089005EF2C6 /* GLAssimpEffect.mm in Sources */,
 				4D9B71FD1D78DCFA0086E387 /* Tools.cpp in Sources */,
 				4D9B72021D78E4E90086E387 /* Camera.cpp in Sources */,
+				4DE1338F1D8AC1B10012A9A0 /* SimpleGLController.m in Sources */,
 				4D0D42931D6878E200379A5F /* main.m in Sources */,
 				4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */,
 				4D11F5FF1D7E0887005DCFF8 /* SceneKitController.m in Sources */,
@@ -928,6 +1127,7 @@
 				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
 				4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */,
 				4D1245BE1D89726700106AB1 /* SplitKeyView.m in Sources */,
+				4DE133971D8ACA7A0012A9A0 /* RWTBaseEffect.m in Sources */,
 				4D1245DC1D89A83C00106AB1 /* TheoryImplementationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

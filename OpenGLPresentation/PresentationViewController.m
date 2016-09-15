@@ -23,8 +23,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _slideNumber = 0;
-  _slideCount = 13;
+  _slideNumber = 18;
+  _slideCount = 26;
   [GLDirector sharedInstance].slideCount = _slideCount;
   [GLDirector sharedInstance].currentPage = _slideNumber;
 
@@ -36,7 +36,8 @@
                                                 error:nil];
 //  NSURL* fileURL = [NSURL fileURLWithPath:filePath];
 //  NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
-
+  [self.view setWantsLayer:YES];
+  self.view.layer.backgroundColor = [NSColor whiteColor].CGColor;
 
   [_webView setDrawsBackground:NO];
   [[_webView mainFrame] loadHTMLString:html baseURL:[[NSBundle mainBundle] resourceURL]];

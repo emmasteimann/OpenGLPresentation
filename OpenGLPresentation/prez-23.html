@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        font-family: Avenir;
+        font-size: 30px;
+        display: table;
+        position: relative;
+        text-align: left;
+      }
+    h1 {
+      font-family: Avenir;
+      font-size: 40px;
+    }
+    #main {
+      position: absolute;
+      top: 50%;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Theory: Shaders</h1>
+    <p>How does the GPU actually translate those vertices and indices you stored as arrays into pixels on the screen?</p><p> Well it's complicated... and sadly it's 90% your responsibility.</p>
+    <p>It begins by making programs called <strong>Shaders</strong>. In OpenGL there are two <em>required</em> kinds of shaders, <strong>Vertex</strong> and <strong>Fragment</strong>.
+    </p><p>
+    Vertex Shaders are ran on each vertex you feed in.<br/>
+    Fragment Shaders are ran for each pixel in the glViewport.
+    </p>
+  </body>
+</html>

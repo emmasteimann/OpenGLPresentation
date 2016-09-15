@@ -50,6 +50,18 @@
     case 13:
       return ShowColorDots;
       break;
+    case 14:
+      return ShowWireFrame;
+      break;
+    case 15:
+      return ShowNormals;
+      break;
+    case 20:
+      return ShowTriangle;
+      break;
+    case 21:
+      return ShowSquare;
+      break;
     default:
       return ShowEmma;
   }

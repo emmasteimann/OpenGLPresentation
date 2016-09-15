@@ -17,7 +17,10 @@ typedef enum {
   WideShot,
   ShowDots,
   ShowColorDots,
-  ShowWireFrame
+  ShowWireFrame,
+  ShowNormals,
+  ShowTriangle,
+  ShowSquare
 } DesiredView;
 
 @interface GLDirector : NSObject

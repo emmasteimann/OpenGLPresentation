@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        font-family: Avenir;
+        font-size: 30px;
+        display: table;
+        position: relative;
+        text-align: left;
+      }
+    h1 {
+      font-family: Avenir;
+      font-size: 40px;
+    }
+    #main {
+      position: absolute;
+      top: 50%;
+    }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
+    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <pre class="prettyprint lang-c">
+      #version 330 core
+
+      in vec4 frag_Color;
+      out vec4 outputColor;
+
+      void main(void) {
+      outputColor = frag_Color;
+      }
+    </pre>
+  </body>
+</html>

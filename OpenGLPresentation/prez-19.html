@@ -25,11 +25,16 @@
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </head>
   <body>
-    <h1>Theory: Vertices</h1>
-    <p>In OpenGL (as well as other graphics APIs) these are called vertices.</p><p>They're the building blocks of a much larger idea. When programming graphics we like to represent surfaces. Surfaces begin with defining positions that roughly map out to the object we're describing.</p>
-    <p>Each vertex is typically stored as an array of vectors. Vectors are structs that contain members like X, Y, Z, W. Making them ideal for storing positions and other things.</p>
+    <h1>Implementation: glViewport</h1>
+    <p>
+    In OpenGL you make a link a to screen by calling: <br/><br/>
     <code class="prettyprint lang-c">
-      vec4 position = vec4(1.0, 1.0, 1.0, 1.0);
-    </code>
+      glViewport(0, 0, width, height);
+    </code><br/><br/>
+    Think of the glViewport as your canvas! The coordinates defined for the view port are (-1, 1) in the upper left hand corner and (1, 1) in the lower right.<br/>
+    </p>
+    <p>
+    <img style="width:350px;" src="viewport.png"/>
+    </p>
   </body>
 </html>

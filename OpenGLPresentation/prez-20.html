@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        font-family: Avenir;
+        font-size: 30px;
+        display: table;
+        position: relative;
+        text-align: left;
+      }
+    h1 {
+      font-family: Avenir;
+      font-size: 40px;
+    }
+    #main {
+      position: absolute;
+      top: 50%;
+    }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
+    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <h1>Implementation: Triangle</h1>
+    <p>So if we create three vertices containing the following positions.
+    </p>
+    <p>
+    <pre class="prettyprint lang-c">
+      const static GLVertex glVertices[] = {
+        {{-1.0, -1.0, 0}},
+        {{1.0, -1.0, 0}},
+        {{1, 1, 0}},
+      };
+    </pre>
+    </p>
+    <p>We draw a triangle that fills up half the screen!
+    </p>
+
+  </body>
+</html>

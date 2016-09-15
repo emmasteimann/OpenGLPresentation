@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        font-family: Avenir;
+        font-size: 30px;
+        display: table;
+        position: relative;
+        text-align: left;
+      }
+    h1 {
+      font-family: Avenir;
+      font-size: 35px;
+    }
+    #main {
+      position: absolute;
+      top: 50%;
+    }
+    code {
+      font-size: 25px;
+    }
+    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <h1>Theory: Talking to the GPU</h1>
+    <p>
+    OpenGL is a cross-language, cross-platform graphics API that is implemented by GPU manufactuers as drivers for their GPU. <br/><br/>So when you write a GL call such as:<br/><br/>
+    <code>
+      glClearColor (0.0, 0.0, 0.0, 0.0);
+    </code>
+    <br/><br/>
+    It is literally interacting directly with GPU telling it to do something.
+    </p>
+  </body>
+</html>

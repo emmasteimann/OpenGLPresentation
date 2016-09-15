@@ -682,6 +682,35 @@
             </objects>
             <point key="canvasLocation" x="80" y="709"/>
         </scene>
+        <!--CodeViewViewController-->
+        <scene sceneID="b5s-QJ-xY5">
+            <objects>
+                <viewController identifier="CodeViewViewController" storyboardIdentifier="CodeViewViewController" id="Qfo-4W-td7" userLabel="CodeViewViewController" customClass="CodeViewViewController" sceneMemberID="viewController">
+                    <webView key="view" id="lbs-Bw-LFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                    </webView>
+                </viewController>
+                <customObject id="lMG-cg-0Nb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="-26"/>
+        </scene>
+        <!--SimpleGLController-->
+        <scene sceneID="Apl-HW-4a2">
+            <objects>
+                <viewController identifier="SimpleGLController" storyboardIdentifier="SimpleGLController" id="xiT-Vu-FdW" userLabel="SimpleGLController" customClass="SimpleGLController" sceneMemberID="viewController">
+                    <openGLView key="view" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" id="Mwo-BT-kxb" customClass="SimplePresentationGLView">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </openGLView>
+                </viewController>
+                <customObject id="Xnh-VV-qor" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="340"/>
+        </scene>
         <!--PresentationViewController-->
         <scene sceneID="TxW-Ru-da4">
             <objects>

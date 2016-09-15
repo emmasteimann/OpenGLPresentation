@@ -162,9 +162,9 @@ typedef enum {
       self.rotationY += M_PI * dt/7;
       _sceneState = EverythingSpinning;
       break;
-    case ShowWireFrame:
-      self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
-      break;
+//    case ShowWireFrame:
+//      self.initialModelMatrix = GLKMatrix4MakeLookAt(-2, -10, -10, _mesh.position.x, _mesh.position.y, _mesh.position.z, 0, 1, 0);
+//      break;
     default:
       self.initialModelMatrix = GLKMatrix4MakeLookAt(0, -8.5, -3, _mesh.position.x, _mesh.position.y+5.5, _mesh.position.z, 0, 2, 0);
       self.rotationY = 0;

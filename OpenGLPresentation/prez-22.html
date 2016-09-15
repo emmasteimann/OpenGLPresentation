@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        font-family: Avenir;
+        font-size: 30px;
+        display: table;
+        position: relative;
+        text-align: left;
+      }
+    h1 {
+      font-family: Avenir;
+      font-size: 40px;
+    }
+    #main {
+      position: absolute;
+      top: 50%;
+    }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
+    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <h1>Implementation: Color</h1>
+    <p>Plain white isn't much fun. So like I mentioned you can even add color as an extra vector on the vertices! Color is typically respresent by a 4 member vector, representing RGB and alpha.
+    </p>
+    <p>
+    <pre class="prettyprint lang-c">
+      const static GLVertex vertices[] = {
+      {{1, -1, 0}, {1, 0, 0, 1}},
+      {{1, 1, 0}, {0, 1, 0, 1}},
+      {{-1, 1, 0}, {0, 0, 1, 1}},
+      {{-1, -1, 0}, {0, 0, 0, 0}}
+      };
+    </pre><pre class="prettyprint lang-c">
+      const static GLubyte indices[] = {
+      0, 1, 2,
+      2, 3, 0
+      };
+    </pre>
+    </p>
+  </body>
+</html>
