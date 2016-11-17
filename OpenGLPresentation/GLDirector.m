@@ -62,6 +62,11 @@
     case 21:
       return ShowSquare;
       break;
+    case 33:
+      return ShowCube;
+    case 34:
+      return SpinCube;
+      break;
     default:
       return ShowEmma;
   }

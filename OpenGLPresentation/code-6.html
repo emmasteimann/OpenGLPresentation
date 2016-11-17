@@ -18,11 +18,43 @@
       position: absolute;
       top: 50%;
     }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      width: 70%;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
     </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </head>
   <body>
-    <h1>Implementation: Shaders</h1>
-    <p>How does the GPU actually translate those vertices and indices you stored as arrays into pixels on the screen? Well it's complicated and sadly it's 90% your responsibility.</p>
-    <p>It begins by making programs called "Shaders". In OpenGL there are two required kinds of shaders, Vertex and 
+    <pre class="prettyprint lang-c">
+
+      // Create & Compile Shaders
+      m_uVertexShader = glCreateShader(GL_VERTEX_SHADER);
+      m_uFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+      glShaderSource(m_uVertexShader, 1, &vertexSource, NULL);
+      glShaderSource(m_uFragmentShader, 1, &fragmentSource, NULL);
+      glCompileShader(m_uVertexShader);
+
+      // Create a Shader program
+      m_uProgram = glCreateProgram();
+
+      // Attach the shaders to the program
+      glAttachShader(m_uProgram, m_uVertexShader);
+      glAttachShader(m_uProgram, m_uFragmentShader);
+
+      // Tell the program to link everything
+      glLinkProgram(m_uProgram);
+
+      // Tell the current OpenGL Context to use the program
+      glUseProgram(m_uProgram);
+      
+      
+    </pre>
   </body>
 </html>

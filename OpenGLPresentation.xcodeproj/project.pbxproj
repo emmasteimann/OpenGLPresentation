@@ -101,12 +101,16 @@
 		4DD6D5D21D8B3F2C00139E72 /* code-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C71D8B3F2C00139E72 /* code-2.html */; };
 		4DD6D5D31D8B3F2C00139E72 /* code-3.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C81D8B3F2C00139E72 /* code-3.html */; };
 		4DD6D5D41D8B3F2C00139E72 /* code-4.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5C91D8B3F2C00139E72 /* code-4.html */; };
-		4DD6D5D51D8B3F2C00139E72 /* code-5.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CA1D8B3F2C00139E72 /* code-5.html */; };
 		4DD6D5D61D8B3F2C00139E72 /* code-6.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CB1D8B3F2C00139E72 /* code-6.html */; };
 		4DD6D5D71D8B3F2C00139E72 /* code-7.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CC1D8B3F2C00139E72 /* code-7.html */; };
 		4DD6D5D81D8B3F2C00139E72 /* code-8.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CD1D8B3F2C00139E72 /* code-8.html */; };
 		4DD6D5D91D8B3F2C00139E72 /* code-9.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CE1D8B3F2C00139E72 /* code-9.html */; };
 		4DD6D5DA1D8B3F2C00139E72 /* code-10.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5CF1D8B3F2C00139E72 /* code-10.html */; };
+		4DD6D5DC1D8B452900139E72 /* bufferslots.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5DB1D8B452900139E72 /* bufferslots.png */; };
+		4DD6D5DF1D8B59E900139E72 /* c2_pipeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5DE1D8B59E900139E72 /* c2_pipeline.png */; };
+		4DD6D5E11D8B5FD200139E72 /* viewportCube.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5E01D8B5FD200139E72 /* viewportCube.png */; };
+		4DD6D5E31D8B6B2E00139E72 /* SimpleMVPVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D5E21D8B6B2E00139E72 /* SimpleMVPVertex.glsl */; };
+		4DE0B0951DDD8FB8002FFF7B /* connect-dots.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0B0941DDD8FB8002FFF7B /* connect-dots.jpg */; };
 		4DE0C1011D6A16A90002D0F7 /* skybox1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0C1001D6A16A90002D0F7 /* skybox1.png */; };
 		4DE0C1041D6A20A30002D0F7 /* GLTerrainNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */; };
 		4DE0C1071D6A34DC0002D0F7 /* GLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0C1061D6A34DC0002D0F7 /* GLPlane.m */; };
@@ -137,15 +141,14 @@
 		4DE1338A1D8AB2E50012A9A0 /* context.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133891D8AB2E50012A9A0 /* context.png */; };
 		4DE1338C1D8AC01F0012A9A0 /* viewport.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1338B1D8AC01F0012A9A0 /* viewport.png */; };
 		4DE1338F1D8AC1B10012A9A0 /* SimpleGLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1338E1D8AC1B10012A9A0 /* SimpleGLController.m */; };
-		4DE133931D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */; };
-		4DE133941D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */; };
-		4DE133971D8ACA7A0012A9A0 /* RWTBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */; };
+		4DE133931D8AC69F0012A9A0 /* SimpleFragmentWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133911D8AC69F0012A9A0 /* SimpleFragmentWhite.glsl */; };
+		4DE133941D8AC69F0012A9A0 /* SimpleVertexWhite.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE133921D8AC69F0012A9A0 /* SimpleVertexWhite.glsl */; };
+		4DE133971D8ACA7A0012A9A0 /* SimpleBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE133961D8ACA7A0012A9A0 /* SimpleBaseEffect.m */; };
 		4DE1339A1D8ACBEA0012A9A0 /* SimplePresentationGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE133991D8ACBEA0012A9A0 /* SimplePresentationGLView.m */; };
 		4DE3ACEF1D89BF690000B012 /* prez-8.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEC1D89BF690000B012 /* prez-8.html */; };
 		4DE3ACF01D89BF690000B012 /* prez-9.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACED1D89BF690000B012 /* prez-9.html */; };
 		4DE3ACF11D89BF690000B012 /* prez-10.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACEE1D89BF690000B012 /* prez-10.html */; };
 		4DE3ACF31D89C33F0000B012 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3ACF21D89C33F0000B012 /* CoreGraphics.framework */; };
-		4DE3ACF51D89CEA70000B012 /* connect-dots.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF41D89CEA70000B012 /* connect-dots.jpg */; };
 		4DE3ACF71D89CFC40000B012 /* prez-11.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF61D89CFC40000B012 /* prez-11.html */; };
 		4DE3ACFC1D89D7290000B012 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACF91D89D7290000B012 /* default.css */; };
 		4DE3ACFD1D89D7290000B012 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3ACFB1D89D7290000B012 /* highlight.js */; };
@@ -154,8 +157,8 @@
 		4DE3AD031D89E8E50000B012 /* prez-13.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3AD021D89E8E50000B012 /* prez-13.html */; };
 		4DE70B421D6F13E30001FBD2 /* shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B401D6F13E30001FBD2 /* shader.fs */; };
 		4DE70B431D6F13E30001FBD2 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B411D6F13E30001FBD2 /* shader.vs */; };
-		4DE70B461D6F14650001FBD2 /* RWTSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */; };
-		4DE70B471D6F14650001FBD2 /* RWTSimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B451D6F14650001FBD2 /* RWTSimpleVertex.glsl */; };
+		4DE70B461D6F14650001FBD2 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B441D6F14650001FBD2 /* SimpleFragment.glsl */; };
+		4DE70B471D6F14650001FBD2 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DE70B451D6F14650001FBD2 /* SimpleVertex.glsl */; };
 		4DEF0BA91D69E57F0097221E /* GLTessEval.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */; };
 		4DEF0BAB1D69E58F0097221E /* GLTessControl.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */; };
 		4DF5FF2C1D7649AE00565135 /* Matrix4f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DF5FF2B1D7649AE00565135 /* Matrix4f.cpp */; };
@@ -320,12 +323,16 @@
 		4DD6D5C71D8B3F2C00139E72 /* code-2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-2.html"; sourceTree = "<group>"; };
 		4DD6D5C81D8B3F2C00139E72 /* code-3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-3.html"; sourceTree = "<group>"; };
 		4DD6D5C91D8B3F2C00139E72 /* code-4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-4.html"; sourceTree = "<group>"; };
-		4DD6D5CA1D8B3F2C00139E72 /* code-5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-5.html"; sourceTree = "<group>"; };
 		4DD6D5CB1D8B3F2C00139E72 /* code-6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-6.html"; sourceTree = "<group>"; };
 		4DD6D5CC1D8B3F2C00139E72 /* code-7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-7.html"; sourceTree = "<group>"; };
 		4DD6D5CD1D8B3F2C00139E72 /* code-8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-8.html"; sourceTree = "<group>"; };
 		4DD6D5CE1D8B3F2C00139E72 /* code-9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-9.html"; sourceTree = "<group>"; };
 		4DD6D5CF1D8B3F2C00139E72 /* code-10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "code-10.html"; sourceTree = "<group>"; };
+		4DD6D5DB1D8B452900139E72 /* bufferslots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bufferslots.png; sourceTree = "<group>"; };
+		4DD6D5DE1D8B59E900139E72 /* c2_pipeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c2_pipeline.png; sourceTree = "<group>"; };
+		4DD6D5E01D8B5FD200139E72 /* viewportCube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewportCube.png; sourceTree = "<group>"; };
+		4DD6D5E21D8B6B2E00139E72 /* SimpleMVPVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleMVPVertex.glsl; sourceTree = "<group>"; };
+		4DE0B0941DDD8FB8002FFF7B /* connect-dots.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "connect-dots.jpg"; sourceTree = "<group>"; };
 		4DE0C1001D6A16A90002D0F7 /* skybox1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox1.png; sourceTree = "<group>"; };
 		4DE0C1021D6A20A30002D0F7 /* GLTerrainNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTerrainNode.h; sourceTree = "<group>"; };
 		4DE0C1031D6A20A30002D0F7 /* GLTerrainNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTerrainNode.m; sourceTree = "<group>"; };
@@ -359,10 +366,10 @@
 		4DE1338B1D8AC01F0012A9A0 /* viewport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewport.png; sourceTree = "<group>"; };
 		4DE1338D1D8AC1B10012A9A0 /* SimpleGLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGLController.h; sourceTree = "<group>"; };
 		4DE1338E1D8AC1B10012A9A0 /* SimpleGLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleGLController.m; sourceTree = "<group>"; };
-		4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragmentWhite.glsl; sourceTree = "<group>"; };
-		4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleVertexWhite.glsl; sourceTree = "<group>"; };
-		4DE133951D8ACA7A0012A9A0 /* RWTBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBaseEffect.h; sourceTree = "<group>"; };
-		4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBaseEffect.m; sourceTree = "<group>"; };
+		4DE133911D8AC69F0012A9A0 /* SimpleFragmentWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragmentWhite.glsl; sourceTree = "<group>"; };
+		4DE133921D8AC69F0012A9A0 /* SimpleVertexWhite.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertexWhite.glsl; sourceTree = "<group>"; };
+		4DE133951D8ACA7A0012A9A0 /* SimpleBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleBaseEffect.h; sourceTree = "<group>"; };
+		4DE133961D8ACA7A0012A9A0 /* SimpleBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleBaseEffect.m; sourceTree = "<group>"; };
 		4DE133981D8ACBEA0012A9A0 /* SimplePresentationGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePresentationGLView.h; sourceTree = "<group>"; };
 		4DE133991D8ACBEA0012A9A0 /* SimplePresentationGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePresentationGLView.m; sourceTree = "<group>"; };
 		4DE3ACEC1D89BF690000B012 /* prez-8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-8.html"; sourceTree = "<group>"; };
@@ -378,8 +385,8 @@
 		4DE3AD021D89E8E50000B012 /* prez-13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prez-13.html"; sourceTree = "<group>"; };
 		4DE70B401D6F13E30001FBD2 /* shader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
 		4DE70B411D6F13E30001FBD2 /* shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
-		4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragment.glsl; sourceTree = "<group>"; };
-		4DE70B451D6F14650001FBD2 /* RWTSimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleVertex.glsl; sourceTree = "<group>"; };
+		4DE70B441D6F14650001FBD2 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
+		4DE70B451D6F14650001FBD2 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 		4DEF0BA81D69E57F0097221E /* GLTessEval.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessEval.glsl; sourceTree = "<group>"; };
 		4DEF0BAA1D69E58F0097221E /* GLTessControl.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GLTessControl.glsl; sourceTree = "<group>"; };
 		4DEF0BAC1D69FF190097221E /* OpenGLHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLHelper.h; sourceTree = "<group>"; };
@@ -464,7 +471,6 @@
 				4D0D428F1D6878E200379A5F /* AppDelegate.m */,
 				4DE3ACF81D89D7290000B012 /* css */,
 				4DE3ACFA1D89D7290000B012 /* js */,
-				4DE133901D8AC4EE0012A9A0 /* RWT */,
 				4DD4B9C21D6E4EFB005EF2C6 /* Nodes */,
 				4DD4B9C11D6E4EE7005EF2C6 /* View Controllers */,
 				4D41F8E21D68A1810014E865 /* PresentationGLView.h */,
@@ -629,12 +635,13 @@
 				4D88E5471D68FBED00D67AEF /* GLSimpleVertex.glsl */,
 				4DE70B401D6F13E30001FBD2 /* shader.fs */,
 				4DE70B411D6F13E30001FBD2 /* shader.vs */,
-				4DE133951D8ACA7A0012A9A0 /* RWTBaseEffect.h */,
-				4DE133961D8ACA7A0012A9A0 /* RWTBaseEffect.m */,
-				4DE133911D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl */,
-				4DE133921D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl */,
-				4DE70B441D6F14650001FBD2 /* RWTSimpleFragment.glsl */,
-				4DE70B451D6F14650001FBD2 /* RWTSimpleVertex.glsl */,
+				4DE133951D8ACA7A0012A9A0 /* SimpleBaseEffect.h */,
+				4DE133961D8ACA7A0012A9A0 /* SimpleBaseEffect.m */,
+				4DE133911D8AC69F0012A9A0 /* SimpleFragmentWhite.glsl */,
+				4DE133921D8AC69F0012A9A0 /* SimpleVertexWhite.glsl */,
+				4DD6D5E21D8B6B2E00139E72 /* SimpleMVPVertex.glsl */,
+				4DE70B441D6F14650001FBD2 /* SimpleFragment.glsl */,
+				4DE70B451D6F14650001FBD2 /* SimpleVertex.glsl */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -785,7 +792,6 @@
 				4DD6D5C71D8B3F2C00139E72 /* code-2.html */,
 				4DD6D5C81D8B3F2C00139E72 /* code-3.html */,
 				4DD6D5C91D8B3F2C00139E72 /* code-4.html */,
-				4DD6D5CA1D8B3F2C00139E72 /* code-5.html */,
 				4DD6D5CB1D8B3F2C00139E72 /* code-6.html */,
 				4DD6D5CC1D8B3F2C00139E72 /* code-7.html */,
 				4DD6D5CD1D8B3F2C00139E72 /* code-8.html */,
@@ -813,20 +819,17 @@
 				4DE1335F1D8A9EA00012A9A0 /* gl_normaltransform02.png */,
 				4DE133891D8AB2E50012A9A0 /* context.png */,
 				4DE1338B1D8AC01F0012A9A0 /* viewport.png */,
+				4DE0B0941DDD8FB8002FFF7B /* connect-dots.jpg */,
 			);
 			name = images;
-			sourceTree = "<group>";
-		};
-		4DE133901D8AC4EE0012A9A0 /* RWT */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RWT;
 			sourceTree = "<group>";
 		};
 		4DE3ACF81D89D7290000B012 /* css */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D5DE1D8B59E900139E72 /* c2_pipeline.png */,
+				4DD6D5DB1D8B452900139E72 /* bufferslots.png */,
+				4DD6D5E01D8B5FD200139E72 /* viewportCube.png */,
 				4DE1335C1D8A9DAB0012A9A0 /* images */,
 				4DE3ACF91D89D7290000B012 /* default.css */,
 			);
@@ -945,15 +948,16 @@
 				4DF5FF4D1D76542200565135 /* McCoy.obj in Resources */,
 				4D4597C61D6A63480018ED50 /* TeamFlareAdmin.DAE in Resources */,
 				4DE70B431D6F13E30001FBD2 /* shader.vs in Resources */,
+				4DD6D5DF1D8B59E900139E72 /* c2_pipeline.png in Resources */,
 				4DE3ACEF1D89BF690000B012 /* prez-8.html in Resources */,
 				4DC8A67C1D77874100C2ACA6 /* bob_lamp_1.dae in Resources */,
-				4DE3ACF51D89CEA70000B012 /* connect-dots.jpg in Resources */,
 				4DC8A6781D775C3A00C2ACA6 /* walking.dae in Resources */,
 				4DF5FF581D76542200565135 /* McCoy_hand_D.tga in Resources */,
 				4D88E5481D68FBED00D67AEF /* GLSimpleFragment.glsl in Resources */,
 				4D132E301D808503003066BD /* pm0133_00_Body2.png in Resources */,
 				4DE3ACF11D89BF690000B012 /* prez-10.html in Resources */,
 				4D132E391D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
+				4DD6D5DC1D8B452900139E72 /* bufferslots.png in Resources */,
 				4DFA30D71D86BF3D00BB698D /* k9.dae in Resources */,
 				4D1245C71D89867000106AB1 /* prez-0.html in Resources */,
 				4DD6D5DA1D8B3F2C00139E72 /* code-10.html in Resources */,
@@ -963,7 +967,7 @@
 				4DE3AD011D89DFD60000B012 /* prez-12.html in Resources */,
 				4DD6D5D31D8B3F2C00139E72 /* code-3.html in Resources */,
 				4DF5FF571D76542200565135 /* McCoy_hair_S.tga in Resources */,
-				4DE133941D8AC69F0012A9A0 /* RWTSimpleVertexWhite.glsl in Resources */,
+				4DE133941D8AC69F0012A9A0 /* SimpleVertexWhite.glsl in Resources */,
 				4D88E5501D68FCE900D67AEF /* mushroom.png in Resources */,
 				4D1245D51D89898600106AB1 /* prez-6.html in Resources */,
 				4D9B71F51D78DA7C0086E387 /* emma-new.dae in Resources */,
@@ -971,7 +975,7 @@
 				4DE70B421D6F13E30001FBD2 /* shader.fs in Resources */,
 				4DE133821D8AACC60012A9A0 /* prez-30.html in Resources */,
 				4DF5FF531D76542200565135 /* McCoy_eye_S.tga in Resources */,
-				4DE70B461D6F14650001FBD2 /* RWTSimpleFragment.glsl in Resources */,
+				4DE70B461D6F14650001FBD2 /* SimpleFragment.glsl in Resources */,
 				4D132E3C1D808503003066BD /* pm0133_00_Body1Id.png in Resources */,
 				4DE3ACF71D89CFC40000B012 /* prez-11.html in Resources */,
 				4DF5FF5F1D76542200565135 /* McCoy_legs_N.tga in Resources */,
@@ -992,6 +996,7 @@
 				4DF5FF301D764E7C00565135 /* GLSimpleBoneVertex.glsl in Resources */,
 				4DE133791D8AACC60012A9A0 /* prez-21.html in Resources */,
 				4DE1337C1D8AACC60012A9A0 /* prez-22.html in Resources */,
+				4DD6D5E11D8B5FD200139E72 /* viewportCube.png in Resources */,
 				4DE1337D1D8AACC60012A9A0 /* prez-31.html in Resources */,
 				4DE133781D8AACC60012A9A0 /* prez-18.html in Resources */,
 				4D1245D91D89A75A00106AB1 /* prez-7.html in Resources */,
@@ -1023,6 +1028,7 @@
 				4DF5FF511D76542200565135 /* McCoy_eye_D.tga in Resources */,
 				4DD6D5D91D8B3F2C00139E72 /* code-9.html in Resources */,
 				4D132E451D808503003066BD /* pm0133_00_Mouth1Id.png in Resources */,
+				4DE0B0951DDD8FB8002FFF7B /* connect-dots.jpg in Resources */,
 				4D132E411D808503003066BD /* pm0133_00_Eye1Id.png in Resources */,
 				4D132E3D1D808503003066BD /* pm0133_00_Body2.png in Resources */,
 				4D0D42981D6878E200379A5F /* Assets.xcassets in Resources */,
@@ -1035,7 +1041,7 @@
 				4DE133771D8AACC60012A9A0 /* prez-23.html in Resources */,
 				4DF5FF611D76542200565135 /* McCoy_torso_D.tga in Resources */,
 				4DE133871D8AACC60012A9A0 /* prez-25.html in Resources */,
-				4DE70B471D6F14650001FBD2 /* RWTSimpleVertex.glsl in Resources */,
+				4DE70B471D6F14650001FBD2 /* SimpleVertex.glsl in Resources */,
 				4D0D429B1D6878E200379A5F /* Main.storyboard in Resources */,
 				4DE1337B1D8AACC60012A9A0 /* prez-20.html in Resources */,
 				4DE1337A1D8AACC60012A9A0 /* prez-19.html in Resources */,
@@ -1084,8 +1090,8 @@
 				4D132E461D808503003066BD /* pm0133_00_Mouth2.png in Resources */,
 				4DE133811D8AACC60012A9A0 /* prez-28.html in Resources */,
 				4D132E441D808503003066BD /* pm0133_00_Mouth1.png in Resources */,
-				4DE133931D8AC69F0012A9A0 /* RWTSimpleFragmentWhite.glsl in Resources */,
-				4DD6D5D51D8B3F2C00139E72 /* code-5.html in Resources */,
+				4DE133931D8AC69F0012A9A0 /* SimpleFragmentWhite.glsl in Resources */,
+				4DD6D5E31D8B6B2E00139E72 /* SimpleMVPVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,7 +1133,7 @@
 				4D0D42901D6878E200379A5F /* AppDelegate.m in Sources */,
 				4D88E5531D68FCF500D67AEF /* GLMushroom.m in Sources */,
 				4D1245BE1D89726700106AB1 /* SplitKeyView.m in Sources */,
-				4DE133971D8ACA7A0012A9A0 /* RWTBaseEffect.m in Sources */,
+				4DE133971D8ACA7A0012A9A0 /* SimpleBaseEffect.m in Sources */,
 				4D1245DC1D89A83C00106AB1 /* TheoryImplementationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

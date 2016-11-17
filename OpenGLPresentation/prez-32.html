@@ -5,7 +5,7 @@
         margin: 0 auto;
         width: 90%;
         font-family: Avenir;
-        font-size: 40px;
+        font-size: 30px;
         display: table;
         position: relative;
         text-align: left;
@@ -21,6 +21,10 @@
     </style>
   </head>
   <body>
-    <h1>Theory: Triangles</h1>
-    <p>After you define the vertices, the GPU can "connect the dots" with through the simplest geometric surfaces possible. Triangles.</body>
+    <h1>Theory: 3D Transformation</h1>
+    <p>But wait... where's the cube?</p>
+    <p>Well, there it is. It's just the cube is matching the viewport dimensions exactly. <br/> Which brings us to another important concept, and another reason OpenGL is crazy frustrating.</p>
+    <p><strong>You have to do your own 3D math.</strong></p>
+    <p>To actually see the cube we must first take its dimensions and translate it into world that's a larger size than itself. For this we use <strong>matrix math</strong>!</p>
+  </body>
 </html>

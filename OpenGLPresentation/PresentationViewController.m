@@ -23,8 +23,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _slideNumber = 18;
-  _slideCount = 26;
+  _slideNumber = 0;
+  _slideCount = 34;
   [GLDirector sharedInstance].slideCount = _slideCount;
   [GLDirector sharedInstance].currentPage = _slideNumber;
 

@@ -5,7 +5,7 @@
         margin: 0 auto;
         width: 90%;
         font-family: Avenir;
-        font-size: 40px;
+        font-size: 30px;
         display: table;
         position: relative;
         text-align: left;
@@ -21,8 +21,10 @@
     </style>
   </head>
   <body>
-    <h1>Implementation: The Scary Stuff.</h1>
+    <h1>Implementation: Vertex Buffer Objects (VBOs)</h1>
     <p>
-    To be able to feed your array of vertices to a shader, it requires A LOT of setup.
-    </p></body>
+    For the shader to be able to get at the members in you vertices, you must first load them into the OpenGL context.</p><p>The areas are called Vertex Buffer Objects or VBOs. The reserved area for Vertices is called an <strong>ARRAY_BUFFER</strong> and the reserved area for indices is called a <strong>ELEMENT_ARRAY_BUFFER</strong>.
+    </p>
+    <img style="width:400px;" src="bufferslots.png" />
+  </body>
 </html>

@@ -18,14 +18,14 @@ enum VB_TYPES {
 };
 
 typedef enum {
-  RWTVertexAttribPosition = 0,
-  RWTVertexAttribColor
-} RWTVertexAttributes;
+  VertexAttribPosition = 0,
+  VertexAttribColor
+} VertexAttributes;
 
 typedef struct {
   GLfloat Position[3];
   GLfloat Color[4];
-} RWTVertex;
+} Vertex;
 
 #define POSITION_LOCATION    0
 #define TEX_COORD_LOCATION   1

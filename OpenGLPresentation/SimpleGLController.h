@@ -12,4 +12,5 @@
 @interface SimpleGLController : NSViewController <SimplePresentationGLViewDelegate>
 -(void)loadColorShader;
 -(void)backToWhite;
+-(void)loadModelViewProjectionShader;
 @end

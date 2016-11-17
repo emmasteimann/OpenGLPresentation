@@ -18,11 +18,45 @@
       position: absolute;
       top: 50%;
     }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      width: 70%;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
     </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </head>
   <body>
-    <h1>Implementation: Shaders</h1>
-    <p>How does the GPU actually translate those vertices and indices you stored as arrays into pixels on the screen? Well it's complicated and sadly it's 90% your responsibility.</p>
-    <p>It begins by making programs called "Shaders". In OpenGL there are two required kinds of shaders, Vertex and 
+    <pre class="prettyprint lang-c">
+      
+      typedef struct {
+      GLfloat Position[3];
+      GLfloat Color[4];
+      } GLVertex;
+      
+      glEnableVertexAttribArray(
+        GetAttribLocation("a_Position")
+      );
+
+      glVertexAttribPointer(
+        GetAttribLocation("a_Position"), 3,
+        GL_FLOAT, GL_FALSE, sizeof(GLVertex),
+        (const GLvoid *) offsetof(GLVertex, Position));
+
+      glEnableVertexAttribArray(
+        GetAttribLocation("a_Color")
+      );
+      
+      glVertexAttribPointer(
+        GetAttribLocation("a_Color"), 4,
+        GL_FLOAT, GL_FALSE, sizeof(GLVertex),
+        (const GLvoid *) offsetof(GLVertex, Color));
+
+    </pre>
   </body>
 </html>

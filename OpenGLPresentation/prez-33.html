@@ -5,7 +5,7 @@
         margin: 0 auto;
         width: 90%;
         font-family: Avenir;
-        font-size: 40px;
+        font-size: 30px;
         display: table;
         position: relative;
         text-align: left;
@@ -18,9 +18,41 @@
       position: absolute;
       top: 50%;
     }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
     </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </head>
   <body>
-    <h1>Theory: Triangles</h1>
-    <p>After you define the vertices, the GPU can "connect the dots" with through the simplest geometric surfaces possible. Triangles.</body>
+    <h1>Theory: Matrix Math</h1>
+    <p>Matrices can be multiplied against vectors and return a transformed vector. Whether it be scaled, translated or rotated. </p>
+    <p>To get the cube to look like a cube, you apply three matrices<br/>
+      <ul>
+        <li>Model Matrix: Where the matrix is in your world</li>
+        <li>View Matrix: Where the is looking and what size</li>
+        <li>Projection Matrix: How to handle depth for eye perspective</li>
+      </ul>
+    </p>
+<!--      <p>Thus if you define a matrix representing where the model is in your world or where it's looking, that single matrix can be multiplied against each vertex on the shader to transform the cube to the correct position. This is called a ModelView Matrix. To orient the screen in relation to the view, you then multiple that times a Projection matrix.</p>-->
+    <pre class="prettyprint lang-c">
+      // Shorthand for a translation matrix
+      GLKMatrix4 viewMatrix = GLKMatrix4MakeTranslation(0, -1, -5);
+      GLKMatrix4 modelMatrix = GLKMatrix4Identity;
+      GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, modelMatrix);
+      GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
+      GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
+    </pre>
+
+    <pre class="prettyprint lang-c">
+      gl_Position = u_ProjectionMatrix * u_ModelViewMatrix * a_Position;
+    </pre>
+
+  </body>
 </html>

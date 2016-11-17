@@ -5,7 +5,7 @@
         margin: 0 auto;
         width: 90%;
         font-family: Avenir;
-        font-size: 40px;
+        font-size: 30px;
         display: table;
         position: relative;
         text-align: left;
@@ -18,9 +18,30 @@
       position: absolute;
       top: 50%;
     }
+    pre.prettyprint {
+      white-space: pre-line;
+      border: none !important;
+      outline: none;
+      font-size: 25px;
+    }
+    code {
+      font-size: 25px;
+    }
     </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </head>
   <body>
-    <h1>Theory: Triangles</h1>
-    <p>After you define the vertices, the GPU can "connect the dots" with through the simplest geometric surfaces possible. Triangles.</body>
+    <h1>Implementation: Vertex Attribute Arrays</h1>
+    <p>You then have to describe the location of the attributes vertices and how they map to attributes in your shaders.</p>
+    <p>
+    <pre class="prettyprint lang-c">
+      const static GLVertex vertices[] = {
+      {{1, -1, 0}, {1, 0, 0, 1}},
+      {{1, 1, 0}, {0, 1, 0, 1}},
+      {{-1, 1, 0}, {0, 0, 1, 1}},
+      {{-1, -1, 0}, {0, 0, 0, 0}}
+      };
+    </pre>
+    </p>
+  </body>
 </html>

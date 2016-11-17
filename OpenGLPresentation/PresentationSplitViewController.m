@@ -112,13 +112,34 @@
     [_simpleGLController loadColorShader];
   }
 
-  if ([GLDirector sharedInstance].currentPage >= 24) {
+  if ([GLDirector sharedInstance].currentPage >= 24 && [GLDirector sharedInstance].currentPage < 29) {
     [_glItem setCollapsed:YES];
     [_simpleGLItem setCollapsed:YES];
     [_theoryItem setCollapsed:YES];
     [_connectItem setCollapsed:YES];
     [_codeItem setCollapsed:NO];
     [_codeController updateSlides];
+  }
+
+  if ([GLDirector sharedInstance].currentPage == 29) {
+    [_codeItem setCollapsed:YES];
+    [_simpleGLItem setCollapsed:NO];
+  }
+
+  if ([GLDirector sharedInstance].currentPage >= 30 && [GLDirector sharedInstance].currentPage < 32) {
+    [_codeItem setCollapsed:NO];
+    [_simpleGLItem setCollapsed:YES];
+    [_codeController updateSlides];
+  }
+
+
+  if ([GLDirector sharedInstance].currentPage == 32) {
+    [_codeItem setCollapsed:YES];
+    [_simpleGLItem setCollapsed:NO];
+  }
+
+  if ([GLDirector sharedInstance].currentPage == 33) {
+    [_simpleGLController loadModelViewProjectionShader];
   }
 
   [self.splitView setPosition:self.view.frame.size.width/2 ofDividerAtIndex:0];
@@ -145,7 +166,23 @@
 
   [_prezController previousPage];
 
-  if ([GLDirector sharedInstance].currentPage >= 24) {
+  if ([GLDirector sharedInstance].currentPage == 28) {
+    [_codeItem setCollapsed:NO];
+    [_simpleGLItem setCollapsed:YES];
+  }
+
+  if ([GLDirector sharedInstance].currentPage == 29) {
+    [_codeItem setCollapsed:YES];
+    [_simpleGLItem setCollapsed:NO];
+  }
+
+  if ([GLDirector sharedInstance].currentPage == 31) {
+    [_codeItem setCollapsed:NO];
+    [_simpleGLItem setCollapsed:YES];
+  }
+
+
+  if ([GLDirector sharedInstance].currentPage >= 24 && [GLDirector sharedInstance].currentPage < 29) {
     [_codeController updateSlides];
   }
 
@@ -178,6 +215,10 @@
 
   if ([GLDirector sharedInstance].currentPage == 21) {
     [_simpleGLController backToWhite];
+  }
+
+  if ([GLDirector sharedInstance].currentPage == 32) {
+    [_simpleGLController loadColorShader];
   }
 
   [self.splitView setPosition:self.view.frame.size.width/2 ofDividerAtIndex:0];

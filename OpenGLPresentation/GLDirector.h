@@ -20,7 +20,9 @@ typedef enum {
   ShowWireFrame,
   ShowNormals,
   ShowTriangle,
-  ShowSquare
+  ShowSquare,
+  ShowCube,
+  SpinCube
 } DesiredView;
 
 @interface GLDirector : NSObject
