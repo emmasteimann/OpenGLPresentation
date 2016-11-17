@@ -8,4 +8,4 @@ That being said, there are some useful bits that I'll definitely reuse in future
 
 Cheers!
 
-![](prez.gif "")
+![](prez.gif "Screenshot of presentation")
